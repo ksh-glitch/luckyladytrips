@@ -67,7 +67,13 @@ export default function MobileMenu({ open, onClose }) {
         }`}
       >
         <div className="flex h-16 items-center justify-between px-5">
-          <Logo variant="color" imgClassName="h-8 w-auto" />
+          <span className="flex items-center gap-2">
+            <Logo as="span" variant="color" imgClassName="h-8 w-auto" />
+            <span className="inline-flex items-center gap-1.5 pb-0.5 text-[0.62rem] font-bold uppercase tracking-[0.3em] text-navy/70">
+              <span aria-hidden="true" className="h-px w-2.5 bg-gold-500" />
+              Trips
+            </span>
+          </span>
           <button
             onClick={onClose}
             aria-label="Close menu"
