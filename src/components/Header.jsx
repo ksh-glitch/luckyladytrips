@@ -30,7 +30,7 @@ export default function Header() {
         )}
       >
         <div className="container flex h-16 items-center justify-between gap-3">
-          <Logo variant="color" imgClassName="h-10 w-auto sm:h-11" />
+          <Logo variant="color" imgClassName="h-11 w-auto sm:h-12" />
 
           {/* Desktop nav */}
           <nav className="hidden lg:block">

@@ -38,6 +38,7 @@ export const images = {
   cabin: `${base}/cabin-or-room.webp`,
 
   // Brand
+  logoPrimary: `${base}/logo-primary.png`, // emblem + "Lucky Lady Trips" lockup (header)
   logoHorizontal: `${base}/logo-horizontal.png`,
   logoStacked: `${base}/logo-stacked.png`,
   logoNavy: `${base}/logo-navy.png`,
