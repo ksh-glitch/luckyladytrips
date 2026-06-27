@@ -112,7 +112,6 @@ const PATHS = {
   chevronDown: <path d="M5 9l7 7 7-7" />,
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   close: <path d="M6 6l12 12M18 6L6 18" />,
-  star: <path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z" />,
   heart: <path d="M12 20s-7-4.3-9.2-8.4A4.6 4.6 0 0 1 12 6a4.6 4.6 0 0 1 9.2 5.6C19 15.7 12 20 12 20z" />,
   mapPin: (
     <>
@@ -159,8 +158,9 @@ const PATHS = {
   ),
 }
 
-// Filled brand glyphs (use their own fill rules)
+// Filled glyphs (use their own fill rules, no outline stroke)
 const FILLED = {
+  star: <path fill="currentColor" d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z" />,
   whatsapp: (
     <path
       fill="currentColor"
