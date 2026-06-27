@@ -3,6 +3,8 @@ import PageHero from '../components/PageHero.jsx'
 import AvailabilityForm from '../components/AvailabilityForm.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import { Icon } from '../components/icons.jsx'
+import { whatsappUrl } from '../lib/whatsapp.js'
+import { trackWhatsApp } from '../lib/analytics.js'
 import { site } from '../data/site.js'
 import { inclusionsStrip } from '../data/inclusions.js'
 import { localBusinessSchema } from '../lib/schema.js'
@@ -36,10 +38,10 @@ export default function Contact() {
               <h2 className="font-display text-xl text-navy">Message us directly</h2>
               <p className="mt-2 text-sm leading-relaxed text-navy/65">The fastest way to check a date. We usually reply within a few hours.</p>
               <div className="mt-5">
-                <WhatsAppButton fullWidth />
+                <WhatsAppButton fullWidth source="contact-sidebar" />
               </div>
               <div className="mt-4 space-y-3 text-sm">
-                <a href={`https://wa.me/${site.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-navy/75 hover:text-teal-700">
+                <a href={whatsappUrl(undefined, 'contact-number')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('contact-number')} className="flex items-center gap-3 text-navy/75 hover:text-teal-700">
                   <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600/10 text-teal-700"><Icon name="whatsapp" className="h-4 w-4" /></span>
                   {site.whatsappDisplay}
                 </a>

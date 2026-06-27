@@ -6,12 +6,13 @@ import { trackWhatsApp } from '../lib/analytics.js'
  * Trip-type card — icon, name, who it's best for, short blurb, WhatsApp link.
  */
 export default function TripTypeCard({ trip }) {
+  const src = `trip-card:${trip.id}`
   return (
     <a
-      href={whatsappUrl(enquiryFor({ trip: trip.formValue }))}
+      href={whatsappUrl(enquiryFor({ trip: trip.formValue }), src)}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackWhatsApp(`trip-card:${trip.id}`)}
+      onClick={() => trackWhatsApp(src)}
       className="card group flex flex-col p-6 transition-all duration-300 ease-smooth hover:-translate-y-1 hover:border-teal-600/30 hover:shadow-card focus-visible:-translate-y-1"
     >
       <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-600/15 to-sea-500/10 text-teal-700 transition-colors duration-300 group-hover:from-teal-600 group-hover:to-teal-500 group-hover:text-white">

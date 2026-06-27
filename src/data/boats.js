@@ -97,3 +97,8 @@ export const boatOptions = [
   'Not sure, recommend the best boat',
   ...boats.map((b) => b.name),
 ]
+
+// Per-person equivalent of the whole-boat "from" price. Used to clarify that
+// e.g. €450 is the whole boat (up to 14), not a per-head rate. Derived so it
+// stays correct if a price or capacity changes.
+export const perPerson = (boat) => Math.round(boat.priceFrom / boat.capacityMax)

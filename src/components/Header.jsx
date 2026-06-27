@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { nav } from '../data/site.js'
 import { Icon } from './icons.jsx'
 import { whatsappUrl } from '../lib/whatsapp.js'
+import { trackWhatsApp } from '../lib/analytics.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import MobileMenu from './MobileMenu.jsx'
 import Logo from './Logo.jsx'
@@ -66,14 +67,15 @@ export default function Header() {
           {/* Right actions */}
           <div className="flex items-center gap-2">
             <div className="hidden lg:block">
-              <WhatsAppButton size="sm" />
+              <WhatsAppButton size="sm" source="header" />
             </div>
 
             {/* Mobile WhatsApp icon */}
             <a
-              href={whatsappUrl()}
+              href={whatsappUrl(undefined, 'header')}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsApp('header')}
               aria-label="Check availability on WhatsApp"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-teal-600 text-white shadow-cta transition hover:bg-teal-700 active:translate-y-px lg:hidden"
             >

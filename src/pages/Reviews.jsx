@@ -43,7 +43,7 @@ export default function Reviews() {
               (with your permission) to help future guests.
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <WhatsAppButton label="Share your experience" context="I travelled with you and would like to leave a review." />
+              <WhatsAppButton label="Share your experience" source="reviews-leave" context="I travelled with you and would like to leave a review." />
               <a href={site.social.tiktok} target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 <Icon name="tiktok" className="h-4 w-4" />
                 See us on TikTok
@@ -60,7 +60,7 @@ export default function Reviews() {
             <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">Plan your own Red Sea day</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">Private, all-inclusive, and priced with nothing hidden. Check availability in a quick message.</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <WhatsAppButton variant="white" size="lg" />
+              <WhatsAppButton variant="white" size="lg" source="reviews-cta" />
               <Button to="/boats" variant="ghost" size="lg" className="!text-white hover:!bg-white/10" iconRight="arrowRight">View boats</Button>
             </div>
           </div>

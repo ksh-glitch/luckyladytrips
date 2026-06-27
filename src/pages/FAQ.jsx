@@ -3,6 +3,8 @@ import PageHero from '../components/PageHero.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import { Icon } from '../components/icons.jsx'
+import { whatsappUrl } from '../lib/whatsapp.js'
+import { trackWhatsApp } from '../lib/analytics.js'
 import { site } from '../data/site.js'
 import { faqs } from '../data/faqs.js'
 import { localBusinessSchema, faqSchema } from '../lib/schema.js'
@@ -22,7 +24,7 @@ export default function FAQ() {
         title="Everything you might want to ask"
         intro="If your question isn't here, message us on WhatsApp. Sean and the crew reply personally."
       >
-        <WhatsAppButton size="lg" />
+        <WhatsAppButton size="lg" source="faq-hero" />
       </PageHero>
 
       <section className="section pt-6">
@@ -38,9 +40,9 @@ export default function FAQ() {
                 the trips.
               </p>
               <div className="mt-5">
-                <WhatsAppButton fullWidth />
+                <WhatsAppButton fullWidth source="faq-aside" />
               </div>
-              <a href={`https://wa.me/${site.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="mt-3 flex items-center justify-center gap-2 text-sm font-medium text-navy/65">
+              <a href={whatsappUrl(undefined, 'faq-number')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('faq-number')} className="mt-3 flex items-center justify-center gap-2 text-sm font-medium text-navy/65">
                 <Icon name="whatsapp" className="h-4 w-4 text-teal-600" />
                 {site.whatsappDisplay}
               </a>

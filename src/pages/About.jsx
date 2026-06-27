@@ -32,7 +32,7 @@ export default function About() {
         title="A British family, a Red Sea life, and one lucky boat"
         intro="Lucky Lady Trips began with a leap: sell up in the UK, move to Soma Bay, and build a better life by the sea. Years on, it's a private Red Sea experience run by people who actually live it."
       >
-        <WhatsAppButton size="lg" />
+        <WhatsAppButton size="lg" source="about-hero" />
       </PageHero>
 
       {/* The move */}
@@ -128,7 +128,7 @@ export default function About() {
             <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">Come and spend a day with us</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">It&apos;s your boat, your people and your day. We&apos;ll take care of everything else.</p>
             <div className="mt-8 flex justify-center">
-              <WhatsAppButton variant="white" size="lg" />
+              <WhatsAppButton variant="white" size="lg" source="about-cta" />
             </div>
           </div>
         </div>

@@ -2,13 +2,21 @@ import { Link, useViewTransitionState } from 'react-router-dom'
 import SmartImage from './SmartImage.jsx'
 import { Icon } from './icons.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
+import { perPerson } from '../data/boats.js'
 import cn from '../lib/cn.js'
 
+// Price chip clarifies that the "from" price is for the WHOLE boat (not per head)
+// and shows the per-person equivalent, so €450 isn't misread as a per-person rate.
 function PriceChip({ boat, className = '' }) {
   return (
-    <span className={cn('inline-flex items-baseline gap-1 rounded-full bg-navy-900/85 px-3 py-1.5 text-white backdrop-blur', className)}>
-      <span className="text-[0.7rem] font-medium uppercase tracking-wider text-white/70">from</span>
-      <span className="font-display text-base leading-none">€{boat.priceFrom}</span>
+    <span className={cn('inline-flex flex-col rounded-2xl bg-navy-900/85 px-3 py-1.5 text-white backdrop-blur', className)}>
+      <span className="flex items-baseline gap-1">
+        <span className="text-[0.7rem] font-medium uppercase tracking-wider text-white/70">from</span>
+        <span className="font-display text-base leading-none">€{boat.priceFrom}</span>
+      </span>
+      <span className="mt-0.5 text-[0.62rem] font-medium leading-tight text-white/70">
+        whole boat · ≈€{perPerson(boat)}pp
+      </span>
     </span>
   )
 }
@@ -52,11 +60,18 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
             {boat.rooms && <span className="chip-light"><Icon name="moon" className="h-4 w-4 text-teal-600" />{boat.rooms} cabins</span>}
           </dl>
           <div className="mt-6 flex items-center gap-3">
-            <WhatsAppButton boat={boat.name} label="Check availability" size="sm" className="flex-1" />
+            <WhatsAppButton boat={boat.name} source="boat-card" label="Check availability" size="sm" className="flex-1" />
             <Link to={detailTo} viewTransition aria-label={`More about ${boat.name}`} className="btn-secondary btn-sm" >
               Details
             </Link>
           </div>
+          <WhatsAppButton
+            intent="quote"
+            boat={boat.name}
+            source="boat-card"
+            variant="link"
+            className="mt-3 self-start text-sm text-teal-700 hover:text-teal-800"
+          />
         </div>
       </article>
     )
@@ -103,14 +118,26 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
 
         <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-navy/65 sm:line-clamp-3">{boat.blurb}</p>
 
-        <div className="mt-auto flex items-center justify-between pt-4">
-          <Link to={detailTo} viewTransition className="link-underline inline-flex items-center gap-1 text-sm">
-            View boat
-            <Icon name="arrowRight" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </Link>
-          <span className="text-sm text-navy/65">
-            <span className="font-display text-lg text-navy">€{boat.priceFrom}</span> / day
-          </span>
+        <div className="mt-auto pt-4">
+          <div className="flex items-center justify-between gap-2">
+            <Link to={detailTo} viewTransition className="link-underline inline-flex items-center gap-1 text-sm">
+              View boat
+              <Icon name="arrowRight" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </Link>
+            <span className="text-right text-sm leading-tight text-navy/65">
+              <span className="font-display text-lg text-navy">€{boat.priceFrom}</span> / day
+              <span className="block text-[0.7rem] text-navy/55">
+                whole boat, up to {boat.capacityMax} · ≈€{perPerson(boat)}pp
+              </span>
+            </span>
+          </div>
+          <WhatsAppButton
+            intent="quote"
+            boat={boat.name}
+            source="boat-card"
+            variant="link"
+            className="mt-3 text-sm text-teal-700 hover:text-teal-800"
+          />
         </div>
       </div>
     </article>

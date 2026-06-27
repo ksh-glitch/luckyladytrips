@@ -7,7 +7,7 @@ import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import { Icon } from '../components/icons.jsx'
-import { boats } from '../data/boats.js'
+import { boats, perPerson } from '../data/boats.js'
 import { localBusinessSchema, boatSchema } from '../lib/schema.js'
 import cn from '../lib/cn.js'
 
@@ -65,7 +65,12 @@ function BoatDetail({ boat, index }) {
             </div>
             <div className="rounded-2xl border border-sand-200 bg-white/70 p-4">
               <dt className="text-xs font-semibold uppercase tracking-wide text-navy/65">From</dt>
-              <dd className="mt-1 font-display text-lg text-navy">€{boat.priceFrom}<span className="text-sm font-sans text-navy/65"> / day</span></dd>
+              <dd className="mt-1 font-display text-lg text-navy">
+                €{boat.priceFrom}<span className="text-sm font-sans text-navy/65"> / day</span>
+                <span className="mt-0.5 block font-sans text-xs font-normal text-navy/55">
+                  whole boat, up to {boat.capacityMax} · ≈€{perPerson(boat)}pp
+                </span>
+              </dd>
             </div>
             <div className="col-span-2 rounded-2xl border border-sand-200 bg-white/70 p-4 sm:col-span-1">
               <dt className="text-xs font-semibold uppercase tracking-wide text-navy/65">Best for</dt>
@@ -90,9 +95,16 @@ function BoatDetail({ boat, index }) {
             ))}
           </div>
 
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
             <WhatsAppButton boat={boat.name} source="boat-detail" label={`Enquire about ${boat.name}`} />
             <Button to="/contact" variant="secondary" iconRight="arrowRight">Check availability</Button>
+            <WhatsAppButton
+              intent="quote"
+              boat={boat.name}
+              source="boat-detail"
+              variant="link"
+              className="text-sm text-teal-700 hover:text-teal-800"
+            />
           </div>
         </div>
       </div>
@@ -115,7 +127,7 @@ export default function Boats() {
         title="Three boats. Every Red Sea experience."
         intro="An intimate cruiser, a spacious 14-guest catamaran, and a fast private speedboat. Whatever the day, there's a boat that fits. And it's always yours alone."
       >
-        <WhatsAppButton size="lg" />
+        <WhatsAppButton size="lg" source="boats-hero" />
         <Button to="/trips" variant="secondary" size="lg" iconRight="arrowRight">Explore trips</Button>
       </PageHero>
 

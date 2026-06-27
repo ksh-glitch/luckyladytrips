@@ -75,6 +75,17 @@ export default function Home() {
             </Button>
           </div>
 
+          <p className="mt-4 text-sm text-white/75">
+            Not ready to book?{' '}
+            <WhatsAppButton
+              intent="quote"
+              source="hero"
+              variant="link"
+              showIcon={false}
+              className="text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            />
+          </p>
+
           <div className="mt-5 flex flex-col gap-2 text-sm font-medium text-white/75 sm:flex-row sm:items-center sm:gap-5">
             <span className="inline-flex items-center gap-2">
               <Icon name="whatsapp" className="h-4 w-4 text-gold-400" />

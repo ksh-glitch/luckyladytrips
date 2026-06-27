@@ -31,7 +31,7 @@ export default function Trips() {
         title="Private Red Sea days, built around you"
         intro="Pick a trip type or mix a few. Every trip is private, all-inclusive, and arranged end to end. You choose the day, we handle the rest."
       >
-        <WhatsAppButton size="lg" />
+        <WhatsAppButton size="lg" source="trips-hero" />
         <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight">View our boats</Button>
       </PageHero>
 
@@ -69,7 +69,7 @@ export default function Trips() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <WhatsAppButton size="lg" />
+            <WhatsAppButton size="lg" source="trips-how" />
           </div>
         </div>
       </section>

@@ -103,7 +103,7 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
 
         {(withCTA || showAboutLink) && (
           <div className="mt-8 flex flex-wrap gap-3">
-            {withCTA && <WhatsAppButton context="We'd love a private day on the water." />}
+            {withCTA && <WhatsAppButton source="story" context="We'd love a private day on the water." />}
             {showAboutLink && (
               <Button to="/about" variant="secondary" iconRight="arrowRight">
                 Our story

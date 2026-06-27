@@ -50,7 +50,7 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
     if (!v.phone.trim()) return setError('Please add a WhatsApp number we can reply to.')
     setError('')
     trackWhatsApp('form')
-    const url = whatsappUrl(enquiryFromForm(v))
+    const url = whatsappUrl(enquiryFromForm(v), 'form')
     window.open(url, '_blank', 'noopener,noreferrer')
     setSent(true)
   }
@@ -61,7 +61,7 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
       <div className="mb-6 flex flex-col gap-2.5 rounded-2xl border border-sand-200 bg-sand-50/70 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-navy/70">Prefer to just message us? Skip the form.</p>
         <a
-          href={whatsappUrl()}
+          href={whatsappUrl(undefined, 'form-fastpath')}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackWhatsApp('form-fastpath')}

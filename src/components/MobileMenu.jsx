@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { nav, site } from '../data/site.js'
 import { Icon } from './icons.jsx'
+import { whatsappUrl } from '../lib/whatsapp.js'
+import { trackWhatsApp } from '../lib/analytics.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Logo from './Logo.jsx'
 
@@ -95,11 +97,12 @@ export default function MobileMenu({ open, onClose }) {
         </nav>
 
         <div className="space-y-3 px-5 pb-7">
-          <WhatsAppButton fullWidth size="lg" />
+          <WhatsAppButton fullWidth size="lg" source="mobile-menu" onClick={onClose} />
           <a
-            href={`https://wa.me/${site.whatsappNumber}`}
+            href={whatsappUrl(undefined, 'mobile-menu-number')}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsApp('mobile-menu-number')}
             className="flex items-center justify-center gap-2 text-sm font-medium text-navy/70"
           >
             <Icon name="whatsapp" className="h-4 w-4 text-teal-600" />

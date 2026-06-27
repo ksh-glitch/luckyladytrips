@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { site, nav, footerExplore } from '../data/site.js'
 import { Icon } from './icons.jsx'
-import { trackTikTok } from '../lib/analytics.js'
+import { trackTikTok, trackWhatsApp } from '../lib/analytics.js'
+import { whatsappUrl } from '../lib/whatsapp.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Logo from './Logo.jsx'
 
@@ -22,7 +23,7 @@ export default function Footer() {
               Ready when you are. Let&apos;s find your date.
             </p>
           </div>
-          <WhatsAppButton variant="white" size="lg" className="shrink-0" />
+          <WhatsAppButton variant="white" size="lg" source="footer" className="shrink-0" />
         </div>
 
         <div className="grid gap-10 md:grid-cols-12">
@@ -75,7 +76,7 @@ export default function Footer() {
         {/* Contact row */}
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/75">
-            <a href={`https://wa.me/${site.whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-gold-300">
+            <a href={whatsappUrl(undefined, 'footer-number')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer-number')} className="inline-flex items-center gap-2 hover:text-gold-300">
               <Icon name="whatsapp" className="h-4 w-4 text-teal-400" />
               {site.whatsappDisplay}
             </a>

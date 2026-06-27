@@ -21,7 +21,8 @@ export default function StickyMobileCTA() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const href = enquiry ? whatsappUrl(enquiryFor(enquiry)) : whatsappUrl()
+  const src = enquiry?.source ? `sticky:${enquiry.source}` : 'sticky'
+  const href = enquiry ? whatsappUrl(enquiryFor(enquiry), src) : whatsappUrl(undefined, src)
   const subtitle = enquiry?.boat
     ? `${enquiry.boat} · ${site.reply.time.toLowerCase()}`
     : site.reply.time
@@ -37,7 +38,7 @@ export default function StickyMobileCTA() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Check availability on WhatsApp"
-        onClick={() => trackWhatsApp(enquiry?.source ? `sticky:${enquiry.source}` : 'sticky')}
+        onClick={() => trackWhatsApp(src)}
         className="flex items-center gap-3 rounded-full bg-teal-600 px-4 py-3 text-white shadow-lift ring-1 ring-white/15 transition active:translate-y-px"
       >
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
