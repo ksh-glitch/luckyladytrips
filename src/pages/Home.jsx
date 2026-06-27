@@ -9,6 +9,7 @@ import Magnetic from '../components/Magnetic.jsx'
 import StorySection from '../components/StorySection.jsx'
 import TikTokCallout from '../components/TikTokCallout.jsx'
 import SocialProof from '../components/SocialProof.jsx'
+import ReviewMarquee from '../components/ReviewMarquee.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import Button from '../components/Button.jsx'
@@ -20,6 +21,7 @@ import { boats } from '../data/boats.js'
 import { inclusionsStrip, inclusionsList, noExtras } from '../data/inclusions.js'
 import { trips } from '../data/trips.js'
 import { faqs } from '../data/faqs.js'
+import { reviews, reviewsPublished } from '../data/reviews.js'
 import { site } from '../data/site.js'
 import { localBusinessSchema, faqSchema } from '../lib/schema.js'
 
@@ -56,7 +58,7 @@ export default function Home() {
           </span>
 
           <h1 className="mt-5 max-w-4xl text-balance font-display text-[2.6rem] leading-[1.03] text-white sm:text-display-lg lg:text-[4.4rem]">
-            Three private boats. One all-inclusive Red Sea experience.
+            Private Red Sea boat trips, made effortless.
           </h1>
 
           <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white/85 sm:text-xl">
@@ -197,7 +199,7 @@ export default function Home() {
             className="mx-auto"
           />
           <div className="mt-10">
-            <SocialProof compact />
+            {reviewsPublished && reviews.length ? <ReviewMarquee reviews={reviews} /> : <SocialProof compact />}
           </div>
         </div>
       </section>

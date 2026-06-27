@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import PageHero from '../components/PageHero.jsx'
 import SmartImage from '../components/SmartImage.jsx'
@@ -12,12 +13,15 @@ import cn from '../lib/cn.js'
 
 function BoatDetail({ boat, index }) {
   const flip = index % 2 === 1
+  const { hash } = useLocation()
+  // When arriving from a boat card, morph the matching image (shared-element View Transition).
+  const morphStyle = hash === `#${boat.id}` ? { viewTransitionName: `boat-${boat.id}` } : undefined
   return (
     <section id={boat.id} className="scroll-mt-24">
       <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
         {/* Media */}
         <div className={cn(flip && 'lg:order-2')}>
-          <div className="overflow-hidden rounded-4xl shadow-card">
+          <div style={morphStyle} className="overflow-hidden rounded-4xl shadow-card">
             <SmartImage
               src={boat.image}
               alt={boat.imageAlt}

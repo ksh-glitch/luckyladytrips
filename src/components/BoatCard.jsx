@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useViewTransitionState } from 'react-router-dom'
 import SmartImage from './SmartImage.jsx'
 import { Icon } from './icons.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
@@ -19,11 +19,13 @@ function PriceChip({ boat, className = '' }) {
  */
 export default function BoatCard({ boat, layout = 'row', flag }) {
   const detailTo = `/boats#${boat.id}`
+  const isTransitioning = useViewTransitionState(detailTo)
+  const morphStyle = isTransitioning ? { viewTransitionName: `boat-${boat.id}` } : undefined
 
   if (layout === 'tall') {
     return (
       <article className="card group flex flex-col overflow-hidden transition-all duration-300 ease-smooth hover:-translate-y-1 hover:shadow-card">
-        <Link to={detailTo} className="relative block aspect-[4/3] overflow-hidden">
+        <Link to={detailTo} viewTransition style={morphStyle} className="relative block aspect-[4/3] overflow-hidden">
           <SmartImage
             src={boat.image}
             alt={boat.imageAlt}
@@ -51,7 +53,7 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
           </dl>
           <div className="mt-6 flex items-center gap-3">
             <WhatsAppButton boat={boat.name} label="Check availability" size="sm" className="flex-1" />
-            <Link to={detailTo} aria-label={`More about ${boat.name}`} className="btn-secondary btn-sm" >
+            <Link to={detailTo} viewTransition aria-label={`More about ${boat.name}`} className="btn-secondary btn-sm" >
               Details
             </Link>
           </div>
@@ -63,7 +65,7 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
   // row layout (horizontal)
   return (
     <article className="card group flex overflow-hidden transition-all duration-300 ease-smooth hover:-translate-y-1 hover:shadow-card">
-      <Link to={detailTo} className="relative block w-2/5 shrink-0 overflow-hidden sm:w-[38%]" aria-label={boat.name}>
+      <Link to={detailTo} viewTransition style={morphStyle} className="relative block w-2/5 shrink-0 overflow-hidden sm:w-[38%]" aria-label={boat.name}>
         <SmartImage
           src={boat.image}
           alt={boat.imageAlt}
@@ -102,7 +104,7 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
         <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-navy/65 sm:line-clamp-3">{boat.blurb}</p>
 
         <div className="mt-auto flex items-center justify-between pt-4">
-          <Link to={detailTo} className="link-underline inline-flex items-center gap-1 text-sm">
+          <Link to={detailTo} viewTransition className="link-underline inline-flex items-center gap-1 text-sm">
             View boat
             <Icon name="arrowRight" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>

@@ -185,6 +185,35 @@
     -webkit-mask-image: linear-gradient(to right, black 86%, transparent 100%);
     mask-image: linear-gradient(to right, black 86%, transparent 100%);
   }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+
+  /* Auto-scrolling marquee (social proof). Two identical copies + translateX
+     -50% = a seamless loop. Pauses on hover/focus; static + scrollable under
+     reduced motion. */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--marquee-duration, 46s) linear infinite;
+  }
+  .marquee-viewport:hover .marquee-track,
+  .marquee-viewport:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .marquee-viewport { overflow-x: auto; }
+    /* Don't morph pages for users who prefer reduced motion */
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) { animation: none !important; }
+  }
 
   /* Subtle film grain — unifies mixed-quality footage and stops large dark
      gradients from banding. Drop a `.grain-layer` div (absolute, inset-0,
