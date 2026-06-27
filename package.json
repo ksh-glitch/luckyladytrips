@@ -1,0 +1,27 @@
+{
+  "name": "lucky-lady-trips",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lucky Lady Trips — private all-inclusive Red Sea boat trips from Soma Bay & Hurghada.",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/generate-sitemap.mjs",
+    "build": "vite-react-ssg build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "vite-react-ssg": "0.9.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
+  }
+}

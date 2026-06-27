@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --header-h: 64px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-h) + 12px);
+  }
+
+  body {
+    @apply bg-sand-50 text-navy font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    /* subtle warm grain-free gradient so ivory never looks flat */
+    background-image:
+      radial-gradient(120% 90% at 100% 0%, rgba(213, 229, 244, 0.35) 0%, rgba(213, 229, 244, 0) 45%),
+      radial-gradient(120% 90% at 0% 100%, rgba(247, 241, 230, 0.6) 0%, rgba(247, 241, 230, 0) 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-navy;
+    font-optical-sizing: auto;
+  }
+
+  /* Respect reduced motion everywhere */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    background: rgba(14, 122, 130, 0.18);
+    color: #08203f;
+  }
+
+  /* Accessible focus ring */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid theme('colors.teal.600');
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Prevent any horizontal overflow on mobile */
+  html, body { max-width: 100%; overflow-x: clip; }
+
+  img { max-width: 100%; }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Components                                                         */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* Buttons ------------------------------------------------------- */
+  .btn {
+    @apply relative inline-flex select-none items-center justify-center gap-2 rounded-full
+           px-6 py-3 text-[0.95rem] font-semibold leading-none tracking-tight
+           transition duration-200 ease-smooth
+           focus-visible:outline-2 active:translate-y-px;
+  }
+
+  .btn-primary {
+    @apply btn bg-teal-600 text-white shadow-cta
+           hover:bg-teal-700 hover:-translate-y-0.5 hover:shadow-lift;
+  }
+
+  .btn-secondary {
+    @apply btn border border-navy/15 bg-white/70 text-navy backdrop-blur
+           hover:border-navy/30 hover:bg-white hover:-translate-y-0.5;
+  }
+
+  .btn-ghost {
+    @apply btn text-navy hover:bg-navy/5;
+  }
+
+  .btn-lg { @apply px-7 py-4 text-base; }
+  .btn-sm { @apply px-4 py-2 text-sm; }
+
+  /* Cards --------------------------------------------------------- */
+  .card {
+    @apply rounded-4xl border border-sand-200/80 bg-white/80 shadow-soft
+           backdrop-blur-[2px];
+  }
+
+  /* Eyebrow / kicker --------------------------------------------- */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase
+           tracking-[0.22em] text-teal-700;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply inline-block h-px w-7 bg-gold-500;
+  }
+
+  /* Location / trust chip ---------------------------------------- */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/30
+           bg-white/15 px-4 py-1.5 text-sm font-medium text-white backdrop-blur;
+  }
+  .chip-light {
+    @apply inline-flex items-center gap-2 rounded-full border border-sand-200
+           bg-white px-3.5 py-1.5 text-sm font-medium text-navy/80 shadow-soft;
+  }
+
+  /* Section spacing ---------------------------------------------- */
+  .section {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  /* Editorial link ----------------------------------------------- */
+  .link-underline {
+    @apply relative font-semibold text-teal-700;
+    background-image: linear-gradient(theme('colors.gold.500'), theme('colors.gold.500'));
+    background-size: 0% 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+    padding-bottom: 2px;
+  }
+  .link-underline:hover { background-size: 100% 2px; }
+
+  /* Prose for body copy ------------------------------------------ */
+  .prose-warm {
+    @apply text-[1.05rem] leading-relaxed text-navy/75;
+  }
+  .prose-warm p + p { @apply mt-4; }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                          */
+/* ------------------------------------------------------------------ */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Scroll reveal — JS adds .is-visible; reduced-motion users skip the move.
+     The hidden state is gated behind .js so content stays visible if JS fails. */
+  .reveal {
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .js .reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* Hide scrollbar for horizontal carousels */
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, black 86%, transparent 100%);
+    mask-image: linear-gradient(to right, black 86%, transparent 100%);
+  }
+}

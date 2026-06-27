@@ -1,0 +1,2 @@
+# Netlify SPA fallback — prerendered pages are served first; unknown routes hydrate the app.
+/*    /index.html   200
