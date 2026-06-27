@@ -109,7 +109,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Choose your boat"
               title="Three boats. Every experience."
-              intro="From an intimate cruiser to a 14-guest catamaran and a fast fishing speedboat — pick the boat that fits your day."
+              intro="From an intimate cruiser to a 14-guest catamaran and a fast fishing speedboat. Pick the boat that fits your day."
             />
             <Button to="/boats" variant="ghost" iconRight="arrowRight" className="shrink-0 self-start sm:self-auto">
               Compare all boats
@@ -231,7 +231,7 @@ export default function Home() {
             Ready to plan your Red Sea escape?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">
-            Tell us your dates and group size. We&apos;ll check availability and arrange the rest — pickup,
+            Tell us your dates and group size. We&apos;ll check availability and arrange the rest: pickup,
             food, drinks, gear and crew included.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

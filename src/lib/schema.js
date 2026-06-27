@@ -89,7 +89,7 @@ export function boatSchema(boat) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${boat.name} — Private Red Sea Charter`,
+    name: `${boat.name}: Private Red Sea Charter`,
     description: boat.blurb,
     image: abs(boat.image),
     brand: { '@type': 'Brand', name: site.name },

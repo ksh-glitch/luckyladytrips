@@ -21,7 +21,7 @@ export default function SEO({
     ? title.includes(site.name)
       ? title // avoid double-appending the brand if the title already includes it
       : `${title} | ${site.name}`
-    : `${site.name} — Private All-Inclusive Red Sea Boat Trips`
+    : `${site.name}: Private All-Inclusive Red Sea Boat Trips`
   const canonical = `${site.url}${path === '/' ? '/' : path}`
   const ogImage = abs(image)
   const schemas = (Array.isArray(schema) ? schema : [schema]).filter(Boolean)

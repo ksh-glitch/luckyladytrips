@@ -20,7 +20,7 @@ export default function Trips() {
   return (
     <>
       <SEO
-        title="Red Sea Trips — Day Trips, Snorkelling, Fishing & Overnight"
+        title="Red Sea Trips: Day Trips, Snorkelling, Fishing & Overnight"
         description="Private Red Sea trips from Soma Bay & Hurghada: day trips, snorkelling, fishing, sunset cruises, overnight escapes and custom charters. All-inclusive, private only."
         path="/trips"
         schema={localBusinessSchema()}
@@ -29,7 +29,7 @@ export default function Trips() {
       <PageHero
         eyebrow="Ways to spend the day"
         title="Private Red Sea days, built around you"
-        intro="Pick a trip type or mix a few. Every trip is private, all-inclusive, and arranged end to end — you choose the day, we handle the rest."
+        intro="Pick a trip type or mix a few. Every trip is private, all-inclusive, and arranged end to end. You choose the day, we handle the rest."
       >
         <WhatsAppButton size="lg" />
         <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight">View our boats</Button>

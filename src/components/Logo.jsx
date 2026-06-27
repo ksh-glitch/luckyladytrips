@@ -31,7 +31,7 @@ export default function Logo({ variant = 'color', className = '', imgClassName =
   )
   if (as === 'span') return <span className={cn('inline-flex items-center', className)}>{img}</span>
   return (
-    <Link to="/" aria-label={`${site.name} — home`} className={cn('inline-flex items-center', className)}>
+    <Link to="/" aria-label={`${site.name} home`} className={cn('inline-flex items-center', className)}>
       {img}
     </Link>
   )

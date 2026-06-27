@@ -48,7 +48,7 @@ function BoatDetail({ boat, index }) {
           <span className="eyebrow">{boat.positioning}</span>
           <h2 className="mt-3 font-display text-display-sm text-navy">{boat.name}</h2>
           {boat.renameable && (
-            <p className="mt-1 text-sm italic text-navy/65">Name to be announced — the boat speaks for itself.</p>
+            <p className="mt-1 text-sm italic text-navy/65">Name to be announced. The boat speaks for itself.</p>
           )}
           <p className="prose-warm mt-4 max-w-prose">{boat.blurb}</p>
           {boat.dayAboard && (
@@ -91,7 +91,7 @@ function BoatDetail({ boat, index }) {
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <WhatsAppButton boat={boat.name} source="boat-detail" label={`Enquire — ${boat.name}`} />
+            <WhatsAppButton boat={boat.name} source="boat-detail" label={`Enquire about ${boat.name}`} />
             <Button to="/contact" variant="secondary" iconRight="arrowRight">Check availability</Button>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Boats() {
   return (
     <>
       <SEO
-        title="Our Boats — One Lucky Lady, Locke Catamaran & Speedboat"
+        title="Our Boats: One Lucky Lady, Locke Catamaran & Speedboat"
         description="Three private Red Sea boats: One Lucky Lady (from €250), the 14-guest Locke Catamaran (from €450) and a Speedboat (from €150). All-inclusive private charters."
         path="/boats"
         schema={[localBusinessSchema(), ...boats.map(boatSchema)]}
@@ -113,7 +113,7 @@ export default function Boats() {
       <PageHero
         eyebrow="Our fleet"
         title="Three boats. Every Red Sea experience."
-        intro="An intimate cruiser, a spacious 14-guest catamaran, and a fast private speedboat. Whatever the day, there's a boat that fits — and it's always yours alone."
+        intro="An intimate cruiser, a spacious 14-guest catamaran, and a fast private speedboat. Whatever the day, there's a boat that fits. And it's always yours alone."
       >
         <WhatsAppButton size="lg" />
         <Button to="/trips" variant="secondary" size="lg" iconRight="arrowRight">Explore trips</Button>
@@ -145,9 +145,9 @@ export default function Boats() {
       <section className="section pt-0">
         <div className="container">
           <div className="on-dark rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12">
-            <SectionHeading align="center" eyebrow="Not sure which boat?" title="Tell us your group — we'll match the boat" intro="Message us your dates and how many you are. We'll recommend the best fit and confirm availability." light className="mx-auto" />
+            <SectionHeading align="center" eyebrow="Not sure which boat?" title="Tell us your group. We'll match the boat" intro="Message us your dates and how many you are. We'll recommend the best fit and confirm availability." light className="mx-auto" />
             <div className="mt-8 flex justify-center">
-              <WhatsAppButton variant="white" size="lg" source="boats-cta" context="Not sure which boat suits us — please recommend." />
+              <WhatsAppButton variant="white" size="lg" source="boats-cta" context="Not sure which boat suits us. Please recommend." />
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const content = {
   "soma-bay-boat-trips": {
     "metaTitle": "Soma Bay Boat Trips: Private All-Inclusive Red Sea",
     "metaDescription": "Private all-inclusive Soma Bay boat trips on the Red Sea. Resort pickup, food, drinks, snorkelling gear and crew included. No shared groups, no hidden fees.",
-    "ogTitle": "Soma Bay Boat Trips — Private Red Sea Days",
+    "ogTitle": "Soma Bay Boat Trips: Private Red Sea Days",
     "ogDescription": "Private all-inclusive boat days from Soma Bay marina. Pickup from any Soma Bay resort. The price you see is the price you pay.",
     "hero": {
       "kicker": "Soma Bay, Red Sea",
@@ -157,7 +157,7 @@ const content = {
   "red-sea-catamaran-charter": {
     "metaTitle": "Red Sea Catamaran Charter | Soma Bay, Up to 14",
     "metaDescription": "Private Red Sea catamaran charter from Soma Bay. The Locke takes up to 14 guests across four cabins. All-inclusive, and the price you see is the price you pay.",
-    "ogTitle": "The Locke Catamaran — Private Red Sea Charter for Groups",
+    "ogTitle": "The Locke Catamaran: Private Red Sea Charter for Groups",
     "ogDescription": "Up to 14 guests, four cabins, private only. All-inclusive Red Sea days and overnights from Soma Bay.",
     "hero": {
       "kicker": "Soma Bay, Red Sea",
@@ -227,12 +227,12 @@ const content = {
   "soma-bay-snorkelling-trips": {
     "metaTitle": "Soma Bay Snorkelling Trips | Private Red Sea Charters",
     "metaDescription": "Private, all-inclusive Soma Bay snorkelling trips to quieter reefs at Tobia Arba and Ras Abu Soma. Gear, towels, food and pickup included. One clear price.",
-    "ogTitle": "Soma Bay Snorkelling Trips — Private & All-Inclusive",
+    "ogTitle": "Soma Bay Snorkelling Trips: Private & All-Inclusive",
     "ogDescription": "Quieter reefs, your own boat. Gear, towels, food and drinks included. Check availability on WhatsApp.",
     "hero": {
       "kicker": "Soma Bay, Red Sea",
       "h1": "Soma Bay snorkelling trips, private and quietly arranged",
-      "intro": "Healthy reefs, your own boat, no shared groups crowding the rail. We run private snorkelling days from Soma Bay marina to the quieter reefs nearby — Tobia Arba and the Ras Abu Soma house reef — with gear, towels and a full crew already on board. The price you see is the price you pay."
+      "intro": "Healthy reefs, your own boat, no shared groups crowding the rail. We run private snorkelling days from Soma Bay marina to the quieter reefs nearby, Tobia Arba and the Ras Abu Soma house reef, with gear, towels and a full crew already on board. The price you see is the price you pay."
     },
     "intro2": "Most snorkelling boats run a fixed loop and pack the deck. Ours carry your group only, so we can sit longer at a reef that's holding fish, move on when you're ready, and skip the spots where ten other boats have already dropped anchor. The reefs this side of Soma Bay stay calmer and less worked than the busy Hurghada runs, which is why we keep all three boats here.",
     "highlights": [
@@ -256,7 +256,7 @@ const content = {
     "sections": [
       {
         "heading": "Where we snorkel around Soma Bay",
-        "body": "Tobia Arba is the draw — a run of sandbank reefs in shallow, sheltered water where the visibility holds and the coral sits close to the surface. It's forgiving for first-timers and still worth the trip if you've fins of your own. The Ras Abu Soma house reef runs along the headland, an easy drift with reef life on one side and open blue on the other, where snapper and the odd grouper sit in the shallows.\n\nBecause every Soma Bay snorkelling trip is private, we read the day as it comes. Wind, light and where the fish are sitting decide the order of stops. If a reef is busy, we move. If it's quiet and alive, we stay."
+        "body": "Tobia Arba is the draw: a run of sandbank reefs in shallow, sheltered water where the visibility holds and the coral sits close to the surface. It's forgiving for first-timers and still worth the trip if you've fins of your own. The Ras Abu Soma house reef runs along the headland, an easy drift with reef life on one side and open blue on the other, where snapper and the odd grouper sit in the shallows.\n\nBecause every Soma Bay snorkelling trip is private, we read the day as it comes. Wind, light and where the fish are sitting decide the order of stops. If a reef is busy, we move. If it's quiet and alive, we stay."
       },
       {
         "heading": "What's included, and what isn't",
@@ -266,7 +266,7 @@ const content = {
     "faqs": [
       {
         "q": "Is this a shared snorkelling boat or private?",
-        "a": "Private, always. You book the whole boat for your group — no strangers, no fixed group itinerary. It's just your people, the crew and the reefs, and we plan the day around what you want to see."
+        "a": "Private, always. You book the whole boat for your group, with no strangers and no fixed group itinerary. It's just your people, the crew and the reefs, and we plan the day around what you want to see."
       },
       {
         "q": "Do I need to bring my own snorkelling gear?",
@@ -282,12 +282,12 @@ const content = {
       },
       {
         "q": "How much does a Soma Bay snorkelling trip cost, and how do I book?",
-        "a": "Private day trips start from EUR 250 on One Lucky Lady, with the speedboat from EUR 150 and the Locke Catamaran for larger groups from EUR 450. The price you see is the price you pay — pickup, food, drinks, gear and crew included. Message us on WhatsApp with your dates and group size to check availability."
+        "a": "Private day trips start from EUR 250 on One Lucky Lady, with the speedboat from EUR 150 and the Locke Catamaran for larger groups from EUR 450. The price you see is the price you pay: pickup, food, drinks, gear and crew included. Message us on WhatsApp with your dates and group size to check availability."
       }
     ],
     "cta": {
       "heading": "Plan a private snorkelling day around Soma Bay",
-      "sub": "Send your dates and group size on WhatsApp and we'll check availability. Gear, towels, food, drinks and pickup all included — one clear price, no surprises."
+      "sub": "Send your dates and group size on WhatsApp and we'll check availability. Gear, towels, food, drinks and pickup all included. One clear price, no surprises."
     }
   },
   "hurghada-fishing-trips": {

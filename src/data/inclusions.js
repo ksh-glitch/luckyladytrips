@@ -17,9 +17,9 @@ export const inclusionsList = [
   { icon: 'car', title: 'Hotel pickup & drop-off', desc: 'Collected from your Soma Bay or Hurghada hotel, and dropped back after.' },
   { icon: 'plate', title: 'Food & drinks on board', desc: 'Freshly prepared food and cold drinks throughout the day.' },
   { icon: 'mask', title: 'Snorkelling gear', desc: 'Masks, fins and snorkels on board for everyone.' },
-  { icon: 'towel', title: 'Towels', desc: 'Fresh towels provided — no need to bring your own.' },
+  { icon: 'towel', title: 'Towels', desc: 'Fresh towels provided, no need to bring your own.' },
   { icon: 'crew', title: 'Full crew', desc: 'A skipper and crew who know the water and look after your day.' },
-  { icon: 'fuel', title: 'Fuel & essentials', desc: 'Fuel and the bits that usually become surprise extras — all in.' },
+  { icon: 'fuel', title: 'Fuel & essentials', desc: 'Fuel and the bits that usually become surprise extras, all in.' },
 ]
 
 // "What you'll never be charged for" — the differentiator list

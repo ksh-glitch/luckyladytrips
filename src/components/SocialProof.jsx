@@ -36,7 +36,7 @@ export default function SocialProof({ compact = false }) {
           </span>
           <p className="max-w-xl text-pretty text-navy/65">
             We&apos;re collecting reviews from real guests. In the meantime, see the days for yourself on
-            Sean&apos;s TikTok — {site.social.tiktokFollowers} followers and counting.
+            Sean&apos;s TikTok: {site.social.tiktokFollowers} followers and counting.
           </p>
           <a href={site.social.tiktokSean} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-1.5 text-sm">
             <Icon name="tiktok" className="h-4 w-4" />

@@ -13,7 +13,7 @@ import { localBusinessSchema } from '../lib/schema.js'
 
 const values = [
   { icon: 'lock', title: 'Private, always', body: 'No shared decks, no strangers. Every trip belongs to your group and no one else.' },
-  { icon: 'tag', title: 'All-inclusive, honestly', body: 'Pickup, food, drinks, gear, towels, fuel and crew — included. The price you see is the price you pay.' },
+  { icon: 'tag', title: 'All-inclusive, honestly', body: 'Pickup, food, drinks, gear, towels, fuel and crew, all included. The price you see is the price you pay.' },
   { icon: 'heart', title: 'Personal, not corporate', body: 'A British family who live here, with a local crew who treat every guest like one of their own.' },
 ]
 
@@ -21,7 +21,7 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About — The Story Behind Lucky Lady Trips"
+        title="About: The Story Behind Lucky Lady Trips"
         description="Sean and Justine left the UK for a life by the Red Sea. What started with One Lucky Lady grew into a private, all-inclusive Red Sea boat company in Soma Bay."
         path="/about"
         schema={localBusinessSchema()}
@@ -49,12 +49,12 @@ export default function About() {
             <div className="prose-warm mt-5 max-w-prose">
               <p>
                 Sean and Justine swapped grey skies for the Red Sea, trading everything familiar for a
-                life on the water in Soma Bay. They started with a single boat — One Lucky Lady — and a
+                life on the water in Soma Bay. They started with a single boat, One Lucky Lady, and a
                 simple idea: give people a private day at sea, done properly, with nothing hidden.
               </p>
               <p>
                 Word spread among expats, hotel guests and returning visitors. Sean became a familiar
-                face on the Red Sea — and on TikTok, where {''}
+                face on the Red Sea, and on TikTok, where {''}
                 <a href="https://www.tiktok.com/@redseasean" target="_blank" rel="noopener noreferrer" className="link-underline">15K+ followers</a> {''}
                 tune in for the days out, the dog, and the macaw.
               </p>
@@ -91,7 +91,7 @@ export default function About() {
                 quick runs to the quieter reefs.
               </p>
               <p>
-                Sean is still on the water most days — but Lucky Lady Trips is bigger than one person now.
+                Sean is still on the water most days, but Lucky Lady Trips is bigger than one person now.
                 A trusted local crew runs every trip to the same standard, so the experience is the same
                 whoever is at the helm.
               </p>

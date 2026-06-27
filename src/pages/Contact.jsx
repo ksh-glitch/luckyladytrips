@@ -11,8 +11,8 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Check Availability — Private Red Sea Boat Trips"
-        description="Check availability for a private, all-inclusive Red Sea boat trip from Soma Bay or Hurghada. Send your dates and group size — we reply personally on WhatsApp."
+        title="Check Availability: Private Red Sea Boat Trips"
+        description="Check availability for a private, all-inclusive Red Sea boat trip from Soma Bay or Hurghada. Send your dates and group size, and we reply personally on WhatsApp."
         path="/contact"
         schema={localBusinessSchema()}
       />
@@ -20,7 +20,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Check availability"
         title="Let's plan your Red Sea day"
-        intro="Fill in a few details and we'll open WhatsApp with your enquiry ready to send. Prefer to type it yourself? Message us directly — we reply personally."
+        intro="Fill in a few details and we'll open WhatsApp with your enquiry ready to send. Prefer to type it yourself? Message us directly. We reply personally."
       />
 
       <section className="section pt-6">

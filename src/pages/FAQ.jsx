@@ -11,7 +11,7 @@ export default function FAQ() {
   return (
     <>
       <SEO
-        title="FAQ — Private Red Sea Boat Trips"
+        title="FAQ: Private Red Sea Boat Trips"
         description="Answers on what's included, private trips, pickup, choosing a boat, weather, children, custom trips and how to check availability with Lucky Lady Trips."
         path="/faq"
         schema={[localBusinessSchema(), faqSchema(faqs)]}
@@ -20,7 +20,7 @@ export default function FAQ() {
       <PageHero
         eyebrow="Good to know"
         title="Everything you might want to ask"
-        intro="If your question isn't here, message us on WhatsApp — Sean and the crew reply personally."
+        intro="If your question isn't here, message us on WhatsApp. Sean and the crew reply personally."
       >
         <WhatsAppButton size="lg" />
       </PageHero>
@@ -34,7 +34,7 @@ export default function FAQ() {
               </span>
               <h2 className="mt-4 font-display text-xl text-navy">Still have a question?</h2>
               <p className="mt-2 text-sm leading-relaxed text-navy/65">
-                Message us directly and we&apos;ll sort it. No call centres, no bots — just the people who run
+                Message us directly and we&apos;ll sort it. No call centres, no bots, just the people who run
                 the trips.
               </p>
               <div className="mt-5">

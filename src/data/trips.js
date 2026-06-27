@@ -30,7 +30,7 @@ export const trips = [
     formValue: 'Snorkelling trip',
     beats: [
       { time: 'Morning', label: 'Pickup & briefing', body: 'Collected from your hotel, then a quick, friendly run-through of the gear on the way out.' },
-      { time: 'Late morning', label: 'The good reefs', body: 'We anchor at reefs chosen for clear water and what is actually worth seeing — not the busy spots.' },
+      { time: 'Late morning', label: 'The good reefs', body: 'We anchor at reefs chosen for clear water and what is actually worth seeing, not the busy spots.' },
       { time: 'Midday', label: 'Surface & refuel', body: 'Back aboard for lunch and a rest, then in again wherever the water looks best.' },
       { time: 'Afternoon', label: 'Home unhurried', body: 'A relaxed cruise back, salty and happy, with the gear rinsed and stowed for you.' },
     ],
@@ -46,7 +46,7 @@ export const trips = [
     beats: [
       { time: 'Early', label: 'Out before the rest', body: 'An early pickup and a fast run to the marks while the water is glassy and still.' },
       { time: 'Morning', label: 'Lines in', body: 'Trolling and bottom fishing with tackle, bait and a crew who know where they are biting.' },
-      { time: 'Midday', label: 'Lunch aboard', body: 'Pause for lunch on the water — and where it is allowed, we will cook what you have caught.' },
+      { time: 'Midday', label: 'Lunch aboard', body: 'Pause for lunch on the water, and where it is allowed, we will cook what you have caught.' },
       { time: 'Afternoon', label: 'Back to the marina', body: 'A steady run home with the day’s stories and, hopefully, a cool box heavier than it left.' },
     ],
   },
@@ -75,7 +75,7 @@ export const trips = [
     beats: [
       { time: 'Afternoon', label: 'Out to anchor', body: 'Aboard the catamaran and out to a quiet anchorage with the rest of the day ahead of you.' },
       { time: 'Evening', label: 'Dinner under the stars', body: 'Dinner on deck as the sky fills in, then a quiet night at anchor with the sea for company.' },
-      { time: 'Sunrise', label: 'First swim', body: 'Wake to flat water and an empty sea — a swim and breakfast before anyone else is out.' },
+      { time: 'Sunrise', label: 'First swim', body: 'Wake to flat water and an empty sea: a swim and breakfast before anyone else is out.' },
     ],
   },
   {
@@ -87,7 +87,7 @@ export const trips = [
       'Birthdays, proposals, family reunions or just a day built your way. Tell us the plan and we arrange it.',
     formValue: 'Custom trip',
     beats: [
-      { time: 'Before', label: 'Tell us the plan', body: 'Birthday, proposal, reunion or something only you would think of — you tell us, we make it happen.' },
+      { time: 'Before', label: 'Tell us the plan', body: 'Birthday, proposal, reunion or something only you would think of. You tell us, we make it happen.' },
       { time: 'The day', label: 'Built your way', body: 'Your route, your pace, your people. We arrange the boat, the food and the details around it.' },
       { time: 'Throughout', label: 'We handle the rest', body: 'You stay in the moment; pickup, crew, catering and timing are all quietly taken care of.' },
     ],

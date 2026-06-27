@@ -108,7 +108,7 @@ export default function SunArcTrips({ trips }) {
         <SectionHeading
           eyebrow="Ways to spend the day"
           title="Find your kind of day on the water"
-          intro="From a slow golden morning to dinner under the stars — every trip is private and built around your group. Tap any to start a WhatsApp enquiry."
+          intro="From a slow golden morning to dinner under the stars. Every trip is private and built around your group. Tap any to start a WhatsApp enquiry."
           align="center"
           className="mx-auto"
         />

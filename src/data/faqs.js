@@ -9,7 +9,7 @@ export const faqs = [
   },
   {
     q: 'Are trips private?',
-    a: 'Always. Every trip is a private charter for you and your group only. We never put you on a shared or group tourist boat, and there is no fixed timetable — the day runs at your pace.',
+    a: 'Always. Every trip is a private charter for you and your group only. We never put you on a shared or group tourist boat, and there is no fixed timetable. The day runs at your pace.',
   },
   {
     q: 'Where do you pick up from?',
@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     q: 'Can we choose the boat?',
-    a: 'Yes. Pick One Lucky Lady, the Locke Catamaran or the Private Speedboat — or tell us your group size and what you have in mind, and we will recommend the best fit.',
+    a: 'Yes. Pick One Lucky Lady, the Locke Catamaran or the Private Speedboat, or tell us your group size and what you have in mind, and we will recommend the best fit.',
   },
   {
     q: 'What happens if the weather is bad?',
@@ -25,7 +25,7 @@ export const faqs = [
   },
   {
     q: 'Are children welcome?',
-    a: 'Very. Private trips are ideal for families — you set the pace, choose calm spots for little ones, and there are no crowds to manage. Let us know their ages so we can plan accordingly.',
+    a: 'Very. Private trips are ideal for families. You set the pace, choose calm spots for little ones, and there are no crowds to manage. Let us know their ages so we can plan accordingly.',
   },
   {
     q: 'Do we need to bring towels or snorkelling gear?',
@@ -33,7 +33,7 @@ export const faqs = [
   },
   {
     q: 'Can we request a custom trip?',
-    a: 'Absolutely. Fishing, snorkelling, a sunset cruise, a birthday or an overnight escape — tell us the day you want and we will build it around you.',
+    a: 'Absolutely. Fishing, snorkelling, a sunset cruise, a birthday or an overnight escape: tell us the day you want and we will build it around you.',
   },
   {
     q: 'How do we check availability?',

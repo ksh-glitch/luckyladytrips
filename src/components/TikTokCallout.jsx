@@ -42,10 +42,10 @@ export default function TikTokCallout({ source = 'home' }) {
             <div>
               <span className="eyebrow !text-gold-300 before:!bg-gold-400">As seen on TikTok</span>
               <h2 className="mt-3 text-balance font-display text-display-sm text-white sm:text-display">
-                You&apos;ve probably already seen us — that&apos;s <span className="whitespace-nowrap text-gold-300">{sean.tiktokSeanName}</span>
+                You&apos;ve probably already seen us. That&apos;s <span className="whitespace-nowrap text-gold-300">{sean.tiktokSeanName}</span>
               </h2>
               <p className="mt-4 max-w-xl text-pretty leading-relaxed text-white/75">
-                Most people find Lucky Lady Trips through Sean&apos;s TikTok — the days out, the reefs, the
+                Most people find Lucky Lady Trips through Sean&apos;s TikTok: the days out, the reefs, the
                 macaw and the dog. Watch the Red Sea the way it actually looks, then message us to live it.
               </p>
 

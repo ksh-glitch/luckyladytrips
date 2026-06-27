@@ -64,7 +64,7 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
             hospitality, freedom and long, easy days on the water.
           </p>
           <p>
-            Running trips alongside them is Adam — born and raised right here in the bay. He knows this
+            Running trips alongside them is Adam, born and raised right here in the bay. He knows this
             stretch of the Red Sea like the back of his hand: the calmest morning reefs, where the fish
             are biting, and the quietest spot to watch the sun go down.
           </p>

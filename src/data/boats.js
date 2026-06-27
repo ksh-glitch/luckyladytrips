@@ -25,9 +25,9 @@ export const boats = [
     ],
     hasRealPhoto: true,
     dayAboard:
-      'Just you and yours. A couple stretched out on the bow, the kids daring each other off the back, a long lunch at anchor — small enough to feel like your own boat, easy enough that you lose track of the time.',
+      'Just you and yours. A couple stretched out on the bow, the kids daring each other off the back, a long lunch at anchor. Small enough to feel like your own boat, easy enough that you lose track of the time.',
     blurb:
-      'The boat that started it all. One Lucky Lady is our intimate cruiser — easy, comfortable and yours for the day. Perfect for a couple, a family or a small group who want the Red Sea to themselves without the crowds.',
+      'The boat that started it all. One Lucky Lady is our intimate cruiser: easy, comfortable and yours for the day. Perfect for a couple, a family or a small group who want the Red Sea to themselves without the crowds.',
     highlights: [
       'Shaded cockpit and sun-pad bow for lazy afternoons',
       'Snorkelling straight off the back at quiet reefs',
@@ -47,16 +47,16 @@ export const boats = [
     bestFor: 'Larger groups, families & celebrations',
     uses: ['Group day trips', 'Celebrations', 'Custom charters', 'Overnight escapes'],
     image: images.lockeCatamaran,
-    imageAlt: 'The Locke Catamaran — a spacious multi-deck catamaran for up to 14 guests',
+    imageAlt: 'The Locke Catamaran, a spacious multi-deck catamaran for up to 14 guests',
     gallery: [],
     hasRealPhoto: false,
     dayAboard:
-      'Room for the whole party. Two hulls, four cabins and decks wide enough to spread right out — this is the boat for the birthday that runs late, the family that travels deep, and the night that drifts into sunrise at anchor.',
+      'Room for the whole party. Two hulls, four cabins and decks wide enough to spread right out. This is the boat for the birthday that runs late, the family that travels deep, and the night that drifts into sunrise at anchor.',
     blurb:
-      'Room to spread out. The Locke Catamaran carries up to 14 guests across two hulls with four cabins below — stable underfoot, generous on deck, and built for the days that turn into celebrations. The natural choice for bigger groups and overnight escapes.',
+      'Room to spread out. The Locke Catamaran carries up to 14 guests across two hulls with four cabins below: stable underfoot, generous on deck, and built for the days that turn into celebrations. The natural choice for bigger groups and overnight escapes.',
     highlights: [
       'Four cabins for changing, resting or staying overnight',
-      'Wide, stable decks — kind to first-timers and kids',
+      'Wide, stable decks, kind to first-timers and kids',
       'Made for birthdays, family days and group charters',
     ],
     placeholderGradient: 'from-navy-900 via-sea-700 to-teal-600',
@@ -72,13 +72,13 @@ export const boats = [
     bestFor: 'Anglers & quick private runs',
     uses: ['Fishing trips', 'Quick escapes', 'Snorkelling stops', 'Fast Red Sea runs'],
     image: images.privateSpeedboat,
-    imageAlt: 'The Private Speedboat — fast and agile for fishing and quick Red Sea runs',
+    imageAlt: 'The Private Speedboat, fast and agile for fishing and quick Red Sea runs',
     gallery: [],
     hasRealPhoto: false,
     // name can be swapped later if the boat is named
     renameable: true,
     dayAboard:
-      'Quick and quiet. First out to the marks at dawn, first into a calm bay before the crowd arrives, and back whenever you please — a nimble, private way to fish, snorkel, or simply outrun the tourist boats.',
+      'Quick and quiet. First out to the marks at dawn, first into a calm bay before the crowd arrives, and back whenever you please. A nimble, private way to fish, snorkel, or simply outrun the tourist boats.',
     blurb:
       'When you want to move. Quick to the reefs, quick to the fishing marks, and quick to a quiet bay before anyone else arrives. Our speedboat is the agile option for anglers and small groups who like a bit of pace with their privacy.',
     highlights: [
@@ -94,6 +94,6 @@ export const boatById = Object.fromEntries(boats.map((b) => [b.id, b]))
 
 // Options for the availability form's boat dropdown
 export const boatOptions = [
-  'Not sure — recommend the best boat',
+  'Not sure, recommend the best boat',
   ...boats.map((b) => b.name),
 ]

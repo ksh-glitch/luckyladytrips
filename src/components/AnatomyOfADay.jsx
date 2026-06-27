@@ -12,7 +12,7 @@ export default function AnatomyOfADay({
   trip,
   eyebrow = 'Anatomy of a day',
   title = 'A day on the water, hour by hour',
-  intro = 'Every trip is private and arranged end to end. Here’s how an unhurried day with us tends to unfold — yours can bend whichever way you like.',
+  intro = 'Every trip is private and arranged end to end. Here’s how an unhurried day with us tends to unfold. Yours can bend whichever way you like.',
 }) {
   const beats = trip?.beats
   if (!beats?.length) return null

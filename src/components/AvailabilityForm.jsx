@@ -160,7 +160,7 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
         <p className="text-sm text-navy/65">
           {sent
             ? 'Opening WhatsApp… we’ll reply personally.'
-            : `No deposit yet — this opens a WhatsApp chat with your details ready to send. ${site.reply.time}.`}
+            : `No deposit yet. This opens a WhatsApp chat with your details ready to send. ${site.reply.time}.`}
         </p>
       </div>
     </form>

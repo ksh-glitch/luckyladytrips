@@ -11,7 +11,7 @@ export default function Reviews() {
   return (
     <>
       <SEO
-        title="Reviews — Loved by Red Sea Guests"
+        title="Reviews: Loved by Red Sea Guests"
         description="What guests say about private, all-inclusive Red Sea boat trips with Lucky Lady Trips in Soma Bay & Hurghada. Real reviews, no fakes."
         path="/reviews"
         schema={localBusinessSchema()}
@@ -20,7 +20,7 @@ export default function Reviews() {
       <PageHero
         eyebrow="Word of mouth"
         title="Loved by expats, hotel guests & returning visitors"
-        intro="Real words from real guests — families, couples and groups who had the Red Sea to themselves. Here's what a private, all-inclusive day with us actually feels like."
+        intro="Real words from real guests: families, couples and groups who had the Red Sea to themselves. Here's what a private, all-inclusive day with us actually feels like."
         align="center"
       />
 

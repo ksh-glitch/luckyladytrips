@@ -7,7 +7,7 @@ export const site = {
   legalName: 'Lucky Lady Trips',
   tagline: 'Three private boats. One all-inclusive Red Sea experience.',
   shortDesc:
-    'Private, all-inclusive Red Sea boat trips from Soma Bay & Hurghada — food, drinks, pickup, towels and snorkelling gear included.',
+    'Private, all-inclusive Red Sea boat trips from Soma Bay & Hurghada. Food, drinks, pickup, towels and snorkelling gear included.',
   url: 'https://luckyladytrips.com',
   domain: 'luckyladytrips.com',
 
