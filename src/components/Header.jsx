@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { nav, site } from '../data/site.js'
+import { NavLink } from 'react-router-dom'
+import { nav } from '../data/site.js'
 import { Icon } from './icons.jsx'
 import { whatsappUrl } from '../lib/whatsapp.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
@@ -30,13 +30,7 @@ export default function Header() {
         )}
       >
         <div className="container flex h-16 items-center justify-between gap-3">
-          <Link to="/" aria-label={`${site.name} — home`} className="flex items-center gap-2.5">
-            <Logo as="span" variant="color" imgClassName="h-11 w-auto sm:h-12" />
-            <span className="inline-flex items-center gap-1.5 pb-1 text-[0.7rem] font-bold uppercase tracking-[0.32em] text-navy/70">
-              <span aria-hidden="true" className="h-px w-3 bg-gold-500 sm:w-3.5" />
-              Trips
-            </span>
-          </Link>
+          <Logo variant="color" imgClassName="h-11 w-auto sm:h-12" />
 
           {/* Desktop nav */}
           <nav className="hidden lg:block">
