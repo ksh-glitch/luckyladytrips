@@ -7,6 +7,7 @@ import InclusionIcon from '../components/InclusionIcon.jsx'
 import SunArcTrips from '../components/SunArcTrips.jsx'
 import Magnetic from '../components/Magnetic.jsx'
 import StorySection from '../components/StorySection.jsx'
+import TikTokCallout from '../components/TikTokCallout.jsx'
 import SocialProof from '../components/SocialProof.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
@@ -182,6 +183,9 @@ export default function Home() {
           <StorySection />
         </div>
       </section>
+
+      {/* 7b — TIKTOK (top discovery channel) -------------------------- */}
+      <TikTokCallout source="home" />
 
       {/* 8 — SOCIAL PROOF --------------------------------------------- */}
       <section className="section bg-white/50">

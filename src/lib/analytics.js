@@ -25,3 +25,8 @@ export function track(event, props) {
 export function trackWhatsApp(source) {
   track('WhatsApp Click', { source: source || 'unknown' })
 }
+
+/** TikTok is the top discovery channel — track follow clicks to see what the site sends there. */
+export function trackTikTok(source) {
+  track('TikTok Click', { source: source || 'unknown' })
+}

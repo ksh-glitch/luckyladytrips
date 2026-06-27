@@ -2,6 +2,8 @@ import SmartImage from './SmartImage.jsx'
 import { Icon } from './icons.jsx'
 import { images } from '../data/images.js'
 import { storyBadges } from '../data/reviews.js'
+import { site } from '../data/site.js'
+import { trackTikTok } from '../lib/analytics.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Button from './Button.jsx'
 
@@ -19,23 +21,23 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
         <div className="grid grid-cols-5 gap-3 sm:gap-4">
           <div className="col-span-3 overflow-hidden rounded-4xl shadow-card">
             <SmartImage
-              src={images.seanJustine}
-              alt="Sean and Justine relaxing on the bow of One Lucky Lady on the Red Sea"
+              src={images.seanPortrait}
+              alt="Sean Kileen, founder of Lucky Lady Trips, at golden hour on the Red Sea"
               className="aspect-[3/4] w-full"
             />
           </div>
           <div className="col-span-2 flex flex-col gap-3 sm:gap-4">
             <div className="overflow-hidden rounded-3xl shadow-soft">
               <SmartImage
-                src={images.justineTiggySunset}
-                alt="Justine holding Tiggy the chihuahua during a sunset cruise"
+                src={images.adamCrew}
+                alt="Adam, born and raised in Soma Bay, part of the Lucky Lady crew"
                 className="aspect-square w-full"
               />
             </div>
             <div className="flex-1 overflow-hidden rounded-3xl shadow-soft">
               <SmartImage
-                src={images.seanPortrait}
-                alt="Sean Kileen, founder of Lucky Lady Trips, at golden hour on the Red Sea"
+                src={images.justineTiggySunset}
+                alt="Justine with Tiggy the chihuahua on a Red Sea sunset cruise"
                 className="h-full min-h-[8rem] w-full"
               />
             </div>
@@ -44,7 +46,7 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
         {/* caption chip */}
         <span className="absolute -bottom-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 rounded-full border border-sand-200 bg-white px-4 py-2 text-sm font-medium text-navy/80 shadow-card">
           <Icon name="feather" className="h-4 w-4 text-gold-500" />
-          Sean, Justine, Rio &amp; Tiggy
+          Sean, Adam, Justine &amp; the crew
         </span>
       </div>
 
@@ -52,7 +54,7 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
       <div>
         <span className="eyebrow">Meet the crew</span>
         <h2 className="mt-3 text-display-sm sm:text-display font-display text-balance text-navy">
-          Meet Sean, Justine, Rio &amp; Tiggy
+          The people behind every day on the water
         </h2>
         <div className="prose-warm mt-5 max-w-prose">
           <p>
@@ -61,22 +63,41 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
             hospitality, freedom and long, easy days on the water.
           </p>
           <p>
-            Rio the macaw keeps an eye on the marina, and Tiggy the chihuahua puppy has logged more
-            sunset cruises than most. You&apos;ll often find Sean on the water — but behind the brand is
-            a full crew who run every trip properly, every time.
+            Running trips alongside them is Adam — born and raised right here in the bay. He knows this
+            stretch of the Red Sea like the back of his hand: the calmest morning reefs, where the fish
+            are biting, and the quietest spot to watch the sun go down.
+          </p>
+          <p>
+            Rio the macaw keeps an eye on the marina, and Tiggy the chihuahua has logged more sunset
+            cruises than most. Behind it all is a full local crew who run every trip properly, every time.
           </p>
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
-          {storyBadges.map((b) => (
-            <span
-              key={b.label}
-              className="inline-flex items-center gap-2 rounded-full border border-sand-200 bg-white px-3.5 py-1.5 text-sm font-medium text-navy/80 shadow-soft"
-            >
-              <Icon name={BADGE_ICON[b.icon] || 'sparkle'} className="h-4 w-4 text-teal-600" />
-              {b.label}
-            </span>
-          ))}
+          {storyBadges.map((b) =>
+            b.icon === 'tiktok' ? (
+              <a
+                key={b.label}
+                href={site.social.tiktokSean}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackTikTok('story-badge')}
+                className="inline-flex items-center gap-2 rounded-full border border-teal-600/30 bg-teal-600/5 px-3.5 py-1.5 text-sm font-semibold text-teal-700 shadow-soft transition hover:border-teal-600/50 hover:bg-teal-600/10"
+              >
+                <Icon name="tiktok" className="h-4 w-4" />
+                {b.label}
+                <Icon name="arrowRight" className="h-3.5 w-3.5" />
+              </a>
+            ) : (
+              <span
+                key={b.label}
+                className="inline-flex items-center gap-2 rounded-full border border-sand-200 bg-white px-3.5 py-1.5 text-sm font-medium text-navy/80 shadow-soft"
+              >
+                <Icon name={BADGE_ICON[b.icon] || 'sparkle'} className="h-4 w-4 text-teal-600" />
+                {b.label}
+              </span>
+            ),
+          )}
         </div>
 
         {(withCTA || showAboutLink) && (

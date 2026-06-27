@@ -1,6 +1,7 @@
 import SEO from '../components/SEO.jsx'
 import PageHero from '../components/PageHero.jsx'
 import StorySection from '../components/StorySection.jsx'
+import TikTokCallout from '../components/TikTokCallout.jsx'
 import SmartImage from '../components/SmartImage.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
@@ -68,6 +69,9 @@ export default function About() {
           <StorySection withCTA={false} showAboutLink={false} />
         </div>
       </section>
+
+      {/* TikTok — the top discovery channel */}
+      <TikTokCallout source="about" />
 
       {/* How it grew */}
       <section className="section">

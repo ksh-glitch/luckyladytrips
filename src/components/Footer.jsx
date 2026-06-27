@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { site, nav, footerExplore } from '../data/site.js'
 import { Icon } from './icons.jsx'
+import { trackTikTok } from '../lib/analytics.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Logo from './Logo.jsx'
 
@@ -81,6 +82,10 @@ export default function Footer() {
             <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 hover:text-gold-300">
               <Icon name="mail" className="h-4 w-4 text-teal-400" />
               {site.email}
+            </a>
+            <a href={site.social.tiktokSean} target="_blank" rel="noopener noreferrer" onClick={() => trackTikTok('footer')} className="inline-flex items-center gap-2 hover:text-gold-300">
+              <Icon name="tiktok" className="h-4 w-4 text-teal-400" />
+              @redseasean
             </a>
           </div>
           <div className="flex items-center gap-3">
