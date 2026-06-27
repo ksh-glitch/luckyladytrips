@@ -38,11 +38,11 @@ export const images = {
   cabin: `${base}/cabin-or-room.webp`,
 
   // Brand
-  logoPrimary: `${base}/logo-primary.png`, // emblem + "Lucky Lady Trips" lockup (header)
+  logoPrimary: `${base}/logo-51.png`, // macaw emblem + "Lucky Lady Trips" horizontal lockup (header)
   logoHorizontal: `${base}/logo-horizontal.png`,
   logoStacked: `${base}/logo-stacked.png`,
   logoNavy: `${base}/logo-navy.png`,
   logoWhite: `${base}/logo-white.png`,
   logoEmblem: `${base}/logo-emblem.png`,
-  ogDefault: `${base}/og-poster.jpg`, // eccentric Red Sea sunset share card (gen: scripts/make-og-image.py)
+  ogDefault: `${base}/og-escape-club.jpg`, // 80s graphic-tee share card: Sean + "Join the Red Sea Escape Club"
 }

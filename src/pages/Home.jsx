@@ -43,7 +43,7 @@ export default function Home() {
             src={images.heroVideo}
             alt="One Lucky Lady private boat on the turquoise Red Sea at Soma Bay in golden afternoon light"
             className="h-full w-full"
-            imgClassName="object-[center_30%]"
+            imgClassName="object-[center_30%] md:object-[center_60%]"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-900/35" />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-950/55 to-transparent" />

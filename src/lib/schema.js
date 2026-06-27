@@ -38,7 +38,7 @@ export function localBusinessSchema() {
     name: site.name,
     description: site.shortDesc,
     url: site.url,
-    image: abs(images.ogDefault),
+    image: abs(images.oneLuckyLady), // real boat photo for business listings (not the stylized share card)
     logo: abs(images.logoStacked),
     telephone: `+${site.whatsappNumber}`,
     priceRange: '€€',
