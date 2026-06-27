@@ -85,7 +85,7 @@ export default function Footer() {
             </a>
             <a href={site.social.tiktokSean} target="_blank" rel="noopener noreferrer" onClick={() => trackTikTok('footer')} className="inline-flex items-center gap-2 hover:text-gold-300">
               <Icon name="tiktok" className="h-4 w-4 text-teal-400" />
-              @redseasean
+              {site.social.tiktokSeanHandle}
             </a>
           </div>
           <div className="flex items-center gap-3">

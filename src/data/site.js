@@ -32,8 +32,11 @@ export const site = {
   social: {
     tiktok: 'https://www.tiktok.com/@luckyladyeg', // business account
     tiktokSean: 'https://www.tiktok.com/@redseasean', // Sean's personal (15K+ followers)
+    tiktokSeanHandle: '@RedSeaSean', // how to write the username
+    tiktokSeanName: 'Red Sea Sean 🇪🇬🇬🇧', // how to write the display name
     instagram: 'https://www.instagram.com/one_lucky_lady_boat_trips/',
     tiktokFollowers: '15K+',
+    tiktokFollowerCount: 15000, // for the animated count-up
   },
 }
 

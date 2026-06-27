@@ -100,6 +100,7 @@ export default {
         'fade-up': 'fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both',
         'fade-in': 'fade-in 0.8s ease both',
         'menu-in': 'menu-in 0.28s cubic-bezier(0.22,1,0.36,1) both',
+        'sheen': 'sheen 3.6s cubic-bezier(0.4,0,0.2,1) infinite',
       },
     },
   },
