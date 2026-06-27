@@ -6,6 +6,7 @@ import { site } from '../data/site.js'
 import { trackTikTok } from '../lib/analytics.js'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Button from './Button.jsx'
+import Reveal from './Reveal.jsx'
 
 const BADGE_ICON = { tiktok: 'tiktok', heart: 'heart', lock: 'lock' }
 
@@ -17,7 +18,7 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       {/* Photo collage — asymmetric, editorial */}
-      <div className="relative order-1 lg:order-none">
+      <Reveal as="div" direction="left" className="relative order-1 lg:order-none">
         <div className="grid grid-cols-5 gap-3 sm:gap-4">
           <div className="col-span-3 overflow-hidden rounded-4xl shadow-card">
             <SmartImage
@@ -48,10 +49,10 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
           <Icon name="feather" className="h-4 w-4 text-gold-500" />
           Sean, Adam, Justine &amp; the crew
         </span>
-      </div>
+      </Reveal>
 
       {/* Copy */}
-      <div>
+      <Reveal as="div" direction="right" delay={80}>
         <span className="eyebrow">Meet the crew</span>
         <h2 className="mt-3 text-display-sm sm:text-display font-display text-balance text-navy">
           The people behind every day on the water
@@ -110,7 +111,7 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
             )}
           </div>
         )}
-      </div>
+      </Reveal>
     </div>
   )
 }
