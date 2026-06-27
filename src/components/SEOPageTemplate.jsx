@@ -159,7 +159,7 @@ export default function SEOPageTemplate({ page }) {
         <div className="container">
           <div className="relative overflow-hidden rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12 sm:py-16">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
-            <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm sm:text-display">{page.cta.heading}</h2>
+            <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">{page.cta.heading}</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">{page.cta.sub}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <WhatsAppButton variant="white" size="lg" context={`I'm interested in: ${page.hero.kicker}.`} />

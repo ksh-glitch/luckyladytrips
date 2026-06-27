@@ -8,7 +8,7 @@ export default function Footer() {
   const year = 2025
 
   return (
-    <footer className="relative mt-8 overflow-hidden bg-navy-900 text-white">
+    <footer className="relative overflow-hidden bg-navy-900 text-white">
       {/* top hairline accent */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
 

@@ -121,7 +121,7 @@ export default function About() {
       <section className="section pt-0">
         <div className="container">
           <div className="rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12">
-            <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm sm:text-display">Come and spend a day with us</h2>
+            <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">Come and spend a day with us</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">It&apos;s your boat, your people and your day. We&apos;ll take care of everything else.</p>
             <div className="mt-8 flex justify-center">
               <WhatsAppButton variant="white" size="lg" />

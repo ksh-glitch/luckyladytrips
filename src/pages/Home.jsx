@@ -227,7 +227,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-navy-950/80" />
         </div>
         <div className="container relative z-10 py-20 text-center text-white sm:py-28">
-          <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm sm:text-display-lg">
+          <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display-lg">
             Ready to plan your Red Sea escape?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">
