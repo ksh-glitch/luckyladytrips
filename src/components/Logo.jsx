@@ -3,11 +3,14 @@ import { images } from '../data/images.js'
 import { site } from '../data/site.js'
 import cn from '../lib/cn.js'
 
-const SRC = {
-  color: images.logoHorizontal,
-  white: images.logoWhite,
-  navy: images.logoNavy,
-  emblem: images.logoEmblem,
+// Each variant has its own intrinsic pixel size — declaring the real width/height
+// reserves the correct aspect-ratio box (no layout shift on load) and stops the
+// logo looking slightly squished/offset.
+const VARIANTS = {
+  color: { src: images.logoHorizontal, w: 326, h: 110 },
+  white: { src: images.logoWhite, w: 156, h: 130 },
+  navy: { src: images.logoNavy, w: 153, h: 130 },
+  emblem: { src: images.logoEmblem, w: 245, h: 256 },
 }
 
 /**
@@ -15,13 +18,14 @@ const SRC = {
  * variant: 'color' (header) | 'white' (dark footer) | 'navy' | 'emblem'
  */
 export default function Logo({ variant = 'color', className = '', imgClassName = 'h-9 w-auto', as = 'link' }) {
+  const v = VARIANTS[variant] || VARIANTS.color
   const img = (
     <img
-      src={SRC[variant] || SRC.color}
+      src={v.src}
       alt={`${site.name} logo`}
       className={imgClassName}
-      width="180"
-      height="48"
+      width={v.w}
+      height={v.h}
       decoding="async"
     />
   )
