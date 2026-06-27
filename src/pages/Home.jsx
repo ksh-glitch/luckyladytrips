@@ -88,6 +88,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2b — TIKTOK (recognition first, for @redseasean-led traffic) - */}
+      <TikTokCallout source="home" />
+
       {/* 3 — INCLUSIONS STRIP ------------------------------------------ */}
       <section className="relative z-20 -mt-px border-b border-sand-200/70 bg-sand-50/95 py-7 backdrop-blur">
         <div className="container">
@@ -185,9 +188,6 @@ export default function Home() {
           <StorySection />
         </div>
       </section>
-
-      {/* 7b — TIKTOK (top discovery channel) -------------------------- */}
-      <TikTokCallout source="home" />
 
       {/* 8 — SOCIAL PROOF --------------------------------------------- */}
       <section className="section bg-white/50">
