@@ -7,7 +7,7 @@ import cn from '../lib/cn.js'
 // reserves the correct aspect-ratio box (no layout shift on load) and stops the
 // logo looking slightly squished/offset.
 const VARIANTS = {
-  color: { src: images.logoPrimary, w: 600, h: 201 },
+  color: { src: images.logoPrimary, w: 600, h: 204 },
   white: { src: images.logoWhite, w: 156, h: 130 },
   navy: { src: images.logoNavy, w: 153, h: 130 },
   emblem: { src: images.logoEmblem, w: 245, h: 256 },
