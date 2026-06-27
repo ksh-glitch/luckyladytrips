@@ -44,5 +44,5 @@ export const images = {
   logoNavy: `${base}/logo-navy.png`,
   logoWhite: `${base}/logo-white.png`,
   logoEmblem: `${base}/logo-emblem.png`,
-  ogDefault: `${base}/og-default.jpg`,
+  ogDefault: `${base}/og-poster.jpg`, // eccentric Red Sea sunset share card (gen: scripts/make-og-image.py)
 }
