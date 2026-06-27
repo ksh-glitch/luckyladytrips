@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import SmartImage from '../components/SmartImage.jsx'
 import HeroVideo from '../components/HeroVideo.jsx'
