@@ -12,6 +12,7 @@ import { boatById } from '../data/boats.js'
 import { seoPages } from '../data/seoPages.js'
 import { inclusionsStrip } from '../data/inclusions.js'
 import { faqSchema, breadcrumbSchema, localBusinessSchema } from '../lib/schema.js'
+import { useSetEnquiry } from '../lib/EnquiryContext.jsx'
 
 function Paragraphs({ text, className = '' }) {
   return text.split('\n\n').map((p, i) => (
@@ -25,6 +26,9 @@ export default function SEOPageTemplate({ page }) {
   const boats = (page.bestBoats || []).map((id) => boatById[id]).filter(Boolean)
   const related = seoPages.filter((p) => p.slug !== page.slug).slice(0, 4)
   const path = `/${page.slug}`
+
+  // Make the global sticky CTA prefill this page's topic.
+  useSetEnquiry({ context: `I'm interested in: ${page.hero.kicker}.`, source: `seo:${page.slug}` })
 
   return (
     <>
@@ -72,7 +76,7 @@ export default function SEOPageTemplate({ page }) {
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton size="lg" context={`I'm interested in: ${page.hero.kicker}.`} />
+            <WhatsAppButton size="lg" source={`seo-hero:${page.slug}`} context={`I'm interested in: ${page.hero.kicker}.`} />
             <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight" className="!bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
               View our boats
             </Button>
@@ -157,12 +161,12 @@ export default function SEOPageTemplate({ page }) {
       {/* CTA */}
       <section className="section">
         <div className="container">
-          <div className="relative overflow-hidden rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12 sm:py-16">
+          <div className="on-dark relative overflow-hidden rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12 sm:py-16">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
             <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">{page.cta.heading}</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">{page.cta.sub}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <WhatsAppButton variant="white" size="lg" context={`I'm interested in: ${page.hero.kicker}.`} />
+              <WhatsAppButton variant="white" size="lg" source={`seo-cta:${page.slug}`} context={`I'm interested in: ${page.hero.kicker}.`} />
               <Button to="/trips" variant="ghost" size="lg" className="!text-white hover:!bg-white/10" iconRight="arrowRight">
                 Explore trips
               </Button>

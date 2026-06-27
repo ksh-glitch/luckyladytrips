@@ -137,6 +137,22 @@
     @apply text-[1.05rem] leading-relaxed text-navy/75;
   }
   .prose-warm p + p { @apply mt-4; }
+
+  /* Dark surfaces -------------------------------------------------- */
+  /* Apply `.on-dark` to ANY band/section sitting on a dark background.
+     The base `h1..h4 { text-navy }` rule can never again render an
+     invisible navy-on-navy heading, because `.on-dark h2` is more
+     specific AND lives in a later layer. This permanently retires the
+     "invisible heading on dark sections" bug class. */
+  .on-dark { @apply text-white/80; }
+  .on-dark h1,
+  .on-dark h2,
+  .on-dark h3,
+  .on-dark h4 { @apply text-white; }
+  .on-dark .eyebrow { @apply text-gold-300; }
+  .on-dark .eyebrow::before { @apply bg-gold-400; }
+  .on-dark .prose-warm { @apply text-white/75; }
+  .on-dark .link-underline { @apply text-gold-300; }
 }
 
 /* ------------------------------------------------------------------ */
@@ -155,7 +171,7 @@
   }
   .js .reveal:not(.is-visible) {
     opacity: 0;
-    transform: translateY(22px);
+    transform: var(--reveal-from, translateY(22px));
   }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -168,5 +184,14 @@
   .mask-fade-r {
     -webkit-mask-image: linear-gradient(to right, black 86%, transparent 100%);
     mask-image: linear-gradient(to right, black 86%, transparent 100%);
+  }
+
+  /* Subtle film grain — unifies mixed-quality footage and stops large dark
+     gradients from banding. Drop a `.grain-layer` div (absolute, inset-0,
+     aria-hidden, pointer-events-none) over an image/hero. */
+  .grain-layer {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: overlay;
   }
 }

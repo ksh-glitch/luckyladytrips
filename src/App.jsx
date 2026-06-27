@@ -3,10 +3,11 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import StickyMobileCTA from './components/StickyMobileCTA.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import { EnquiryProvider } from './lib/EnquiryContext.jsx'
 
 export default function App() {
   return (
-    <>
+    <EnquiryProvider>
       <ScrollToTop />
       <a
         href="#main"
@@ -20,6 +21,6 @@ export default function App() {
       </main>
       <Footer />
       <StickyMobileCTA />
-    </>
+    </EnquiryProvider>
   )
 }

@@ -16,6 +16,13 @@ export const site = {
   whatsappDisplay: '+20 120 572 6571',
   email: 'sean@luckyladytrips.com',
 
+  // Honest reassurance shown beside the primary CTAs (answers "will a real
+  // person reply quickly?" at the moment of decision). Edit freely.
+  reply: {
+    time: 'Usually replies within a few hours',
+    meta: 'Sean & the crew · Soma Bay (EET)',
+  },
+
   // Service area
   baseLocation: 'Soma Bay, Red Sea, Egypt',
   locations: ['Soma Bay', 'Hurghada', 'Red Sea'],

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import SmartImage from '../components/SmartImage.jsx'
+import HeroVideo from '../components/HeroVideo.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import BoatCard from '../components/BoatCard.jsx'
 import InclusionIcon from '../components/InclusionIcon.jsx'
-import TripTypeCard from '../components/TripTypeCard.jsx'
+import SunArcTrips from '../components/SunArcTrips.jsx'
+import Magnetic from '../components/Magnetic.jsx'
 import StorySection from '../components/StorySection.jsx'
 import SocialProof from '../components/SocialProof.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
@@ -34,16 +36,17 @@ export default function Home() {
       {/* 2 — HERO ------------------------------------------------------- */}
       <section className="relative flex min-h-[92svh] items-end overflow-hidden">
         <div className="absolute inset-0">
-          <SmartImage
-            src={images.hero}
+          <HeroVideo
+            poster={images.hero}
+            src={images.heroVideo}
             alt="One Lucky Lady private boat on the turquoise Red Sea at Soma Bay in golden afternoon light"
             className="h-full w-full"
             imgClassName="object-[center_30%]"
-            loading="eager"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-900/35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/55 to-transparent" />
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-900/35" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-950/55 to-transparent" />
+            <div aria-hidden="true" className="grain-layer pointer-events-none absolute inset-0 opacity-[0.07]" />
+          </HeroVideo>
         </div>
 
         <div className="container relative z-10 pb-16 pt-28 sm:pb-20 lg:pb-28">
@@ -62,16 +65,24 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton size="lg" />
+            <Magnetic className="w-full sm:w-auto">
+              <WhatsAppButton size="lg" source="hero" fullWidth className="sm:w-auto" />
+            </Magnetic>
             <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight" className="!border-white/30 !bg-white/10 !text-white backdrop-blur hover:!bg-white/20">
               View our boats
             </Button>
           </div>
 
-          <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/75">
-            <Icon name="tag" className="h-4 w-4 text-gold-400" />
-            The price you see is the price you pay.
-          </p>
+          <div className="mt-5 flex flex-col gap-2 text-sm font-medium text-white/75 sm:flex-row sm:items-center sm:gap-5">
+            <span className="inline-flex items-center gap-2">
+              <Icon name="whatsapp" className="h-4 w-4 text-gold-400" />
+              {site.reply.time}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Icon name="tag" className="h-4 w-4 text-gold-400" />
+              The price you see is the price you pay.
+            </span>
+          </div>
         </div>
       </section>
 
@@ -113,7 +124,7 @@ export default function Home() {
       {/* 5 — ALL-INCLUSIVE PROMISE (navy band) ------------------------- */}
       <section className="section">
         <div className="container">
-          <div className="relative overflow-hidden rounded-5xl bg-navy-900 px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-16">
+          <div className="on-dark relative overflow-hidden rounded-5xl bg-navy-900 px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-16">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
             <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-teal-500/15 blur-3xl" />
 
@@ -138,7 +149,7 @@ export default function Home() {
                 </ul>
 
                 <div className="mt-8">
-                  <WhatsAppButton variant="white" />
+                  <WhatsAppButton variant="white" source="navy-band" />
                 </div>
               </div>
 
@@ -163,25 +174,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6 — TRIP TYPES ------------------------------------------------ */}
-      <section className="section bg-white/50">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Ways to spend the day"
-            title="Find your kind of day on the water"
-            intro="Every trip is private and built around your group. Tap any to start a WhatsApp enquiry."
-            align="center"
-            className="mx-auto"
-          />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {trips.map((trip, i) => (
-              <Reveal key={trip.id} delay={(i % 3) * 70}>
-                <TripTypeCard trip={trip} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 6 — TRIP TYPES (signature sun-arc) ---------------------------- */}
+      <SunArcTrips trips={trips} />
 
       {/* 7 — STORY ----------------------------------------------------- */}
       <section className="section">
@@ -211,7 +205,7 @@ export default function Home() {
           <div>
             <SectionHeading eyebrow="Good to know" title="Your questions, answered" intro="Everything you might want to check before you message us." />
             <div className="mt-6 hidden lg:block">
-              <WhatsAppButton />
+              <WhatsAppButton source="faq" />
             </div>
           </div>
           <div className="card px-6 py-2 sm:px-8">
@@ -225,8 +219,9 @@ export default function Home() {
         <div className="absolute inset-0">
           <SmartImage src={images.oneLuckyLadyNight} alt="One Lucky Lady lit with blue deck lighting in Soma Bay marina after dark" className="h-full w-full" />
           <div className="absolute inset-0 bg-navy-950/80" />
+          <div aria-hidden="true" className="grain-layer pointer-events-none absolute inset-0 opacity-[0.06]" />
         </div>
-        <div className="container relative z-10 py-20 text-center text-white sm:py-28">
+        <div className="on-dark container relative z-10 py-20 text-center text-white sm:py-28">
           <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display-lg">
             Ready to plan your Red Sea escape?
           </h2>
@@ -235,7 +230,7 @@ export default function Home() {
             food, drinks, gear and crew included.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <WhatsAppButton variant="white" size="lg" label="Check availability on WhatsApp" />
+            <WhatsAppButton variant="white" size="lg" label="Check availability on WhatsApp" source="final-cta" />
             <Button to="/boats" variant="ghost" size="lg" className="!text-white hover:!bg-white/10" iconRight="arrowRight">
               View boats
             </Button>

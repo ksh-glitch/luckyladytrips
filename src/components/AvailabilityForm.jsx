@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { boatOptions } from '../data/boats.js'
 import { tripOptions } from '../data/trips.js'
 import { enquiryFromForm, whatsappUrl } from '../lib/whatsapp.js'
+import { trackWhatsApp } from '../lib/analytics.js'
+import { site } from '../data/site.js'
 import { Icon } from './icons.jsx'
 import cn from '../lib/cn.js'
+
+const GUEST_CHIPS = ['1–2', '3–4', '5–6', '7+']
 
 const fieldBase =
   'w-full rounded-2xl border border-sand-200 bg-white px-4 py-3 text-navy placeholder:text-navy/35 shadow-soft transition focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-600/10'
@@ -31,6 +35,9 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
   })
   const [error, setError] = useState('')
   const [sent, setSent] = useState(false)
+  // Set on the client so SSR markup has no stale min date (avoids hydration mismatch).
+  const [today, setToday] = useState('')
+  useEffect(() => setToday(new Date().toISOString().slice(0, 10)), [])
 
   const set = (k) => (e) => {
     const val = e.target.type === 'checkbox' ? e.target.checked : e.target.value
@@ -42,6 +49,7 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
     if (!v.name.trim()) return setError('Please add your name so Sean knows who he’s talking to.')
     if (!v.phone.trim()) return setError('Please add a WhatsApp number we can reply to.')
     setError('')
+    trackWhatsApp('form')
     const url = whatsappUrl(enquiryFromForm(v))
     window.open(url, '_blank', 'noopener,noreferrer')
     setSent(true)
@@ -49,6 +57,21 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
 
   return (
     <form onSubmit={onSubmit} noValidate className="card p-6 sm:p-8">
+      {/* Fast path for the impatient — skip the form, just open WhatsApp */}
+      <div className="mb-6 flex flex-col gap-2.5 rounded-2xl border border-sand-200 bg-sand-50/70 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-navy/70">Prefer to just message us? Skip the form.</p>
+        <a
+          href={whatsappUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackWhatsApp('form-fastpath')}
+          className="btn-secondary btn-sm shrink-0"
+        >
+          <Icon name="whatsapp" className="h-4 w-4" />
+          Message on WhatsApp
+        </a>
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="sm:col-span-1">
           <Label htmlFor="name">Your name</Label>
@@ -61,7 +84,7 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
 
         <div>
           <Label htmlFor="date">Preferred date</Label>
-          <input id="date" name="date" type="date" value={v.date} onChange={set('date')} className={cn(fieldBase, 'appearance-none')} />
+          <input id="date" name="date" type="date" min={today || undefined} value={v.date} onChange={set('date')} className={cn(fieldBase, 'appearance-none')} />
         </div>
         <div className="flex items-end">
           <label htmlFor="flexible" className="flex w-full cursor-pointer items-center gap-3 rounded-2xl border border-sand-200 bg-white px-4 py-3 shadow-soft">
@@ -71,8 +94,28 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
         </div>
 
         <div>
-          <Label htmlFor="guests">Number of guests</Label>
-          <input id="guests" name="guests" type="number" min="1" max="14" inputMode="numeric" value={v.guests} onChange={set('guests')} placeholder="e.g. 4" className={fieldBase} />
+          <span id="guests-label" className="mb-1.5 block text-sm font-semibold text-navy/85">Number of guests</span>
+          <div className="flex flex-wrap gap-2" role="group" aria-labelledby="guests-label">
+            {GUEST_CHIPS.map((g) => {
+              const active = v.guests === g
+              return (
+                <button
+                  key={g}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setV((s) => ({ ...s, guests: active ? '' : g }))}
+                  className={cn(
+                    'rounded-full border px-4 py-2.5 text-sm font-semibold transition',
+                    active
+                      ? 'border-teal-600 bg-teal-600 text-white shadow-cta'
+                      : 'border-sand-200 bg-white text-navy/75 hover:border-teal-600/40 hover:text-teal-700',
+                  )}
+                >
+                  {g}
+                </button>
+              )
+            })}
+          </div>
         </div>
         <div>
           <Label htmlFor="boat">Preferred boat</Label>
@@ -115,7 +158,9 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
           Send on WhatsApp
         </button>
         <p className="text-sm text-navy/65">
-          {sent ? 'Opening WhatsApp… we’ll reply personally.' : 'No deposit yet — this opens a WhatsApp chat with your details ready to send.'}
+          {sent
+            ? 'Opening WhatsApp… we’ll reply personally.'
+            : `No deposit yet — this opens a WhatsApp chat with your details ready to send. ${site.reply.time}.`}
         </p>
       </div>
     </form>

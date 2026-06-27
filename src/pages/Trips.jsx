@@ -1,6 +1,7 @@
 import SEO from '../components/SEO.jsx'
 import PageHero from '../components/PageHero.jsx'
 import TripTypeCard from '../components/TripTypeCard.jsx'
+import AnatomyOfADay from '../components/AnatomyOfADay.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import Button from '../components/Button.jsx'
@@ -45,6 +46,11 @@ export default function Trips() {
           </div>
         </div>
       </section>
+
+      {/* Anatomy of a day — sell the experience, not the asset */}
+      <div className="bg-white/50">
+        <AnatomyOfADay trip={trips[0]} />
+      </div>
 
       {/* How it works */}
       <section className="section bg-white/50">

@@ -24,6 +24,8 @@ export const boats = [
       { src: images.oneLuckyLadyNight, alt: 'One Lucky Lady lit up with blue deck lighting after dark' },
     ],
     hasRealPhoto: true,
+    dayAboard:
+      'Just you and yours. A couple stretched out on the bow, the kids daring each other off the back, a long lunch at anchor — small enough to feel like your own boat, easy enough that you lose track of the time.',
     blurb:
       'The boat that started it all. One Lucky Lady is our intimate cruiser — easy, comfortable and yours for the day. Perfect for a couple, a family or a small group who want the Red Sea to themselves without the crowds.',
     highlights: [
@@ -48,6 +50,8 @@ export const boats = [
     imageAlt: 'The Locke Catamaran — a spacious multi-deck catamaran for up to 14 guests',
     gallery: [],
     hasRealPhoto: false,
+    dayAboard:
+      'Room for the whole party. Two hulls, four cabins and decks wide enough to spread right out — this is the boat for the birthday that runs late, the family that travels deep, and the night that drifts into sunrise at anchor.',
     blurb:
       'Room to spread out. The Locke Catamaran carries up to 14 guests across two hulls with four cabins below — stable underfoot, generous on deck, and built for the days that turn into celebrations. The natural choice for bigger groups and overnight escapes.',
     highlights: [
@@ -73,6 +77,8 @@ export const boats = [
     hasRealPhoto: false,
     // name can be swapped later if the boat is named
     renameable: true,
+    dayAboard:
+      'Quick and quiet. First out to the marks at dawn, first into a calm bay before the crowd arrives, and back whenever you please — a nimble, private way to fish, snorkel, or simply outrun the tourist boats.',
     blurb:
       'When you want to move. Quick to the reefs, quick to the fishing marks, and quick to a quiet bay before anyone else arrives. Our speedboat is the agile option for anglers and small groups who like a bit of pace with their privacy.',
     highlights: [

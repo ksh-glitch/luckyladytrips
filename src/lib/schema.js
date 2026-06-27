@@ -1,7 +1,33 @@
 import { site } from '../data/site.js'
 import { images } from '../data/images.js'
+import { reviews, reviewsPublished } from '../data/reviews.js'
 
 const abs = (p) => (p?.startsWith('http') ? p : `${site.url}${p}`)
+
+// Build AggregateRating + Review nodes from real, published reviews only.
+// Never invented — mirrors the honesty rule in data/reviews.js.
+function reviewNodes() {
+  if (!reviewsPublished) return null
+  const rated = reviews.filter((r) => r.rating)
+  if (!rated.length) return null
+  const avg = rated.reduce((s, r) => s + r.rating, 0) / rated.length
+  return {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: Number(avg.toFixed(1)),
+      reviewCount: rated.length,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: rated.map((r) => ({
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+      author: { '@type': 'Person', name: r.name },
+      reviewBody: r.text,
+      ...(r.date ? { datePublished: r.date } : {}),
+    })),
+  }
+}
 
 // LocalBusiness / TravelAgency — included site-wide (in App).
 export function localBusinessSchema() {
@@ -27,6 +53,7 @@ export function localBusinessSchema() {
     areaServed: site.serviceAreas.map((name) => ({ '@type': 'Place', name })),
     sameAs: [site.social.tiktok, site.social.instagram, site.social.tiktokSean].filter(Boolean),
     knowsLanguage: ['en', 'ar'],
+    ...(reviewNodes() || {}),
   }
 }
 

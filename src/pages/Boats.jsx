@@ -47,6 +47,11 @@ function BoatDetail({ boat, index }) {
             <p className="mt-1 text-sm italic text-navy/65">Name to be announced — the boat speaks for itself.</p>
           )}
           <p className="prose-warm mt-4 max-w-prose">{boat.blurb}</p>
+          {boat.dayAboard && (
+            <p className="mt-4 max-w-prose border-l-2 border-gold-400 pl-4 font-display text-lg italic leading-relaxed text-navy/80">
+              {boat.dayAboard}
+            </p>
+          )}
 
           {/* specs */}
           <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -82,7 +87,7 @@ function BoatDetail({ boat, index }) {
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <WhatsAppButton boat={boat.name} label={`Enquire — ${boat.name}`} />
+            <WhatsAppButton boat={boat.name} source="boat-detail" label={`Enquire — ${boat.name}`} />
             <Button to="/contact" variant="secondary" iconRight="arrowRight">Check availability</Button>
           </div>
         </div>
@@ -135,10 +140,10 @@ export default function Boats() {
       {/* CTA */}
       <section className="section pt-0">
         <div className="container">
-          <div className="rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12">
+          <div className="on-dark rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12">
             <SectionHeading align="center" eyebrow="Not sure which boat?" title="Tell us your group — we'll match the boat" intro="Message us your dates and how many you are. We'll recommend the best fit and confirm availability." light className="mx-auto" />
             <div className="mt-8 flex justify-center">
-              <WhatsAppButton variant="white" size="lg" context="Not sure which boat suits us — please recommend." />
+              <WhatsAppButton variant="white" size="lg" source="boats-cta" context="Not sure which boat suits us — please recommend." />
             </div>
           </div>
         </div>

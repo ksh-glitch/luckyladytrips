@@ -19,6 +19,11 @@
     />
 
     <!-- title + meta description are managed per-route by the SEO component (react-helmet-async) -->
+
+    <!-- Privacy-light analytics (Plausible). Async, cookieless, ~1KB. The stub
+         lets custom events (e.g. WhatsApp clicks) queue before the script loads. -->
+    <script defer data-domain="luckyladytrips.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+    <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
   </head>
   <body>
     <div id="root"></div>

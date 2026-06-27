@@ -1,5 +1,6 @@
 import { Icon } from './icons.jsx'
 import { whatsappUrl, enquiryFor } from '../lib/whatsapp.js'
+import { trackWhatsApp } from '../lib/analytics.js'
 import cn from '../lib/cn.js'
 
 const VARIANTS = {
@@ -20,20 +21,27 @@ export default function WhatsAppButton({
   boat,
   trip,
   context,
+  source = 'cta',
   variant = 'primary',
   size = 'md',
   fullWidth = false,
   showIcon = true,
   className = '',
+  onClick,
   ...props
 }) {
   const text = message || (boat || trip || context ? enquiryFor({ boat, trip, context }) : undefined)
+  const handleClick = (e) => {
+    trackWhatsApp(boat ? `${source}:${boat}` : source)
+    onClick?.(e)
+  }
   return (
     <a
       href={whatsappUrl(text)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${label} on WhatsApp`}
+      onClick={handleClick}
       className={cn('group', VARIANTS[variant], SIZES[size], fullWidth && 'w-full', className)}
       {...props}
     >

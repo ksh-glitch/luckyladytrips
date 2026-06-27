@@ -10,6 +10,10 @@ const base = '/assets'
 export const images = {
   // Hero / One Lucky Lady (real photography)
   hero: `${base}/hero-one-lucky-lady.webp`,
+  // Optional cinematic hero loop (One Lucky Lady underway, graded). When a real
+  // ~2-5MB muted loop exists at /public/assets, point this at it and the hero
+  // upgrades automatically (poster stays the LCP element). Keep null until then.
+  heroVideo: null, // e.g. `${base}/hero-one-lucky-lady.mp4`
   oneLuckyLady: `${base}/one-lucky-lady.webp`,
   oneLuckyLadyDeck: `${base}/one-lucky-lady-deck.webp`,
   oneLuckyLadyMarina: `${base}/one-lucky-lady-marina.webp`,
