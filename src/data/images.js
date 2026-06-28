@@ -44,5 +44,5 @@ export const images = {
   logoNavy: `${base}/logo-navy.png`,
   logoWhite: `${base}/logo-white.png`,
   logoEmblem: `${base}/logo-emblem.png`,
-  ogDefault: `${base}/og-escape-club.jpg`, // 80s graphic-tee share card: Sean + "Join the Red Sea Escape Club"
+  ogDefault: `${base}/og-lucky-lady.jpg`, // 80s synthwave share card: flying macaw + One Lucky Lady cruiser, "Private Red Sea Boat Trips" (Sean kept as a small badge)
 }

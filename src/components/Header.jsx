@@ -30,8 +30,8 @@ export default function Header() {
             : 'border-b border-transparent bg-sand-50/60 backdrop-blur-sm',
         )}
       >
-        <div className="container flex h-16 items-center justify-between gap-3">
-          <Logo variant="color" imgClassName="h-11 w-auto sm:h-12" />
+        <div className="container flex h-16 items-center justify-between gap-3 sm:h-20">
+          <Logo variant="color" imgClassName="h-12 w-auto sm:h-[3.75rem]" />
 
           {/* Desktop nav */}
           <nav className="hidden lg:block">
