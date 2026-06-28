@@ -12,7 +12,7 @@ export default function InclusionIcon({ icon, label, className = '' }) {
         className,
       )}
     >
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-600/10 text-teal-700">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-teal-600/10 text-teal-700">
         <Icon name={icon} className="h-5 w-5" />
       </span>
       <span className="text-sm font-semibold leading-tight text-navy">{label}</span>

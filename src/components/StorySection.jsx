@@ -28,14 +28,14 @@ export default function StorySection({ withCTA = true, showAboutLink = true }) {
             />
           </div>
           <div className="col-span-2 flex flex-col gap-3 sm:gap-4">
-            <div className="overflow-hidden rounded-3xl shadow-soft">
+            <div className="overflow-hidden rounded-4xl shadow-soft">
               <SmartImage
                 src={images.adamCrew}
                 alt="Adam, born and raised in Soma Bay, part of the Lucky Lady crew"
                 className="aspect-square w-full"
               />
             </div>
-            <div className="flex-1 overflow-hidden rounded-3xl shadow-soft">
+            <div className="flex-1 overflow-hidden rounded-4xl shadow-soft">
               <SmartImage
                 src={images.justineTiggySunset}
                 alt="Justine with Tiggy the chihuahua on a Red Sea sunset cruise"

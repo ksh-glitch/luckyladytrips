@@ -147,7 +147,7 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
       </div>
 
       {error && (
-        <p role="alert" className="mt-4 rounded-xl bg-gold-500/10 px-4 py-3 text-sm font-medium text-navy">
+        <p role="alert" className="mt-4 rounded-2xl bg-gold-500/10 px-4 py-3 text-sm font-medium text-navy">
           {error}
         </p>
       )}

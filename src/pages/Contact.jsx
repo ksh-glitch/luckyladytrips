@@ -42,15 +42,15 @@ export default function Contact() {
               </div>
               <div className="mt-4 space-y-3 text-sm">
                 <a href={whatsappUrl(undefined, 'contact-number')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('contact-number')} className="flex items-center gap-3 text-navy/75 hover:text-teal-700">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600/10 text-teal-700"><Icon name="whatsapp" className="h-4 w-4" /></span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-teal-600/10 text-teal-700"><Icon name="whatsapp" className="h-4 w-4" /></span>
                   {site.whatsappDisplay}
                 </a>
                 <a href={`mailto:${site.email}`} className="flex items-center gap-3 text-navy/75 hover:text-teal-700">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600/10 text-teal-700"><Icon name="mail" className="h-4 w-4" /></span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-teal-600/10 text-teal-700"><Icon name="mail" className="h-4 w-4" /></span>
                   {site.email}
                 </a>
                 <div className="flex items-center gap-3 text-navy/75">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-teal-600/10 text-teal-700"><Icon name="mapPin" className="h-4 w-4" /></span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-teal-600/10 text-teal-700"><Icon name="mapPin" className="h-4 w-4" /></span>
                   {site.baseLocation}
                 </div>
               </div>

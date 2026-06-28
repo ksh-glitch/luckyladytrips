@@ -174,7 +174,7 @@ export default function Home() {
                 <ul className="mt-5 space-y-4">
                   {inclusionsList.map((inc) => (
                     <li key={inc.title} className="flex gap-3.5">
-                      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-500/20 text-teal-300">
+                      <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-teal-500/20 text-teal-300">
                         <Icon name={inc.icon} className="h-5 w-5" />
                       </span>
                       <div>

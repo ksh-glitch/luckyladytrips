@@ -114,7 +114,7 @@ export default function TikTokCallout({ source = 'home' }) {
                 className="group relative mt-4 grid grid-cols-3 gap-2"
               >
                 {FEED.map((t, i) => (
-                  <span key={i} className="relative block overflow-hidden rounded-xl ring-1 ring-white/10">
+                  <span key={i} className="relative block overflow-hidden rounded-2xl ring-1 ring-white/10">
                     <SmartImage src={t.src} alt={t.alt} className="aspect-[3/4] w-full" imgClassName="transition-transform duration-700 ease-smooth group-hover:scale-110" />
                     <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950/55 to-transparent" />
                     <span aria-hidden="true" className="absolute inset-0 flex items-center justify-center">

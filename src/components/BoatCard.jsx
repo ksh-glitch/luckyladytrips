@@ -91,7 +91,6 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
           className="h-full min-h-[190px] w-full"
           imgClassName="transition-transform duration-700 ease-smooth group-hover:scale-105"
         />
-        <PriceChip boat={boat} className="absolute bottom-2.5 left-2.5" />
         {flag && (
           <span className="absolute left-2.5 top-2.5 rounded-full bg-gold-500 px-2.5 py-0.5 text-[0.68rem] font-semibold text-navy-900 shadow-soft">
             {flag}

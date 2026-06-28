@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { site, nav, footerExplore } from '../data/site.js'
 import { Icon } from './icons.jsx'
 import { trackTikTok, trackWhatsApp } from '../lib/analytics.js'
@@ -8,6 +8,11 @@ import Logo from './Logo.jsx'
 
 export default function Footer() {
   const year = 2025
+  // The homepage already closes with its own full-bleed final CTA, so the
+  // footer's CTA band would be a second "book now" in a row. Show it on every
+  // other page (which have no such closer), hide it on home.
+  const { pathname } = useLocation()
+  const showCtaBand = pathname !== '/'
 
   return (
     <footer className="relative overflow-hidden bg-navy-900 text-white">
@@ -15,16 +20,18 @@ export default function Footer() {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
 
       <div className="container py-14 lg:py-16">
-        {/* CTA band */}
-        <div className="mb-12 flex flex-col items-start justify-between gap-5 rounded-4xl border border-white/10 bg-white/[0.04] p-7 sm:flex-row sm:items-center sm:p-9">
-          <div>
-            <p className="eyebrow !text-gold-300 before:!bg-gold-400">Plan your day</p>
-            <p className="mt-2 font-display text-2xl sm:text-3xl text-balance">
-              Ready when you are. Let&apos;s find your date.
-            </p>
+        {/* CTA band — skipped on the homepage to avoid back-to-back CTAs */}
+        {showCtaBand && (
+          <div className="mb-12 flex flex-col items-start justify-between gap-5 rounded-4xl border border-white/10 bg-white/[0.04] p-7 sm:flex-row sm:items-center sm:p-9">
+            <div>
+              <p className="eyebrow !text-gold-300 before:!bg-gold-400">Plan your day</p>
+              <p className="mt-2 font-display text-2xl sm:text-3xl text-balance">
+                Ready when you are. Let&apos;s find your date.
+              </p>
+            </div>
+            <WhatsAppButton variant="white" size="lg" source="footer" className="shrink-0" />
           </div>
-          <WhatsAppButton variant="white" size="lg" source="footer" className="shrink-0" />
-        </div>
+        )}
 
         <div className="grid gap-10 md:grid-cols-12">
           {/* Brand */}

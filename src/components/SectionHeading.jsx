@@ -18,7 +18,7 @@ export default function SectionHeading({
   return (
     <div className={cn('max-w-2xl', centered && 'mx-auto text-center', className)}>
       {eyebrow && (
-        <span className={cn('eyebrow', light && '!text-gold-300', centered && 'before:hidden sm:before:inline-block')}>
+        <span className={cn('eyebrow', light && '!text-gold-300', centered && 'before:hidden')}>
           {eyebrow}
         </span>
       )}

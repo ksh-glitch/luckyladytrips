@@ -107,7 +107,7 @@ export default function SEOPageTemplate({ page }) {
           <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1" delay={80}>
             {page.highlights.map((h) => (
               <div key={h.title} className="card flex gap-3 p-5">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-600/10 text-teal-700">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-teal-600/10 text-teal-700">
                   <Icon name="check" className="h-5 w-5" />
                 </span>
                 <div>
