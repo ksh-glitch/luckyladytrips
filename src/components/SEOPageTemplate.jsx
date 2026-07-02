@@ -6,6 +6,7 @@ import BoatCard from './BoatCard.jsx'
 import FAQAccordion from './FAQAccordion.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
 import Button from './Button.jsx'
+import CtaBand from './CtaBand.jsx'
 import Reveal from './Reveal.jsx'
 import { Icon } from './icons.jsx'
 import { boatById } from '../data/boats.js'
@@ -51,15 +52,15 @@ export default function SEOPageTemplate({ page }) {
       <section className="relative">
         <div className="absolute inset-0">
           <SmartImage src={page.image} alt={page.imageAlt} className="h-full w-full" loading="eager" fetchPriority="high" imgClassName="object-[center_40%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/55 to-navy-900/35" />
+          <div className="scrim-hero absolute inset-0" />
         </div>
 
-        <div className="relative container flex min-h-[72vh] flex-col justify-end pb-14 pt-28 sm:min-h-[68vh] lg:min-h-[64vh] lg:pb-20">
-          <nav aria-label="Breadcrumb" className="mb-5 text-sm text-white/70">
+        <div className="on-dark relative container flex min-h-[72vh] flex-col justify-end pb-14 pt-28 sm:min-h-[68vh] lg:min-h-[64vh] lg:pb-20">
+          <nav aria-label="Breadcrumb" className="mb-5 text-sm text-white/75">
             <ol className="flex items-center gap-2">
               <li><Link to="/" className="hover:text-gold-300">Home</Link></li>
               <li aria-hidden="true">/</li>
-              <li className="text-white/90">{page.hero.kicker}</li>
+              <li className="text-white">{page.hero.kicker}</li>
             </ol>
           </nav>
 
@@ -68,7 +69,7 @@ export default function SEOPageTemplate({ page }) {
             {page.hero.kicker}
           </span>
 
-          <h1 className="mt-4 max-w-3xl text-balance font-display text-[2.3rem] leading-[1.05] text-white sm:text-display lg:text-display-lg">
+          <h1 className="mt-4 max-w-3xl text-balance font-display text-[2.4rem] leading-[1.05] text-white sm:text-display lg:text-display-lg">
             {page.hero.h1}
           </h1>
           <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white/85">
@@ -77,7 +78,7 @@ export default function SEOPageTemplate({ page }) {
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <WhatsAppButton size="lg" source={`seo-hero:${page.slug}`} context={`I'm interested in: ${page.hero.kicker}.`} />
-            <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight" className="!bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
+            <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight">
               View our boats
             </Button>
           </div>
@@ -139,7 +140,7 @@ export default function SEOPageTemplate({ page }) {
         <section className="section">
           <div className="container">
             <SectionHeading eyebrow="Choose your boat" title="The right boat for this trip" intro="Private only, all-inclusive, and priced with nothing hidden." />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {boats.map((b) => (
                 <BoatCard key={b.id} boat={b} layout="tall" flag={b.id === 'one-lucky-lady' ? 'The original' : undefined} />
               ))}
@@ -152,7 +153,7 @@ export default function SEOPageTemplate({ page }) {
       <section className="bg-white/50 py-16 lg:py-24">
         <div className="container max-w-3xl">
           <SectionHeading eyebrow="Good to know" title="Questions, answered" align="center" />
-          <div className="mt-8">
+          <div className="mt-12">
             <FAQAccordion items={page.faqs} />
           </div>
         </div>
@@ -161,21 +162,20 @@ export default function SEOPageTemplate({ page }) {
       {/* CTA */}
       <section className="section">
         <div className="container">
-          <div className="on-dark relative overflow-hidden rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12 sm:py-16">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
+          <CtaBand>
             <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">{page.cta.heading}</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">{page.cta.sub}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <WhatsAppButton variant="white" size="lg" source={`seo-cta:${page.slug}`} context={`I'm interested in: ${page.hero.kicker}.`} />
-              <Button to="/trips" variant="ghost" size="lg" className="!text-white hover:!bg-white/10" iconRight="arrowRight">
+              <Button to="/trips" variant="ghost" size="lg" iconRight="arrowRight">
                 Explore trips
               </Button>
             </div>
-          </div>
+          </CtaBand>
 
           {/* internal links */}
           <div className="mt-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy/65">Keep exploring</p>
+            <p className="label">Keep exploring</p>
             <div className="mt-4 flex flex-wrap gap-2.5">
               {related.map((r) => (
                 <Link key={r.slug} to={`/${r.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-sand-200 bg-white px-4 py-2 text-sm font-medium text-navy/75 shadow-soft transition hover:border-teal-600/30 hover:text-teal-700">

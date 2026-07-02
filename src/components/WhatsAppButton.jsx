@@ -5,9 +5,9 @@ import cn from '../lib/cn.js'
 
 const VARIANTS = {
   primary: 'btn-primary',
-  white: 'btn bg-white text-teal-700 shadow-cta hover:-translate-y-0.5 hover:shadow-lift hover:bg-white',
-  outline: 'btn border border-white/40 bg-white/10 text-white backdrop-blur hover:bg-white/20',
-  gold: 'btn bg-gold-500 text-navy-900 shadow-soft hover:bg-gold-400 hover:-translate-y-0.5',
+  white: 'btn-white text-teal-700',
+  secondary: 'btn-secondary',
+  gold: 'btn-gold',
   // Text-style CTA (no button chrome) for the soft "get prices" path. Colour via className.
   link: 'inline-flex items-center gap-1.5 font-semibold underline-offset-4 transition hover:underline',
 }

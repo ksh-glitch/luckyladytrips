@@ -8,7 +8,7 @@ export default function InclusionIcon({ icon, label, className = '' }) {
   return (
     <div
       className={cn(
-        'flex items-center gap-2.5 rounded-2xl border border-sand-200/70 bg-white/70 px-3.5 py-3 shadow-soft backdrop-blur-sm',
+        'flex items-center gap-2.5 rounded-full border border-sand-200/70 bg-white/70 px-3.5 py-3 shadow-soft backdrop-blur-sm',
         className,
       )}
     >

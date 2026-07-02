@@ -19,7 +19,7 @@ export default function NotFound() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button to="/" variant="primary" icon="anchor">Back to home</Button>
-            <WhatsAppButton variant="outline" source="404" className="!border-navy/15 !bg-white/60 !text-teal-700" />
+            <WhatsAppButton variant="secondary" source="404" />
           </div>
         </div>
       </section>

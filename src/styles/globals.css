@@ -86,6 +86,16 @@
     @apply btn text-navy hover:bg-navy/5;
   }
 
+  .btn-white {
+    @apply btn bg-white text-navy-900 shadow-cta
+           hover:-translate-y-0.5 hover:shadow-lift;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold-500 text-navy-900 shadow-soft
+           hover:bg-gold-400 hover:-translate-y-0.5;
+  }
+
   .btn-lg { @apply px-7 py-4 text-base; }
   .btn-sm { @apply px-4 py-2 text-sm; }
 
@@ -93,6 +103,12 @@
   .card {
     @apply rounded-4xl border border-sand-200/80 bg-white/80 shadow-soft
            backdrop-blur-[2px];
+  }
+
+  /* Glass surface on dark navy bands — THE one recipe. Pair with a radius
+     at the call site (rounded-4xl for cards, rounded-full for chips). */
+  .glass {
+    @apply border border-white/10 bg-white/[0.05];
   }
 
   /* Eyebrow / kicker --------------------------------------------- */
@@ -103,6 +119,12 @@
   .eyebrow::before {
     content: '';
     @apply inline-block h-px w-7 bg-gold-500;
+  }
+
+  /* Muted micro-label (footer columns, "keep exploring", etc.) —
+     the quiet sibling of .eyebrow, for labels that shouldn't pull focus. */
+  .label {
+    @apply font-sans text-xs font-semibold uppercase tracking-[0.18em] text-navy/65;
   }
 
   /* Location / trust chip ---------------------------------------- */
@@ -138,6 +160,11 @@
   }
   .prose-warm p + p { @apply mt-4; }
 
+  /* Photo-hero scrim — one recipe shared by every image/video hero. */
+  .scrim-hero {
+    @apply bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-900/35;
+  }
+
   /* Dark surfaces -------------------------------------------------- */
   /* Apply `.on-dark` to ANY band/section sitting on a dark background.
      The base `h1..h4 { text-navy }` rule can never again render an
@@ -153,6 +180,17 @@
   .on-dark .eyebrow::before { @apply bg-gold-400; }
   .on-dark .prose-warm { @apply text-white/75; }
   .on-dark .link-underline { @apply text-gold-300; }
+  .on-dark .label { @apply text-white/55; }
+
+  /* Dark-surface button variants. Buttons dropped on a dark band adapt
+     automatically — no per-call-site !important repaints. */
+  .on-dark .btn-secondary {
+    @apply border-white/30 bg-white/10 text-white
+           hover:border-white/50 hover:bg-white/20;
+  }
+  .on-dark .btn-ghost {
+    @apply text-white hover:bg-white/10;
+  }
 }
 
 /* ------------------------------------------------------------------ */

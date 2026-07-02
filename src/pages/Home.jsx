@@ -45,13 +45,13 @@ export default function Home() {
             className="h-full w-full"
             imgClassName="object-[center_30%] md:object-[center_60%]"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/55 to-navy-900/35" />
+            <div className="scrim-hero absolute inset-0" />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-950/55 to-transparent" />
             <div aria-hidden="true" className="grain-layer pointer-events-none absolute inset-0 opacity-[0.07]" />
           </HeroVideo>
         </div>
 
-        <div className="container relative z-10 pb-16 pt-28 sm:pb-20 lg:pb-28">
+        <div className="on-dark container relative z-10 pb-16 pt-28 sm:pb-20 lg:pb-28">
           <span className="chip animate-fade-in">
             <Icon name="mapPin" className="h-4 w-4 text-gold-400" />
             Soma Bay · Hurghada · Red Sea
@@ -70,7 +70,7 @@ export default function Home() {
             <Magnetic className="w-full sm:w-auto">
               <WhatsAppButton size="lg" source="hero" fullWidth className="sm:w-auto" />
             </Magnetic>
-            <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight" className="!border-white/30 !bg-white/10 !text-white backdrop-blur hover:!bg-white/20">
+            <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight">
               View our boats
             </Button>
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:mx-auto lg:max-w-4xl">
+          <div className="mt-12 grid gap-5 lg:mx-auto lg:max-w-4xl">
             {boats.map((boat, i) => (
               <Reveal key={boat.id} delay={i * 70}>
                 <BoatCard boat={boat} layout="row" flag={boat.id === 'one-lucky-lady' ? 'The original' : undefined} />
@@ -146,7 +146,7 @@ export default function Home() {
 
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
               <div>
-                <span className="eyebrow !text-gold-300 before:!bg-gold-400">All-inclusive, honestly</span>
+                <span className="eyebrow">All-inclusive, honestly</span>
                 <h2 className="mt-3 text-balance font-display text-display-sm text-white sm:text-display">
                   The price you see is the price you pay.
                 </h2>
@@ -157,7 +157,7 @@ export default function Home() {
 
                 <ul className="mt-7 flex flex-wrap gap-2.5">
                   {noExtras.map((n) => (
-                    <li key={n} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.04] px-3 py-1.5 text-sm text-white/80">
+                    <li key={n} className="glass inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm text-white/80">
                       <Icon name="close" className="h-3.5 w-3.5 text-gold-400" />
                       {n}
                     </li>
@@ -169,8 +169,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-4xl border border-white/10 bg-white/[0.05] p-6 sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold-300">Included as standard</p>
+              <div className="glass rounded-4xl p-6 sm:p-8">
+                <p className="eyebrow">Included as standard</p>
                 <ul className="mt-5 space-y-4">
                   {inclusionsList.map((inc) => (
                     <li key={inc.title} className="flex gap-3.5">
@@ -179,7 +179,7 @@ export default function Home() {
                       </span>
                       <div>
                         <p className="font-semibold text-white">{inc.title}</p>
-                        <p className="text-sm text-white/65">{inc.desc}</p>
+                        <p className="text-sm text-white/75">{inc.desc}</p>
                       </div>
                     </li>
                   ))}
@@ -209,7 +209,7 @@ export default function Home() {
             align="center"
             className="mx-auto"
           />
-          <div className="mt-10">
+          <div className="mt-12">
             {reviewsPublished && reviews.length ? <ReviewMarquee reviews={reviews} /> : <SocialProof compact />}
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <WhatsAppButton variant="white" size="lg" label="Check availability on WhatsApp" source="final-cta" />
-            <Button to="/boats" variant="ghost" size="lg" className="!text-white hover:!bg-white/10" iconRight="arrowRight">
+            <Button to="/boats" variant="ghost" size="lg" iconRight="arrowRight">
               View boats
             </Button>
           </div>

@@ -6,8 +6,8 @@ const VARIANTS = {
   primary: 'btn-primary',
   secondary: 'btn-secondary',
   ghost: 'btn-ghost',
-  whatsapp: 'btn bg-teal-600 text-white shadow-cta hover:bg-teal-700 hover:-translate-y-0.5 hover:shadow-lift',
-  gold: 'btn bg-gold-500 text-navy-900 shadow-soft hover:bg-gold-400 hover:-translate-y-0.5',
+  whatsapp: 'btn-primary',
+  gold: 'btn-gold',
 }
 const SIZES = { sm: 'btn-sm', md: '', lg: 'btn-lg' }
 

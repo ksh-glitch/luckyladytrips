@@ -11,10 +11,10 @@ function PriceChip({ boat, className = '' }) {
   return (
     <span className={cn('inline-flex flex-col rounded-2xl bg-navy-900/85 px-3 py-1.5 text-white backdrop-blur', className)}>
       <span className="flex items-baseline gap-1">
-        <span className="text-[0.7rem] font-medium uppercase tracking-wider text-white/70">from</span>
+        <span className="text-[0.7rem] font-medium uppercase tracking-wider text-white/75">from</span>
         <span className="font-display text-base leading-none">€{boat.priceFrom}</span>
       </span>
-      <span className="mt-0.5 text-[0.62rem] font-medium leading-tight text-white/70">
+      <span className="mt-0.5 text-[0.62rem] font-medium leading-tight text-white/75">
         whole boat · ≈€{perPerson(boat)}pp
       </span>
     </span>

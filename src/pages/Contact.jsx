@@ -57,7 +57,7 @@ export default function Contact() {
             </div>
 
             <div className="card p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-navy/65">Always included</p>
+              <p className="label">Always included</p>
               <ul className="mt-4 grid grid-cols-1 gap-2.5">
                 {inclusionsStrip.map((it) => (
                   <li key={it.label} className="flex items-center gap-2.5 text-sm text-navy/75">

@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.jsx'
 import SmartImage from '../components/SmartImage.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import Button from '../components/Button.jsx'
+import CtaBand from '../components/CtaBand.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import { Icon } from '../components/icons.jsx'
@@ -156,12 +157,12 @@ export default function Boats() {
       {/* CTA */}
       <section className="section pt-0">
         <div className="container">
-          <div className="on-dark rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12">
+          <CtaBand>
             <SectionHeading align="center" eyebrow="Not sure which boat?" title="Tell us your group. We'll match the boat" intro="Message us your dates and how many you are. We'll recommend the best fit and confirm availability." light className="mx-auto" />
             <div className="mt-8 flex justify-center">
               <WhatsAppButton variant="white" size="lg" source="boats-cta" context="Not sure which boat suits us. Please recommend." />
             </div>
-          </div>
+          </CtaBand>
         </div>
       </section>
     </>

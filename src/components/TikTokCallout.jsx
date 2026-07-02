@@ -40,7 +40,7 @@ export default function TikTokCallout({ source = 'home' }) {
           <div className="relative grid items-center gap-9 lg:grid-cols-[1.4fr_1fr]">
             {/* Copy */}
             <div>
-              <span className="eyebrow !text-gold-300 before:!bg-gold-400">As seen on TikTok</span>
+              <span className="eyebrow">As seen on TikTok</span>
               <h2 className="mt-3 text-balance font-display text-display-sm text-white sm:text-display">
                 You&apos;ve probably already seen us. That&apos;s <span className="whitespace-nowrap text-gold-300">{sean.tiktokSeanName}</span>
               </h2>
@@ -55,7 +55,7 @@ export default function TikTokCallout({ source = 'home' }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackTikTok(`callout:${source}`)}
-                  className="btn bg-white text-navy-900 shadow-cta hover:-translate-y-0.5 hover:shadow-lift"
+                  className="btn-white"
                 >
                   <Icon name="tiktok" className="h-[1.2em] w-[1.2em]" />
                   Follow {sean.tiktokSeanHandle}
@@ -65,7 +65,7 @@ export default function TikTokCallout({ source = 'home' }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackTikTok(`callout-brand:${source}`)}
-                  className="link-underline !text-gold-300 inline-flex items-center gap-1.5 text-sm"
+                  className="link-underline inline-flex items-center gap-1.5 text-sm"
                 >
                   Or the boats&apos; channel @luckyladyeg
                 </a>
@@ -73,7 +73,7 @@ export default function TikTokCallout({ source = 'home' }) {
             </div>
 
             {/* Live-feeling profile card */}
-            <div className="relative overflow-hidden rounded-4xl border border-white/12 bg-white/[0.06] p-5 backdrop-blur-sm">
+            <div className="glass relative overflow-hidden rounded-4xl p-5">
               <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-sheen" />
 
               {/* profile header */}
@@ -132,7 +132,7 @@ export default function TikTokCallout({ source = 'home' }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackTikTok(`callout-card:${source}`)}
-                className="relative mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-navy-900 shadow-cta transition hover:-translate-y-0.5 hover:shadow-lift"
+                className="btn-white relative mt-4 w-full"
               >
                 <Icon name="tiktok" className="h-4 w-4" />
                 Follow {sean.tiktokSeanHandle}

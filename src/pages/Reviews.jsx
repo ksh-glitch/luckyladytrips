@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero.jsx'
 import SocialProof from '../components/SocialProof.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import Button from '../components/Button.jsx'
+import CtaBand from '../components/CtaBand.jsx'
 import { Icon } from '../components/icons.jsx'
 import { site } from '../data/site.js'
 import { localBusinessSchema } from '../lib/schema.js'
@@ -56,14 +57,14 @@ export default function Reviews() {
       {/* CTA */}
       <section className="section pt-0">
         <div className="container">
-          <div className="rounded-5xl bg-navy-900 px-6 py-14 text-center text-white sm:px-12">
+          <CtaBand>
             <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">Plan your own Red Sea day</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">Private, all-inclusive, and priced with nothing hidden. Check availability in a quick message.</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <WhatsAppButton variant="white" size="lg" source="reviews-cta" />
-              <Button to="/boats" variant="ghost" size="lg" className="!text-white hover:!bg-white/10" iconRight="arrowRight">View boats</Button>
+              <Button to="/boats" variant="ghost" size="lg" iconRight="arrowRight">View boats</Button>
             </div>
-          </div>
+          </CtaBand>
         </div>
       </section>
     </>

@@ -48,7 +48,7 @@ export default function StickyMobileCTA() {
           <span className="block text-[0.95rem] font-bold leading-tight">Check availability</span>
           <span className="block truncate text-xs text-white/80">{subtitle}</span>
         </span>
-        <Icon name="arrowRight" className="h-5 w-5 shrink-0 text-white/90" />
+        <Icon name="arrowRight" className="h-5 w-5 shrink-0 text-white" />
       </a>
     </div>
   )
