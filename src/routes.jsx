@@ -8,9 +8,14 @@ import FAQ from './pages/FAQ.jsx'
 import Contact from './pages/Contact.jsx'
 import SEOPage from './pages/SEOPage.jsx'
 import NotFound from './pages/NotFound.jsx'
+import Preview from './pages/Preview.jsx'
 import { seoPageSlugs } from './data/seoPages.js'
 
 export const routes = [
+  // Standalone Riviera homepage preview (noindex). Rendered outside <App /> so
+  // the normal header/footer don't compete with the full-bleed poster design.
+  { path: '/preview', element: <Preview /> },
+  { path: '/preview/riviera', element: <Preview /> },
   {
     path: '/',
     element: <App />,
