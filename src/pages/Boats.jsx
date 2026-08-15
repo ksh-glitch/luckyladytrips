@@ -118,7 +118,7 @@ export default function Boats() {
     <>
       <SEO
         title="Our Boats: One Lucky Lady, Locke Catamaran & Speedboat"
-        description="Three private Red Sea boats: One Lucky Lady (from €250), the 14-guest Locke Catamaran (from €115pp, min 4 guests) and a Speedboat (from €250). All-inclusive private charters from 4 hours."
+        description="Three private Red Sea boats: One Lucky Lady (from €300), the 14-guest Locke Catamaran (from €115pp, min 4 guests) and a Speedboat (from €250). All-inclusive private charters from 4 hours."
         path="/boats"
         schema={[localBusinessSchema(), ...boats.map(boatSchema)]}
       />

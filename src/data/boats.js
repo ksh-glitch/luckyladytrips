@@ -13,7 +13,7 @@ export const boats = [
     positioning: 'The original private Red Sea escape',
     capacity: '4–6 guests',
     capacityMax: 6,
-    priceFrom: 250,
+    priceFrom: 300,
     bestFor: 'Couples, families & small groups',
     uses: ['Snorkelling', 'Relaxing', 'Sunset cruises', 'Private day trips'],
     image: images.hero,

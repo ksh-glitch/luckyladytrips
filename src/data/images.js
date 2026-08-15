@@ -26,6 +26,7 @@ export const images = {
   // People / story (real photography)
   seanJustine: `${base}/sean-justine.webp`,
   seanPortrait: `${base}/sean-portrait.webp`,
+  seanAvatar: `${base}/sean-avatar.webp`, // square face crop of the portrait, for reply badges
   adamCrew: `${base}/adam-crew.webp`,
   justineTiggySunset: `${base}/justine-tiggy-sunset.webp`,
 

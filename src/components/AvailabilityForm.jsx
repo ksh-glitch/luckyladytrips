@@ -4,6 +4,7 @@ import { tripOptions } from '../data/trips.js'
 import { enquiryFromForm, whatsappUrl } from '../lib/whatsapp.js'
 import { trackWhatsApp } from '../lib/analytics.js'
 import { site } from '../data/site.js'
+import { images } from '../data/images.js'
 import { Icon } from './icons.jsx'
 import cn from '../lib/cn.js'
 
@@ -152,16 +153,27 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
         </p>
       )}
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
         <button type="submit" className="btn-primary btn-lg group w-full sm:w-auto">
           <Icon name="whatsapp" className="h-5 w-5" />
           Send on WhatsApp
         </button>
-        <p className="text-sm text-navy/65">
-          {sent
-            ? 'Opening WhatsApp… we’ll reply personally.'
-            : `No deposit yet. This opens a WhatsApp chat with your details ready to send. ${site.reply.time}.`}
-        </p>
+        <div className="flex items-center gap-3">
+          <img
+            src={images.seanAvatar}
+            alt="Sean, your host"
+            width="192"
+            height="192"
+            loading="lazy"
+            decoding="async"
+            className="h-10 w-10 shrink-0 rounded-full object-cover ring-2 ring-teal-600/25"
+          />
+          <p className="text-sm text-navy/65">
+            {sent
+              ? 'Opening WhatsApp… we’ll reply personally.'
+              : `No deposit yet. This opens a WhatsApp chat with your details ready to send. ${site.reply.time}.`}
+          </p>
+        </div>
       </div>
     </form>
   )

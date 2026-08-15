@@ -12,6 +12,7 @@ import SocialProof from '../components/SocialProof.jsx'
 import ReviewMarquee from '../components/ReviewMarquee.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
+import ReplyBadge from '../components/ReplyBadge.jsx'
 import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { Icon } from '../components/icons.jsx'
@@ -86,11 +87,8 @@ export default function Home() {
             />
           </p>
 
-          <div className="mt-5 flex flex-col gap-2 text-sm font-medium text-white/75 sm:flex-row sm:items-center sm:gap-5">
-            <span className="inline-flex items-center gap-2">
-              <Icon name="whatsapp" className="h-4 w-4 text-gold-400" />
-              {site.reply.time}
-            </span>
+          <div className="mt-5 flex flex-col gap-3 text-sm font-medium text-white/75 sm:flex-row sm:items-center sm:gap-6">
+            <ReplyBadge light />
             <span className="inline-flex items-center gap-2">
               <Icon name="tag" className="h-4 w-4 text-gold-400" />
               The price you see is the price you pay.
