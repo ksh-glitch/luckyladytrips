@@ -347,7 +347,7 @@ const TT_FEED = [
 
 // A graded real still for each trip card (all real Red Sea photography).
 const TRIP_IMG = {
-  'private-day-trips': images.oneLuckyLadySomabay,
+  'private-day-trips': images.oneLuckyLadyBeach,
   'snorkelling-trips': images.oneLuckyLady,
   'fishing-trips': images.oneLuckyLadyMarina,
   'sunset-cruises': images.justineTiggySunset,
@@ -524,7 +524,7 @@ export default function RivieraHome() {
 
       {/* ---------------- all-inclusive promise ---------------- */}
       <section className="sec promise">
-        <img className="pbg" src={images.oneLuckyLadySomabay} alt="" aria-hidden="true" loading="lazy" />
+        <img className="pbg" src={images.oneLuckyLadyBeach} alt="" aria-hidden="true" loading="lazy" />
         <div className="psun" />
         <div className="grain" />
         <div className="wrap inner">

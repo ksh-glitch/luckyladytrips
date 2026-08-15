@@ -19,6 +19,7 @@ export const site = {
   // Honest reassurance shown beside the primary CTAs (answers "will a real
   // person reply quickly?" at the moment of decision). Edit freely.
   reply: {
+    lead: 'Message Sean directly',
     time: 'Usually replies within a few hours',
     meta: 'Sean & the crew · Soma Bay (EET)',
   },

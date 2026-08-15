@@ -3,8 +3,7 @@ import { boatOptions } from '../data/boats.js'
 import { tripOptions } from '../data/trips.js'
 import { enquiryFromForm, whatsappUrl } from '../lib/whatsapp.js'
 import { trackWhatsApp } from '../lib/analytics.js'
-import { site } from '../data/site.js'
-import { images } from '../data/images.js'
+import ReplyBadge from './ReplyBadge.jsx'
 import { Icon } from './icons.jsx'
 import cn from '../lib/cn.js'
 
@@ -158,23 +157,14 @@ export default function AvailabilityForm({ initialBoat = boatOptions[0], initial
           <Icon name="whatsapp" className="h-5 w-5" />
           Send on WhatsApp
         </button>
-        <div className="flex items-center gap-3">
-          <img
-            src={images.seanAvatar}
-            alt="Sean, your host"
-            width="192"
-            height="192"
-            loading="lazy"
-            decoding="async"
-            className="h-10 w-10 shrink-0 rounded-full object-cover ring-2 ring-teal-600/25"
-          />
-          <p className="text-sm text-navy/65">
-            {sent
-              ? 'Opening WhatsApp… we’ll reply personally.'
-              : `No deposit yet. This opens a WhatsApp chat with your details ready to send. ${site.reply.time}.`}
-          </p>
-        </div>
+        <ReplyBadge />
       </div>
+
+      <p className="mt-3 text-sm text-navy/65">
+        {sent
+          ? 'Opening WhatsApp… we’ll reply personally.'
+          : 'No deposit yet. This opens a WhatsApp chat with your details ready to send.'}
+      </p>
     </form>
   )
 }

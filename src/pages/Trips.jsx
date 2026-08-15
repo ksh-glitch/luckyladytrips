@@ -1,5 +1,6 @@
 import SEO from '../components/SEO.jsx'
 import PageHero from '../components/PageHero.jsx'
+import SmartImage from '../components/SmartImage.jsx'
 import TripTypeCard from '../components/TripTypeCard.jsx'
 import AnatomyOfADay from '../components/AnatomyOfADay.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
@@ -8,6 +9,7 @@ import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { Icon } from '../components/icons.jsx'
 import { trips } from '../data/trips.js'
+import { images } from '../data/images.js'
 import { localBusinessSchema } from '../lib/schema.js'
 
 const steps = [
@@ -44,6 +46,42 @@ export default function Trips() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* What you actually see once you're in — the reefs we run to */}
+      <section className="section bg-white/50 pt-0">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Under the surface"
+            title="The reefs you'll actually be swimming over"
+            intro="Gear is on board for everyone, and we pick the stops for water clarity rather than convenience. This is the Red Sea a few minutes off our anchorages."
+          />
+          <Reveal>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <figure className="overflow-hidden rounded-4xl shadow-card">
+                <SmartImage
+                  src={images.reefFreediver}
+                  alt="Freediver gliding between two coral pillars in clear blue water, surrounded by shoals of orange anthias"
+                  className="aspect-[4/5] w-full"
+                />
+              </figure>
+              <figure className="overflow-hidden rounded-4xl shadow-card">
+                <SmartImage
+                  src={images.snorkelling}
+                  alt="Sunlit shallow reef with hard corals and reef fish, seen from just below the surface"
+                  className="aspect-[4/5] w-full"
+                />
+              </figure>
+              <figure className="overflow-hidden rounded-4xl shadow-card sm:col-span-2 lg:col-span-1">
+                <SmartImage
+                  src={images.reefClownfish}
+                  alt="Red Sea clownfish hovering above its anemone on the reef"
+                  className="aspect-[4/5] w-full sm:aspect-[16/9] lg:aspect-[4/5]"
+                />
+              </figure>
+            </div>
+          </Reveal>
         </div>
       </section>
 

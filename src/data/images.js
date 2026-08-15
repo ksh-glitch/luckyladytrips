@@ -9,7 +9,9 @@ const base = '/assets'
 
 export const images = {
   // Hero / One Lucky Lady (real photography)
-  hero: `${base}/hero-one-lucky-lady.webp`,
+  // Owned, watermark-free. The old `hero-one-lucky-lady.webp` carried a borrowed
+  // "Simply Somabay" watermark — do not point the hero back at it.
+  hero: `${base}/one-lucky-lady-deck.webp`,
   // Optional cinematic hero loop (One Lucky Lady underway, graded). When a real
   // ~2-5MB muted loop exists at /public/assets, point this at it and the hero
   // upgrades automatically (poster stays the LCP element). Keep null until then.
@@ -17,6 +19,7 @@ export const images = {
   oneLuckyLady: `${base}/one-lucky-lady.webp`,
   oneLuckyLadyDeck: `${base}/one-lucky-lady-deck.webp`,
   oneLuckyLadyMarina: `${base}/one-lucky-lady-marina.webp`,
+  // WATERMARKED ("Simply Somabay") — borrowed, not ours. Unused; do not re-add.
   oneLuckyLadySomabay: `${base}/one-lucky-lady-somabay.webp`,
   oneLuckyLadyNight: `${base}/one-lucky-lady-night.webp`,
   oneLuckyLadyBeach: `${base}/one-lucky-lady-beach.webp`,

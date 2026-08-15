@@ -7,10 +7,10 @@ import { images } from './images.js'
 // ---------------------------------------------------------------------------
 
 const meta = {
-  "soma-bay-boat-trips": { image: images.oneLuckyLadySomabay, imageAlt: "One Lucky Lady moored at Soma Bay marina with the Red Sea behind", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
+  "soma-bay-boat-trips": { image: images.oneLuckyLadyBeach, imageAlt: "One Lucky Lady moored at Soma Bay marina with the Red Sea behind", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
   "hurghada-private-boat-trips": { image: images.oneLuckyLadyMarina, imageAlt: "Private boat resting on calm turquoise water near the Hurghada coast", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
   "red-sea-catamaran-charter": { image: images.seanJustine, imageAlt: "Guests relaxing on the spacious bow of a Red Sea charter for groups", bestBoats: ["locke-catamaran","one-lucky-lady"] },
-  "soma-bay-snorkelling-trips": { image: images.oneLuckyLadyDeck, imageAlt: "Boat deck and bow on calm water at a quiet Soma Bay snorkelling reef", bestBoats: ["one-lucky-lady","private-speedboat"] },
+  "soma-bay-snorkelling-trips": { image: images.snorkelling, imageAlt: "Sunlit Red Sea reef with hard corals and shoals of fish, seen from just below the surface", bestBoats: ["one-lucky-lady","private-speedboat"] },
   "hurghada-fishing-trips": { image: images.oneLuckyLady, imageAlt: "Stern of the boat ready for a private Red Sea fishing day off Hurghada", bestBoats: ["private-speedboat","one-lucky-lady"] },
   "red-sea-overnight-boat-trips": { image: images.oneLuckyLadyNight, imageAlt: "Boat lit with soft deck lighting at anchor under the night sky", bestBoats: ["locke-catamaran"] },
   "all-inclusive-boat-trips-hurghada": { image: images.hero, imageAlt: "All-inclusive private boat day on the Red Sea, fully arranged", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },

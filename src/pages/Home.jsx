@@ -44,7 +44,7 @@ export default function Home() {
             src={images.heroVideo}
             alt="One Lucky Lady private boat on the turquoise Red Sea at Soma Bay in golden afternoon light"
             className="h-full w-full"
-            imgClassName="object-[center_30%] md:object-[center_60%]"
+            imgClassName="object-[center_45%] md:object-[center_55%]"
           >
             <div className="scrim-hero absolute inset-0" />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-950/55 to-transparent" />
@@ -87,8 +87,8 @@ export default function Home() {
             />
           </p>
 
-          <div className="mt-5 flex flex-col gap-3 text-sm font-medium text-white/75 sm:flex-row sm:items-center sm:gap-6">
-            <ReplyBadge light />
+          <div className="mt-6 flex flex-col items-start gap-4 text-sm font-medium text-white/75 sm:flex-row sm:items-center sm:gap-6">
+            <ReplyBadge light source="hero" />
             <span className="inline-flex items-center gap-2">
               <Icon name="tag" className="h-4 w-4 text-gold-400" />
               The price you see is the price you pay.

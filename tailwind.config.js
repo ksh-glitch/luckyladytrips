@@ -95,12 +95,18 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(-8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        // Expanding halo behind the "online" dot on the reply badge.
+        'live-ping': {
+          '0%': { transform: 'scale(1)', opacity: '0.65' },
+          '75%, 100%': { transform: 'scale(2.4)', opacity: '0' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.7s cubic-bezier(0.22,1,0.36,1) both',
         'fade-in': 'fade-in 0.8s ease both',
         'menu-in': 'menu-in 0.28s cubic-bezier(0.22,1,0.36,1) both',
         'sheen': 'sheen 3.6s cubic-bezier(0.4,0,0.2,1) infinite',
+        'live-ping': 'live-ping 2.2s cubic-bezier(0,0,0.2,1) infinite',
       },
     },
   },
