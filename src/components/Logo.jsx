@@ -7,10 +7,10 @@ import cn from '../lib/cn.js'
 // reserves the correct aspect-ratio box (no layout shift on load) and stops the
 // logo looking slightly squished/offset.
 const VARIANTS = {
-  color: { src: images.logoPrimary, w: 2172, h: 724 },
+  color: { src: images.logoPrimary, w: 720, h: 240 },
   // logo 51 has a white-filled wordmark + keyline, so the same lockup reads on the
   // dark footer too — no separate mono version needed.
-  white: { src: images.logoPrimary, w: 2172, h: 724 },
+  white: { src: images.logoPrimary, w: 720, h: 240 },
   navy: { src: images.logoNavy, w: 153, h: 130 },
   emblem: { src: images.logoEmblem, w: 245, h: 256 },
 }

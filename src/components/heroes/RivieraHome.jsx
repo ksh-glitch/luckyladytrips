@@ -5,7 +5,7 @@ import { whatsappUrl, enquiryFor } from '../../lib/whatsapp.js'
 import { trackWhatsApp, trackTikTok } from '../../lib/analytics.js'
 import { site, nav, footerExplore } from '../../data/site.js'
 import { images } from '../../data/images.js'
-import { boats } from '../../data/boats.js'
+import { boats, priceParts } from '../../data/boats.js'
 import { trips } from '../../data/trips.js'
 import { inclusionsStrip, inclusionsList, noExtras } from '../../data/inclusions.js'
 import { faqs } from '../../data/faqs.js'
@@ -508,7 +508,7 @@ export default function RivieraHome() {
                   <p className="tag">{b.tagline}</p>
                   <div className="meta">
                     <span className="pill">{b.capacity}</span>
-                    <span className="price">from €{b.priceFrom} <small>/ boat</small></span>
+                    <span className="price">from €{priceParts(b).amount} <small>{priceParts(b).perPerson ? '/ person · min 4' : '/ boat'}</small></span>
                   </div>
                   <p className="best">{b.bestFor}</p>
                   <div className="act">

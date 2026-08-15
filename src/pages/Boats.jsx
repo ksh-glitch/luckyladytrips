@@ -8,7 +8,7 @@ import CtaBand from '../components/CtaBand.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
 import { Icon } from '../components/icons.jsx'
-import { boats, perPerson } from '../data/boats.js'
+import { boats, priceParts } from '../data/boats.js'
 import { localBusinessSchema, boatSchema } from '../lib/schema.js'
 import cn from '../lib/cn.js'
 
@@ -67,9 +67,9 @@ function BoatDetail({ boat, index }) {
             <div className="rounded-2xl border border-sand-200 bg-white/70 p-4">
               <dt className="text-xs font-semibold uppercase tracking-wide text-navy/65">From</dt>
               <dd className="mt-1 font-display text-lg text-navy">
-                €{boat.priceFrom}<span className="text-sm font-sans text-navy/65"> / day</span>
+                €{priceParts(boat).amount}{priceParts(boat).perPerson && 'pp'}<span className="text-sm font-sans text-navy/65"> · from 4 hrs</span>
                 <span className="mt-0.5 block font-sans text-xs font-normal text-navy/55">
-                  whole boat, up to {boat.capacityMax} · ≈€{perPerson(boat)}pp
+                  {priceParts(boat).noteLong}
                 </span>
               </dd>
             </div>
@@ -118,7 +118,7 @@ export default function Boats() {
     <>
       <SEO
         title="Our Boats: One Lucky Lady, Locke Catamaran & Speedboat"
-        description="Three private Red Sea boats: One Lucky Lady (from €250), the 14-guest Locke Catamaran (from €450) and a Speedboat (from €150). All-inclusive private charters."
+        description="Three private Red Sea boats: One Lucky Lady (from €250), the 14-guest Locke Catamaran (from €115pp, min 4 guests) and a Speedboat (from €250). All-inclusive private charters from 4 hours."
         path="/boats"
         schema={[localBusinessSchema(), ...boats.map(boatSchema)]}
       />
@@ -138,7 +138,7 @@ export default function Boats() {
           {boats.map((b) => (
             <a key={b.id} href={`#${b.id}`} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-sand-100 px-4 py-2 text-sm font-medium text-navy/75 transition hover:text-teal-700">
               {b.name}
-              <span className="text-navy/65">€{b.priceFrom}+</span>
+              <span className="text-navy/65">€{priceParts(b).amount}{priceParts(b).perPerson ? 'pp' : '+'}</span>
             </a>
           ))}
         </div>

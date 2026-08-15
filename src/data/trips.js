@@ -41,7 +41,7 @@ export const trips = [
     icon: 'anchor',
     bestFor: 'Anglers & curious beginners',
     blurb:
-      'Out early to the marks for trolling and bottom fishing. Tackle, bait and a crew who know the water.',
+      'Out early to the marks for trolling and bottom fishing, customised to your liking. Tackle, bait and a crew who know the water.',
     formValue: 'Fishing trip',
     beats: [
       { time: 'Early', label: 'Out before the rest', body: 'An early pickup and a fast run to the marks while the water is glassy and still.' },

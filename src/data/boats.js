@@ -19,6 +19,9 @@ export const boats = [
     image: images.hero,
     imageAlt: 'One Lucky Lady private boat moored in the turquoise water at Soma Bay marina',
     gallery: [
+      { src: images.oneLuckyLadyBeach, alt: 'One Lucky Lady moored on turquoise water with the beach behind' },
+      { src: images.oneLuckyLadyBow, alt: 'One Lucky Lady bow sun pads over clear turquoise water' },
+      { src: images.oneLuckyLadyCockpit, alt: 'One Lucky Lady cockpit with quilted seating and teak-style deck' },
       { src: images.oneLuckyLady, alt: 'One Lucky Lady stern with cushioned deck seating' },
       { src: images.oneLuckyLadyDeck, alt: 'One Lucky Lady bow and helm in golden afternoon light' },
       { src: images.oneLuckyLadyNight, alt: 'One Lucky Lady lit up with blue deck lighting after dark' },
@@ -43,13 +46,20 @@ export const boats = [
     capacity: 'Up to 14 guests',
     capacityMax: 14,
     rooms: 4,
-    priceFrom: 450,
+    // Catamaran is priced per person: €115pp with a 4-guest minimum.
+    // priceFrom stays as the minimum charter total (4 × €115) for schema/quick-nav.
+    pricePerPerson: 115,
+    minGuests: 4,
+    priceFrom: 460,
     bestFor: 'Larger groups, families & celebrations',
     uses: ['Group day trips', 'Celebrations', 'Custom charters', 'Overnight escapes'],
     image: images.lockeCatamaran,
-    imageAlt: 'The Locke Catamaran, a spacious multi-deck catamaran for up to 14 guests',
-    gallery: [],
-    hasRealPhoto: false,
+    imageAlt: 'The Locke Catamaran under sail on calm water at golden hour',
+    gallery: [
+      { src: images.lockeCatamaranSaloon, alt: 'Locke Catamaran saloon with dining table set for six and sea views all round' },
+      { src: images.lockeCatamaranSailing, alt: 'The Locke Catamaran under full sail with the sun behind the sails' },
+    ],
+    hasRealPhoto: true,
     dayAboard:
       'Room for the whole party. Two hulls, four cabins and decks wide enough to spread right out. This is the boat for the birthday that runs late, the family that travels deep, and the night that drifts into sunrise at anchor.',
     blurb:
@@ -68,7 +78,7 @@ export const boats = [
     positioning: 'Fast, private, built for adventure',
     capacity: '4–6 guests',
     capacityMax: 6,
-    priceFrom: 150,
+    priceFrom: 250,
     bestFor: 'Anglers & quick private runs',
     uses: ['Fishing trips', 'Quick escapes', 'Snorkelling stops', 'Fast Red Sea runs'],
     image: images.privateSpeedboat,
@@ -99,6 +109,27 @@ export const boatOptions = [
 ]
 
 // Per-person equivalent of the whole-boat "from" price. Used to clarify that
-// e.g. €450 is the whole boat (up to 14), not a per-head rate. Derived so it
-// stays correct if a price or capacity changes.
-export const perPerson = (boat) => Math.round(boat.priceFrom / boat.capacityMax)
+// a whole-boat price is not a per-head rate. Boats priced per person
+// (pricePerPerson) return that rate directly. Derived so it stays correct if
+// a price or capacity changes.
+export const perPerson = (boat) => boat.pricePerPerson ?? Math.round(boat.priceFrom / boat.capacityMax)
+
+// All trips start at 4 hours; longer days and overnights are arranged on request.
+export const tripBasis = 'from 4 hours'
+
+// Normalised price display for cards/chips: headline amount, whether it's a
+// per-person rate, and the clarifying note that prevents misreading it.
+export const priceParts = (boat) =>
+  boat.pricePerPerson
+    ? {
+        amount: boat.pricePerPerson,
+        perPerson: true,
+        note: `per person · min ${boat.minGuests} guests`,
+        noteLong: `per person, minimum ${boat.minGuests} guests`,
+      }
+    : {
+        amount: boat.priceFrom,
+        perPerson: false,
+        note: `whole boat · ≈€${perPerson(boat)}pp`,
+        noteLong: `whole boat, up to ${boat.capacityMax} · ≈€${perPerson(boat)}pp`,
+      }

@@ -2,20 +2,21 @@ import { Link, useViewTransitionState } from 'react-router-dom'
 import SmartImage from './SmartImage.jsx'
 import { Icon } from './icons.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
-import { perPerson } from '../data/boats.js'
+import { priceParts } from '../data/boats.js'
 import cn from '../lib/cn.js'
 
-// Price chip clarifies that the "from" price is for the WHOLE boat (not per head)
-// and shows the per-person equivalent, so €450 isn't misread as a per-person rate.
+// Price chip clarifies whether the "from" price is for the whole boat or per
+// person, so a whole-boat price isn't misread as a per-head rate (and vice versa).
 function PriceChip({ boat, className = '' }) {
+  const price = priceParts(boat)
   return (
     <span className={cn('inline-flex flex-col rounded-2xl bg-navy-900/85 px-3 py-1.5 text-white backdrop-blur', className)}>
       <span className="flex items-baseline gap-1">
         <span className="text-[0.7rem] font-medium uppercase tracking-wider text-white/75">from</span>
-        <span className="font-display text-base leading-none">€{boat.priceFrom}</span>
+        <span className="font-display text-base leading-none">€{price.amount}{price.perPerson && 'pp'}</span>
       </span>
       <span className="mt-0.5 text-[0.62rem] font-medium leading-tight text-white/75">
-        whole boat · ≈€{perPerson(boat)}pp
+        {price.note}
       </span>
     </span>
   )
@@ -124,9 +125,9 @@ export default function BoatCard({ boat, layout = 'row', flag }) {
               <Icon name="arrowRight" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
             <span className="text-right text-sm leading-tight text-navy/65">
-              <span className="font-display text-lg text-navy">€{boat.priceFrom}</span> / day
+              from <span className="font-display text-lg text-navy">€{priceParts(boat).amount}</span>{priceParts(boat).perPerson && 'pp'} · 4 hrs+
               <span className="block text-[0.7rem] text-navy/55">
-                whole boat, up to {boat.capacityMax} · ≈€{perPerson(boat)}pp
+                {priceParts(boat).noteLong}
               </span>
             </span>
           </div>

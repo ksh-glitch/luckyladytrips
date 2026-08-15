@@ -19,6 +19,9 @@ export const images = {
   oneLuckyLadyMarina: `${base}/one-lucky-lady-marina.webp`,
   oneLuckyLadySomabay: `${base}/one-lucky-lady-somabay.webp`,
   oneLuckyLadyNight: `${base}/one-lucky-lady-night.webp`,
+  oneLuckyLadyBeach: `${base}/one-lucky-lady-beach.webp`,
+  oneLuckyLadyBow: `${base}/one-lucky-lady-bow.webp`,
+  oneLuckyLadyCockpit: `${base}/one-lucky-lady-cockpit.webp`,
 
   // People / story (real photography)
   seanJustine: `${base}/sean-justine.webp`,
@@ -26,15 +29,22 @@ export const images = {
   adamCrew: `${base}/adam-crew.webp`,
   justineTiggySunset: `${base}/justine-tiggy-sunset.webp`,
 
-  // Boats awaiting their own photos — drop these files in to replace placeholders:
-  //   /public/assets/locke-catamaran.webp
+  // Locke Catamaran (real photography — Bali catamaran)
+  lockeCatamaran: `${base}/locke-catamaran.webp`, // 4:3 crop of the sailing shot
+  lockeCatamaranSailing: `${base}/locke-catamaran-sailing.webp`, // full portrait under sail
+  lockeCatamaranSaloon: `${base}/locke-catamaran-saloon.webp`, // saloon dining with sea view
+
+  // Speedboat awaiting its own photo — drop this file in to replace the placeholder:
   //   /public/assets/private-speedboat.webp
-  lockeCatamaran: `${base}/locke-catamaran.webp`,
   privateSpeedboat: `${base}/private-speedboat.webp`,
+
+  // Reef / snorkelling (real photography, local reefs)
+  snorkelling: `${base}/snorkelling-red-sea.webp`, // sunlit reef panorama with fish
+  reefClownfish: `${base}/reef-clownfish.webp`,
+  reefFreediver: `${base}/reef-freediver.webp`,
 
   // Optional supporting photos (drop in to replace placeholders):
   foodOnBoard: `${base}/food-on-board.webp`,
-  snorkelling: `${base}/snorkelling-red-sea.webp`,
   cabin: `${base}/cabin-or-room.webp`,
 
   // Brand

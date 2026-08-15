@@ -12,6 +12,10 @@ export const faqs = [
     a: 'Always. Every trip is a private charter for you and your group only. We never put you on a shared or group tourist boat, and there is no fixed timetable. The day runs at your pace.',
   },
   {
+    q: 'How long is a trip?',
+    a: 'Every trip starts at 4 hours, and from there it is up to you: a half day, a full day, a sunset run or an overnight escape. Tell us how long you would like on the water and we will build the day around it.',
+  },
+  {
     q: 'Where do you pick up from?',
     a: 'We collect you from your hotel across Soma Bay and Hurghada and drop you back afterwards. Tell us where you are staying and we will arrange the rest.',
   },

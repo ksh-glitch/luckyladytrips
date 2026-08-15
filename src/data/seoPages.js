@@ -58,7 +58,7 @@ const content = {
       },
       {
         "heading": "Three boats, one private day",
-        "body": "Pick the boat that fits your group. One Lucky Lady takes 4 to 6 guests from EUR 250, made for couples and small families who want a relaxed private day. The Locke Catamaran carries up to 14 across four cabins from EUR 450, built for larger groups, celebrations and overnight escapes. The Private Speedboat takes 4 to 6 from EUR 150 for fishing trips, quick snorkelling stops and fast runs out from the marina.\n\nNot sure which suits you? Message us on WhatsApp and we'll talk it through."
+        "body": "Pick the boat that fits your group. One Lucky Lady takes 4 to 6 guests from EUR 250, made for couples and small families who want a relaxed private day. The Locke Catamaran carries up to 14 across four cabins from EUR 115 per person (minimum 4 guests), built for larger groups, celebrations and overnight escapes. The Private Speedboat takes 4 to 6 from EUR 250 for fishing trips, quick snorkelling stops and fast runs out from the marina. Every trip starts at 4 hours and stretches as far as you like.\n\nNot sure which suits you? Message us on WhatsApp and we'll talk it through."
       }
     ],
     "faqs": [
@@ -124,7 +124,7 @@ const content = {
       },
       {
         "heading": "Where we go, and what is already included",
-        "body": "From Hurghada we run out to Giftun Island, the shallow water at Orange Bay, the sandbar at Mahmya, and the reefs around Abu Ramada, where you might cross paths with trevally or a passing barracuda. Snorkelling gear and towels are on board, the food and drinks are sorted, and fuel and crew are part of the price, not a line added at the end.\n\nThree boats give you the right fit. One Lucky Lady suits couples and small groups, from EUR 250. The Locke Catamaran has four cabins for up to fourteen guests, from EUR 450. The private speedboat is built for fast runs and fishing, from EUR 150. Send your group and dates on WhatsApp and we will tell you what works."
+        "body": "From Hurghada we run out to Giftun Island, the shallow water at Orange Bay, the sandbar at Mahmya, and the reefs around Abu Ramada, where you might cross paths with trevally or a passing barracuda. Snorkelling gear and towels are on board, the food and drinks are sorted, and fuel and crew are part of the price, not a line added at the end.\n\nThree boats give you the right fit. One Lucky Lady suits couples and small groups, from EUR 250. The Locke Catamaran has four cabins for up to fourteen guests, from EUR 115 per person with a minimum of four. The private speedboat is built for fast runs and fishing, from EUR 250. Send your group and dates on WhatsApp and we will tell you what works."
       }
     ],
     "faqs": [
@@ -142,7 +142,7 @@ const content = {
       },
       {
         "q": "What does it cost, and are there hidden fees?",
-        "a": "Prices start from EUR 150 for the speedboat, EUR 250 for One Lucky Lady and EUR 450 for the Locke Catamaran. The price you see is the price you pay. No surprise add-ons, no photographer pressure, no extras sprung on you at sea."
+        "a": "Prices start from EUR 250 for the speedboat, EUR 250 for One Lucky Lady and EUR 115 per person (minimum 4 guests) for the Locke Catamaran, with every trip starting at 4 hours. The price you see is the price you pay. No surprise add-ons, no photographer pressure, no extras sprung on you at sea."
       },
       {
         "q": "How do we book and check availability?",
@@ -194,7 +194,7 @@ const content = {
       },
       {
         "heading": "One price, no surprises",
-        "body": "The Locke starts from EUR 450 for the whole boat, and the price you see is the price you pay. No hidden fees, no surprise add-ons, no photographer trailing you for paid prints, no tourist-trap extras at the end of the day.\n\nThat's the point of going private and all-inclusive: you know the cost before you step aboard, and everything that matters is already in it."
+        "body": "The Locke starts from EUR 115 per person with a minimum of four guests, and the price you see is the price you pay. No hidden fees, no surprise add-ons, no photographer trailing you for paid prints, no tourist-trap extras at the end of the day.\n\nThat's the point of going private and all-inclusive: you know the cost before you step aboard, and everything that matters is already in it."
       }
     ],
     "faqs": [
@@ -208,7 +208,7 @@ const content = {
       },
       {
         "q": "What's included in the price?",
-        "a": "Everything: resort pickup and drop-off, food, drinks, snorkelling gear, towels, fuel and a full crew. From EUR 450 for the boat, and the price you see is the price you pay. No add-ons or pressure on the day."
+        "a": "Everything: resort pickup and drop-off, food, drinks, snorkelling gear, towels, fuel and a full crew. From EUR 115 per person with a minimum of four guests, and the price you see is the price you pay. No add-ons or pressure on the day."
       },
       {
         "q": "Where does the catamaran depart from, and what if the weather turns?",
@@ -282,7 +282,7 @@ const content = {
       },
       {
         "q": "How much does a Soma Bay snorkelling trip cost, and how do I book?",
-        "a": "Private day trips start from EUR 250 on One Lucky Lady, with the speedboat from EUR 150 and the Locke Catamaran for larger groups from EUR 450. The price you see is the price you pay: pickup, food, drinks, gear and crew included. Message us on WhatsApp with your dates and group size to check availability."
+        "a": "Private day trips start from EUR 250 on One Lucky Lady, with the speedboat from EUR 250 and the Locke Catamaran for larger groups from EUR 115 per person (minimum 4 guests). Every trip starts at 4 hours. The price you see is the price you pay: pickup, food, drinks, gear and crew included. Message us on WhatsApp with your dates and group size to check availability."
       }
     ],
     "cta": {
@@ -340,7 +340,7 @@ const content = {
       },
       {
         "q": "What's included in the price?",
-        "a": "Hotel or resort pickup and drop-off, fuel, rods and tackle, food, cold drinks, towels, snorkelling gear and a full crew. The price you see is the price you pay, with no surcharges at the dock. Private speedboat fishing starts from EUR 150."
+        "a": "Hotel or resort pickup and drop-off, fuel, rods and tackle, food, cold drinks, towels, snorkelling gear and a full crew. The price you see is the price you pay, with no surcharges at the dock. Private speedboat fishing starts from EUR 250, runs from 4 hours, and every trip is customised to your liking."
       },
       {
         "q": "Do I need fishing experience?",
@@ -402,7 +402,7 @@ const content = {
     "faqs": [
       {
         "q": "How many people can sleep aboard on an overnight trip?",
-        "a": "The Locke Catamaran has four cabins and sleeps up to 14, so it suits a couple wanting space or a larger group or family travelling together. Every overnight is private to your group only. Overnight charters on the Locke start from EUR 450, and we will quote your exact dates on WhatsApp."
+        "a": "The Locke Catamaran has four cabins and sleeps up to 14, so it suits a couple wanting space or a larger group or family travelling together. Every overnight is private to your group only. Day charters on the Locke start from EUR 115 per person (minimum 4 guests), and we will quote your exact overnight dates on WhatsApp."
       },
       {
         "q": "Where does the boat anchor for the night?",
@@ -528,7 +528,7 @@ const content = {
       },
       {
         "heading": "Three boats, one all-inclusive standard",
-        "body": "One Lucky Lady is the original private Red Sea escape, sized for 4 to 6 guests and made for couples, families and slow snorkelling days, from EUR 250. The Locke Catamaran takes up to 14 guests across four cabins, stable and roomy for groups, celebrations and overnight escapes, from EUR 450. The Private Speedboat is fast and private, built for fishing, quick escapes and snorkelling stops, from EUR 150.\n\nWhichever you pick, the standard holds. Hotel pickup and drop-off, food, drinks, snorkelling gear, towels, fuel and a full crew, all included. The price you see is the price you pay."
+        "body": "One Lucky Lady is the original private Red Sea escape, sized for 4 to 6 guests and made for couples, families and slow snorkelling days, from EUR 250. The Locke Catamaran takes up to 14 guests across four cabins, stable and roomy for groups, celebrations and overnight escapes, from EUR 115 per person with a minimum of four. The Private Speedboat is fast and private, built for fishing, quick escapes and snorkelling stops, from EUR 250.\n\nWhichever you pick, the standard holds. Hotel pickup and drop-off, food, drinks, snorkelling gear, towels, fuel and a full crew, all included. The price you see is the price you pay."
       },
       {
         "heading": "Local waters we know well",
@@ -546,7 +546,7 @@ const content = {
       },
       {
         "q": "Which of the three boats should I choose?",
-        "a": "It depends on your group and your plans. One Lucky Lady (4 to 6 guests, from EUR 250) suits couples and families. The Locke Catamaran (up to 14 guests, four cabins, from EUR 450) is made for larger groups, celebrations and overnight escapes. The Private Speedboat (4 to 6 guests, from EUR 150) is best for fishing and fast private runs."
+        "a": "It depends on your group and your plans. One Lucky Lady (4 to 6 guests, from EUR 250) suits couples and families. The Locke Catamaran (up to 14 guests, four cabins, from EUR 115 per person, minimum 4) is made for larger groups, celebrations and overnight escapes. The Private Speedboat (4 to 6 guests, from EUR 250) is best for fishing and fast private runs."
       },
       {
         "q": "What happens if the weather turns?",
