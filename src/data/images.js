@@ -33,14 +33,19 @@ export const images = {
   adamCrew: `${base}/adam-crew.webp`,
   justineTiggySunset: `${base}/justine-tiggy-sunset.webp`,
 
-  // Locke Catamaran (real photography — Bali catamaran)
+  // Locke Catamaran. The -foredeck/-sunpads stills are frames from the owner's
+  // own video of the boat; -sailing/-saloon came from the manufacturer/charter
+  // set (branded "BALI" sails), so prefer the owned stills where one will do.
   lockeCatamaran: `${base}/locke-catamaran.webp`, // 4:3 crop of the sailing shot
-  lockeCatamaranSailing: `${base}/locke-catamaran-sailing.webp`, // full portrait under sail
-  lockeCatamaranSaloon: `${base}/locke-catamaran-saloon.webp`, // saloon dining with sea view
+  lockeCatamaranSailing: `${base}/locke-catamaran-sailing.webp`,
+  lockeCatamaranSaloon: `${base}/locke-catamaran-saloon.webp`,
+  lockeCatamaranForedeck: `${base}/locke-catamaran-foredeck.webp`,
+  lockeCatamaranSunpads: `${base}/locke-catamaran-sunpads.webp`,
 
-  // Speedboat awaiting its own photo — drop this file in to replace the placeholder:
-  //   /public/assets/private-speedboat.webp
+  // Private Speedboat — RIB with twin Yamaha 200s. Stills from the owner's video.
   privateSpeedboat: `${base}/private-speedboat.webp`,
+  privateSpeedboatBow: `${base}/private-speedboat-bow.webp`,
+  privateSpeedboatEngines: `${base}/private-speedboat-engines.webp`,
 
   // Reef / snorkelling (real photography, local reefs)
   snorkelling: `${base}/snorkelling-red-sea.webp`, // sunlit reef panorama with fish

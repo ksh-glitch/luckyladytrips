@@ -56,8 +56,10 @@ export const boats = [
     image: images.lockeCatamaran,
     imageAlt: 'The Locke Catamaran under sail on calm water at golden hour',
     gallery: [
-      { src: images.lockeCatamaranSaloon, alt: 'Locke Catamaran saloon with dining table set for six and sea views all round' },
-      { src: images.lockeCatamaranSailing, alt: 'The Locke Catamaran under full sail with the sun behind the sails' },
+      { src: images.lockeCatamaranForedeck, alt: 'The Locke Catamaran’s foredeck lounge with sun pads and a table, moored in the marina' },
+      { src: images.lockeCatamaranSunpads, alt: 'Wide foredeck sun pads on the Locke Catamaran looking out over calm marina water' },
+      { src: images.lockeCatamaranSaloon, alt: 'Catamaran saloon with dining table set for six and sea views all round' },
+      { src: images.lockeCatamaranSailing, alt: 'A Bali catamaran of the Locke’s type under full sail at golden hour' },
     ],
     hasRealPhoto: true,
     dayAboard:
@@ -82,9 +84,12 @@ export const boats = [
     bestFor: 'Anglers & quick private runs',
     uses: ['Fishing trips', 'Quick escapes', 'Snorkelling stops', 'Fast Red Sea runs'],
     image: images.privateSpeedboat,
-    imageAlt: 'The Private Speedboat, fast and agile for fishing and quick Red Sea runs',
-    gallery: [],
-    hasRealPhoto: false,
+    imageAlt: 'The private speedboat, a RIB with a shaded T-top console, moored on bright turquoise water',
+    gallery: [
+      { src: images.privateSpeedboatBow, alt: 'The speedboat alongside in clear turquoise water, T-top console and deep tubes' },
+      { src: images.privateSpeedboatEngines, alt: 'Twin Yamaha 200hp outboards on the speedboat’s transom' },
+    ],
+    hasRealPhoto: true,
     // name can be swapped later if the boat is named
     renameable: true,
     dayAboard:
@@ -92,8 +97,8 @@ export const boats = [
     blurb:
       'When you want to move. Quick to the reefs, quick to the fishing marks, and quick to a quiet bay before anyone else arrives. Our speedboat is the agile option for anglers and small groups who like a bit of pace with their privacy.',
     highlights: [
+      'Twin 200hp outboards, so the good spots are never far',
       'First to the best marks for a morning of fishing',
-      'Nimble enough to chase the calmest, quietest water',
       'A fast, private alternative to the big tourist boats',
     ],
     placeholderGradient: 'from-teal-700 via-sea-700 to-sea-500',

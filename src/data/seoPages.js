@@ -11,7 +11,7 @@ const meta = {
   "hurghada-private-boat-trips": { image: images.oneLuckyLadyMarina, imageAlt: "Private boat resting on calm turquoise water near the Hurghada coast", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
   "red-sea-catamaran-charter": { image: images.seanJustine, imageAlt: "Guests relaxing on the spacious bow of a Red Sea charter for groups", bestBoats: ["locke-catamaran","one-lucky-lady"] },
   "soma-bay-snorkelling-trips": { image: images.snorkelling, imageAlt: "Sunlit Red Sea reef with hard corals and shoals of fish, seen from just below the surface", bestBoats: ["one-lucky-lady","private-speedboat"] },
-  "hurghada-fishing-trips": { image: images.oneLuckyLady, imageAlt: "Stern of the boat ready for a private Red Sea fishing day off Hurghada", bestBoats: ["private-speedboat","one-lucky-lady"] },
+  "hurghada-fishing-trips": { image: images.privateSpeedboat, imageAlt: "The private speedboat moored on turquoise water, ready for a Red Sea fishing day off Hurghada", bestBoats: ["private-speedboat","one-lucky-lady"] },
   "red-sea-overnight-boat-trips": { image: images.oneLuckyLadyNight, imageAlt: "Boat lit with soft deck lighting at anchor under the night sky", bestBoats: ["locke-catamaran"] },
   "all-inclusive-boat-trips-hurghada": { image: images.hero, imageAlt: "All-inclusive private boat day on the Red Sea, fully arranged", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
   "private-yacht-charter-soma-bay": { image: images.justineTiggySunset, imageAlt: "Relaxed sunset moment aboard a private Soma Bay yacht charter", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
