@@ -9,9 +9,10 @@ const base = '/assets'
 
 export const images = {
   // Hero / One Lucky Lady (real photography)
-  // Owned, watermark-free. The old `hero-one-lucky-lady.webp` carried a borrowed
-  // "Simply Somabay" watermark — do not point the hero back at it.
-  hero: `${base}/one-lucky-lady-deck.webp`,
+  // NOTE: the "Simply Somabay" lettering on the far shoreline in this shot (and
+  // in -somabay) is a physical destination sign at the location, NOT a watermark.
+  // It was wrongly flagged as borrowed once — it's owned imagery. Leave it be.
+  hero: `${base}/hero-one-lucky-lady.webp`,
   // Optional cinematic hero loop (One Lucky Lady underway, graded). When a real
   // ~2-5MB muted loop exists at /public/assets, point this at it and the hero
   // upgrades automatically (poster stays the LCP element). Keep null until then.
@@ -19,7 +20,7 @@ export const images = {
   oneLuckyLady: `${base}/one-lucky-lady.webp`,
   oneLuckyLadyDeck: `${base}/one-lucky-lady-deck.webp`,
   oneLuckyLadyMarina: `${base}/one-lucky-lady-marina.webp`,
-  // WATERMARKED ("Simply Somabay") — borrowed, not ours. Unused; do not re-add.
+  // Shows the "Simply Somabay" shoreline sign — a location cue, not a watermark.
   oneLuckyLadySomabay: `${base}/one-lucky-lady-somabay.webp`,
   oneLuckyLadyNight: `${base}/one-lucky-lady-night.webp`,
   oneLuckyLadyBeach: `${base}/one-lucky-lady-beach.webp`,

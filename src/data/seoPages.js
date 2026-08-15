@@ -7,7 +7,7 @@ import { images } from './images.js'
 // ---------------------------------------------------------------------------
 
 const meta = {
-  "soma-bay-boat-trips": { image: images.oneLuckyLadyBeach, imageAlt: "One Lucky Lady moored at Soma Bay marina with the Red Sea behind", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
+  "soma-bay-boat-trips": { image: images.oneLuckyLadySomabay, imageAlt: "One Lucky Lady moored at Soma Bay marina with the Simply Somabay shoreline sign behind", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
   "hurghada-private-boat-trips": { image: images.oneLuckyLadyMarina, imageAlt: "Private boat resting on calm turquoise water near the Hurghada coast", bestBoats: ["one-lucky-lady","locke-catamaran","private-speedboat"] },
   "red-sea-catamaran-charter": { image: images.seanJustine, imageAlt: "Guests relaxing on the spacious bow of a Red Sea charter for groups", bestBoats: ["locke-catamaran","one-lucky-lady"] },
   "soma-bay-snorkelling-trips": { image: images.snorkelling, imageAlt: "Sunlit Red Sea reef with hard corals and shoals of fish, seen from just below the surface", bestBoats: ["one-lucky-lady","private-speedboat"] },
