@@ -650,7 +650,7 @@ export default function RivieraHome() {
             <p>Running trips alongside them is Adam, born and raised right here in the bay — he knows the calmest morning reefs, where the fish are biting, and the quietest spot to watch the sun go down.</p>
             <p>Rio the macaw keeps an eye on the marina, Tiggy the chihuahua has logged more sunset cruises than most, and a full local crew runs every trip properly, every time.</p>
             <div className="badges">
-              <a className="badge tt" href={site.social.tiktokSean} target="_blank" rel="noopener noreferrer" onClick={() => trackTikTok('riviera-home:story')}><Icon name="tiktok" className="" />15K+ on TikTok →</a>
+              <a className="badge tt" href={site.social.tiktokSean} target="_blank" rel="noopener noreferrer" onClick={() => trackTikTok('riviera-home:story')}><Icon name="tiktok" className="" />18.9K on TikTok →</a>
               <span className="badge"><Icon name="heart" className="" />Loved by Red Sea guests</span>
               <span className="badge"><Icon name="lock" className="" />Private, personal, all-inclusive</span>
             </div>

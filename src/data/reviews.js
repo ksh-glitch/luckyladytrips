@@ -36,7 +36,7 @@ export const trustPoints = [
 
 // Personality / trust badges for the founder story
 export const storyBadges = [
-  { icon: 'tiktok', label: '15K+ TikTok followers' },
+  { icon: 'tiktok', label: '18.9K TikTok followers' },
   { icon: 'heart', label: 'Loved by Red Sea guests' },
   { icon: 'lock', label: 'Private, personal, all-inclusive' },
 ]

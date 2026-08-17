@@ -262,3 +262,11 @@
     mix-blend-mode: overlay;
   }
 }
+
+/* Slow drift for the /links full-bleed backdrop (killed by the global
+   prefers-reduced-motion rule above). */
+@keyframes lk-drift {
+  from { transform: scale(1) translateY(0); }
+  to { transform: scale(1.07) translateY(-1.5%); }
+}
+.lk-drift { animation: lk-drift 36s ease-in-out infinite alternate; }

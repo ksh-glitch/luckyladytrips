@@ -5,7 +5,8 @@ import { Icon } from '../components/icons.jsx'
 import { site } from '../data/site.js'
 import { images } from '../data/images.js'
 import { reviews } from '../data/reviews.js'
-import { whatsappUrl } from '../lib/whatsapp.js'
+import { featuredTikToks } from '../data/tiktok.js'
+import { whatsappUrl, enquiryFor } from '../lib/whatsapp.js'
 import { track, trackWhatsApp, trackTikTok } from '../lib/analytics.js'
 import cn from '../lib/cn.js'
 
@@ -20,6 +21,10 @@ import cn from '../lib/cn.js'
 //  Views fire "Links Page View", taps fire "Link Click" (both carry src),
 //  and the WhatsApp message itself embeds "ref: links-<src>".
 // ---------------------------------------------------------------------------
+
+// Staggered entrance for the page's blocks (fade-up is `both`-filled, so
+// blocks start hidden; the global reduced-motion rule collapses it to instant).
+const stagger = (i) => ({ style: { animationDelay: `${90 + i * 80}ms` }, className: 'animate-fade-up' })
 
 function useSrc() {
   return useMemo(() => {
@@ -69,7 +74,7 @@ export default function Links() {
           <img
             src={images.oneLuckyLadyBeach}
             alt=""
-            className="h-full w-full object-cover object-[center_30%]"
+            className="lk-drift h-full w-full object-cover object-[center_30%]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/88 to-navy-950" />
           <div className="absolute -top-32 left-1/2 h-80 w-[34rem] -translate-x-1/2 rounded-full bg-teal-500/20 blur-3xl" />
@@ -78,7 +83,7 @@ export default function Links() {
 
         <div className="relative mx-auto w-full max-w-md">
           {/* ---------- identity ---------- */}
-          <div className="flex flex-col items-center text-center">
+          <div {...stagger(0)} className="animate-fade-up flex flex-col items-center text-center">
             <span className="relative">
               <span aria-hidden="true" className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-gold-400 via-teal-400 to-sea-700 opacity-90" />
               <img
@@ -106,7 +111,7 @@ export default function Links() {
           </div>
 
           {/* ---------- proof band ---------- */}
-          <dl className="mt-7 grid grid-cols-3 overflow-hidden rounded-3xl border border-white/12 bg-white/[0.07] backdrop-blur-md">
+          <dl {...stagger(1)} className="animate-fade-up mt-7 grid grid-cols-3 overflow-hidden rounded-3xl border border-white/12 bg-white/[0.07] backdrop-blur-md">
             {[
               { big: <><CountUp to={site.social.tiktokFollowerCount} />+</>, label: 'TikTok followers' },
               { big: <CountUp to={3} format={(n) => String(Math.round(n))} />, label: 'private boats' },
@@ -120,7 +125,7 @@ export default function Links() {
           </dl>
 
           {/* ---------- WhatsApp: the one true CTA ---------- */}
-          <div className="mt-6 space-y-3">
+          <div {...stagger(2)} className="animate-fade-up mt-6 space-y-3">
             <a
               href={whatsappUrl(undefined, `links-${src}`)}
               target="_blank"
@@ -138,6 +143,37 @@ export default function Links() {
               </span>
               <Icon name="arrowRight" className="h-5 w-5 shrink-0 text-white/80 transition-transform duration-300 ease-smooth group-hover:translate-x-1" />
             </a>
+
+            {/* ---------- choose your day: one tap opens a pre-filled enquiry ---------- */}
+            <div>
+              <p className="mb-2.5 flex items-center gap-2 px-1 pt-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/55">
+                <Icon name="sun" className="h-3.5 w-3.5 text-gold-400" />
+                Choose your day
+              </p>
+              <div className="grid grid-cols-3 gap-2.5">
+                {[
+                  { trip: 'Snorkelling trip', label: 'Snorkel', img: images.snorkelling },
+                  { trip: 'Fishing trip', label: 'Fish', img: images.privateSpeedboat },
+                  { trip: 'Sunset cruise', label: 'Sunset', img: images.justineTiggySunset },
+                ].map((t) => (
+                  <a
+                    key={t.trip}
+                    href={whatsappUrl(enquiryFor({ trip: t.trip }), `links-${src}-day`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackWhatsApp(`links-${src}-${t.label.toLowerCase()}`)}
+                    className="group relative overflow-hidden rounded-2xl border border-white/12 shadow-card transition duration-300 ease-smooth hover:-translate-y-0.5 hover:border-white/30"
+                  >
+                    <img src={t.img} alt="" loading="lazy" className="aspect-square w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-105" />
+                    <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/15 to-transparent" />
+                    <span className="absolute inset-x-0 bottom-0 flex items-center justify-between px-2.5 pb-2">
+                      <span className="text-sm font-bold text-white">{t.label}</span>
+                      <Icon name="whatsapp" className="h-3.5 w-3.5 text-emerald-300" />
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
 
             {/* ---------- TikTok feature card ---------- */}
             <a
@@ -160,23 +196,46 @@ export default function Links() {
                     Follow
                   </span>
                 </span>
-                <span className="mt-4 flex items-end justify-between gap-3 border-t border-white/10 pt-4">
+                <span className="mt-4 flex items-center justify-between gap-4 border-t border-white/10 pt-4">
                   <span>
                     <span className="block font-display text-3xl leading-none text-white">
-                      <CountUp to={site.social.tiktokFollowerCount} />+
+                      <CountUp to={site.social.tiktokFollowerCount} />
                     </span>
                     <span className="mt-1 block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/50">
                       followers &amp; counting
                     </span>
                   </span>
-                  <span className="flex -space-x-2">
-                    {[images.reefClownfish, images.snorkelling, images.reefFreediver].map((t, i) => (
-                      <img key={i} src={t} alt="" loading="lazy" className="h-12 w-12 rounded-xl border-2 border-navy-950 object-cover" style={{ transform: `rotate(${(i - 1) * 6}deg)` }} />
-                    ))}
+                  <span className="text-right">
+                    <span className="block font-display text-3xl leading-none text-white">{site.social.tiktokLikes}</span>
+                    <span className="mt-1 block text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/50">likes</span>
                   </span>
                 </span>
               </span>
             </a>
+
+            {/* featured videos — Sean's most-watched, straight from TikTok */}
+            <div className="grid grid-cols-3 gap-2.5">
+              {featuredTikToks.map((v, i) => (
+                <a
+                  key={v.url}
+                  href={v.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackTikTok(`links-${src}-video-${i + 1}`)}
+                  aria-label={`${v.label} — ${v.views} views on TikTok`}
+                  className="group relative overflow-hidden rounded-2xl border border-white/12 shadow-card transition duration-300 ease-smooth hover:-translate-y-0.5 hover:border-white/30"
+                >
+                  <img src={v.thumb} alt={v.label} loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-105" />
+                  <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent" />
+                  <span aria-hidden="true" className="absolute left-1/2 top-[38%] flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 backdrop-blur-sm transition group-hover:bg-white/40">
+                    <svg viewBox="0 0 24 24" fill="white" className="ml-0.5 h-4 w-4"><path d="M8 5v14l11-7z" /></svg>
+                  </span>
+                  <span className="absolute inset-x-0 bottom-0 px-2 pb-2">
+                    <span className="block text-[0.7rem] font-bold leading-tight text-white">{v.views} views</span>
+                  </span>
+                </a>
+              ))}
+            </div>
 
             {/* ---------- the rest of the ways in ---------- */}
             <LinkRow
@@ -234,7 +293,7 @@ export default function Links() {
           </div>
 
           {/* ---------- one real review ---------- */}
-          <figure className="mt-6 rounded-3xl border border-white/12 bg-white/[0.07] px-5 py-5 backdrop-blur-md">
+          <figure {...stagger(3)} className="animate-fade-up mt-6 rounded-3xl border border-white/12 bg-white/[0.07] px-5 py-5 backdrop-blur-md">
             <div className="flex gap-1" aria-label={`${review.rating} out of 5 stars`}>
               {Array.from({ length: review.rating }).map((_, i) => (
                 <Icon key={i} name="star" className="h-4 w-4 text-gold-400" />

@@ -56,7 +56,7 @@ export default function About() {
               <p>
                 Word spread among expats, hotel guests and returning visitors. Sean became a familiar
                 face on the Red Sea, and on TikTok, where {''}
-                <a href="https://www.tiktok.com/@redseasean" target="_blank" rel="noopener noreferrer" className="link-underline">15K+ followers</a> {''}
+                <a href="https://www.tiktok.com/@redseasean" target="_blank" rel="noopener noreferrer" className="link-underline">18.9K followers</a> {''}
                 tune in for the days out, the dog, and the macaw.
               </p>
             </div>
