@@ -9,11 +9,14 @@ import Contact from './pages/Contact.jsx'
 import SEOPage from './pages/SEOPage.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Preview from './pages/Preview.jsx'
+import Links from './pages/Links.jsx'
 import { seoPageSlugs } from './data/seoPages.js'
 
 export const routes = [
   // Standalone Riviera homepage preview (noindex). Rendered outside <App /> so
   // the normal header/footer don't compete with the full-bleed poster design.
+  // Link-in-bio / QR landing page — standalone, noindex, tracked via ?src=
+  { path: '/links', element: <Links /> },
   { path: '/preview', element: <Preview /> },
   { path: '/preview/riviera', element: <Preview /> },
   {
