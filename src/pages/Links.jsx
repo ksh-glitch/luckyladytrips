@@ -261,8 +261,8 @@ export default function Links() {
               onClick={() => trackTikTok(`links-${src}-boat`)}
               icon="tiktok"
               chipClass="bg-white/10"
-              title="TikTok · @luckyladyeg"
-              sub="The boats, the trips, the guests"
+              title="Business TikTok · @luckyladyeg"
+              sub="The official Lucky Lady Trips account"
             />
             <LinkRow
               href={site.social.instagram}
