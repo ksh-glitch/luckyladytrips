@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import SEO from '../components/SEO.jsx'
 import { Icon } from '../components/icons.jsx'
 import { site } from '../data/site.js'
@@ -25,6 +25,62 @@ function useSrc() {
     const src = new URLSearchParams(window.location.search).get('src')
     return (src || 'direct').slice(0, 32)
   }, [])
+}
+
+// TikTok-style strip of the owner's real clips: muted 6s loops that tap
+// through to TikTok. Paused (poster only) for prefers-reduced-motion users.
+const CLIPS = [
+  { video: '/assets/clips/one-lucky-lady-loop.mp4', poster: '/assets/clips/one-lucky-lady-poster.webp', label: 'One Lucky Lady' },
+  { video: '/assets/clips/locke-catamaran-loop.mp4', poster: '/assets/clips/locke-catamaran-poster.webp', label: 'Locke Catamaran' },
+  { video: '/assets/clips/private-speedboat-loop.mp4', poster: '/assets/clips/private-speedboat-poster.webp', label: 'The Speedboat' },
+]
+
+function ClipStrip({ href, onClick }) {
+  const wrap = useRef(null)
+  useEffect(() => {
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    wrap.current?.querySelectorAll('video').forEach((v) => {
+      if (reduce) v.pause()
+      else v.play().catch(() => {}) // some browsers hold autoplay until nudged
+    })
+  }, [])
+  return (
+    <div ref={wrap}>
+      <p className="mb-2.5 flex items-center gap-2 px-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/55">
+        <Icon name="tiktok" className="h-3.5 w-3.5 text-gold-400" />
+        Straight off the boats
+      </p>
+      <div className="grid grid-cols-3 gap-2.5">
+        {CLIPS.map((c) => (
+          <a
+            key={c.label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClick}
+            aria-label={`${c.label} — watch more on TikTok`}
+            className="group relative overflow-hidden rounded-2xl border border-white/15 shadow-card transition duration-300 ease-smooth hover:-translate-y-0.5"
+          >
+            <video
+              src={c.video}
+              poster={c.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="aspect-[9/16] w-full object-cover"
+            />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center gap-1 px-2 pb-2 text-[0.62rem] font-semibold leading-tight text-white/90">
+              <Icon name="tiktok" className="h-3 w-3 shrink-0" />
+              {c.label}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 function LinkRow({ href, icon, title, sub, onClick, primary = false, external = true }) {
@@ -141,6 +197,19 @@ export default function Links() {
               title="Call or save our number"
               sub={site.whatsappDisplay}
             />
+            <LinkRow
+              href="/lucky-lady-trips.vcf"
+              external={false}
+              onClick={hit('vcard')}
+              icon="users"
+              title="Save our contact card"
+              sub="One tap to add us to your phone"
+            />
+
+            <div className="pt-3">
+              <ClipStrip href={site.social.tiktokSean} onClick={() => trackTikTok(`links-${src}-clip`)} />
+            </div>
+
             <LinkRow
               href={site.social.tiktokSean}
               onClick={() => trackTikTok(`links-${src}`)}
