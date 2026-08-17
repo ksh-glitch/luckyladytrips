@@ -18,6 +18,8 @@ export const boats = [
     uses: ['Snorkelling', 'Relaxing', 'Sunset cruises', 'Private day trips'],
     image: images.hero,
     imageAlt: 'One Lucky Lady private boat moored in the turquoise water at Soma Bay marina',
+    clip: '/assets/clips/one-lucky-lady-loop.mp4',
+    clipPoster: '/assets/clips/one-lucky-lady-poster.webp',
     gallery: [
       { src: images.oneLuckyLadyBeach, alt: 'One Lucky Lady moored on turquoise water with the beach behind' },
       { src: images.oneLuckyLadyBow, alt: 'One Lucky Lady bow sun pads over clear turquoise water' },
@@ -55,6 +57,8 @@ export const boats = [
     uses: ['Group day trips', 'Celebrations', 'Custom charters', 'Overnight escapes'],
     image: images.lockeCatamaran,
     imageAlt: 'The Locke Catamaran under sail on calm water at golden hour',
+    clip: '/assets/clips/locke-catamaran-loop.mp4',
+    clipPoster: '/assets/clips/locke-catamaran-poster.webp',
     gallery: [
       { src: images.lockeCatamaranForedeck, alt: 'The Locke Catamaran’s foredeck lounge with sun pads and a table, moored in the marina' },
       { src: images.lockeCatamaranSunpads, alt: 'Wide foredeck sun pads on the Locke Catamaran looking out over calm marina water' },
@@ -85,6 +89,8 @@ export const boats = [
     uses: ['Fishing trips', 'Quick escapes', 'Snorkelling stops', 'Fast Red Sea runs'],
     image: images.privateSpeedboat,
     imageAlt: 'The private speedboat, a RIB with a shaded T-top console, moored on bright turquoise water',
+    clip: '/assets/clips/private-speedboat-loop.mp4',
+    clipPoster: '/assets/clips/private-speedboat-poster.webp',
     gallery: [
       { src: images.privateSpeedboatBow, alt: 'The speedboat alongside in clear turquoise water, T-top console and deep tubes' },
       { src: images.privateSpeedboatEngines, alt: 'Twin Yamaha 200hp outboards on the speedboat’s transom' },

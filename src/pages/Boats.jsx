@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import SEO from '../components/SEO.jsx'
 import PageHero from '../components/PageHero.jsx'
 import SmartImage from '../components/SmartImage.jsx'
+import BoatClip from '../components/BoatClip.jsx'
 import WhatsAppButton from '../components/WhatsAppButton.jsx'
 import Button from '../components/Button.jsx'
 import CtaBand from '../components/CtaBand.jsx'
@@ -23,15 +24,24 @@ function BoatDetail({ boat, index }) {
         {/* Media */}
         <div className={cn(flip && 'lg:order-2')}>
           <div style={morphStyle} className="overflow-hidden rounded-4xl shadow-card">
-            <SmartImage
-              src={boat.image}
-              alt={boat.imageAlt}
-              hasPhoto={boat.hasRealPhoto}
-              gradient={boat.placeholderGradient}
-              label={`${boat.name} · photo coming soon`}
-              icon="anchor"
-              className="aspect-[4/3] w-full"
-            />
+            {boat.clip ? (
+              <BoatClip
+                clip={boat.clip}
+                poster={boat.clipPoster}
+                alt={boat.imageAlt}
+                className="aspect-[4/3]"
+              />
+            ) : (
+              <SmartImage
+                src={boat.image}
+                alt={boat.imageAlt}
+                hasPhoto={boat.hasRealPhoto}
+                gradient={boat.placeholderGradient}
+                label={`${boat.name} · photo coming soon`}
+                icon="anchor"
+                className="aspect-[4/3] w-full"
+              />
+            )}
           </div>
           {boat.gallery?.length > 0 && (
             <div className="mt-3 grid grid-cols-3 gap-3">
