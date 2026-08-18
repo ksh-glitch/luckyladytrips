@@ -46,6 +46,7 @@ export const site = {
 export const nav = [
   { label: 'Boats', to: '/boats' },
   { label: 'Trips', to: '/trips' },
+  { label: 'Gallery', to: '/gallery' },
   { label: 'About', to: '/about' },
   { label: 'Reviews', to: '/reviews' },
   { label: 'FAQ', to: '/faq' },
@@ -54,6 +55,9 @@ export const nav = [
 
 // Popular SEO landing pages surfaced in the footer for internal linking
 export const footerExplore = [
+  { label: 'As Seen on TikTok', to: '/tiktok' },
+  { label: 'Bootstouren (Deutsch)', to: '/de/soma-bay-bootstouren' },
+  { label: 'Морские прогулки (Русский)', to: '/ru/morskie-progulki-soma-bay' },
   { label: 'Soma Bay Boat Trips', to: '/soma-bay-boat-trips' },
   { label: 'Hurghada Private Boat Trips', to: '/hurghada-private-boat-trips' },
   { label: 'Red Sea Catamaran Charter', to: '/red-sea-catamaran-charter' },

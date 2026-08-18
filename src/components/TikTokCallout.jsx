@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Icon } from './icons.jsx'
 import SmartImage from './SmartImage.jsx'
 import CountUp from './CountUp.jsx'
@@ -60,15 +61,13 @@ export default function TikTokCallout({ source = 'home' }) {
                   <Icon name="tiktok" className="h-[1.2em] w-[1.2em]" />
                   Follow {sean.tiktokSeanHandle}
                 </a>
-                <a
-                  href={site.social.tiktok}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackTikTok(`callout-brand:${source}`)}
+                <Link
+                  to="/tiktok"
+                  onClick={() => trackTikTok(`callout-watch:${source}`)}
                   className="link-underline inline-flex items-center gap-1.5 text-sm"
                 >
-                  Or the boats&apos; channel @luckyladyeg
-                </a>
+                  Watch the best clips here
+                </Link>
               </div>
             </div>
 

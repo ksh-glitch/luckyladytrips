@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://luckyladytrips.com/</loc>
     <lastmod>2025-01-01</lastmod>
@@ -14,6 +14,18 @@
   </url>
   <url>
     <loc>https://luckyladytrips.com/trips</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/gallery</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/tiktok</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -44,12 +56,20 @@
   </url>
   <url>
     <loc>https://luckyladytrips.com/soma-bay-boat-trips</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/soma-bay-boat-trips"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/soma-bay-bootstouren"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/morskie-progulki-soma-bay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/soma-bay-boat-trips"/>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://luckyladytrips.com/hurghada-private-boat-trips</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/hurghada-private-boat-trips"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/private-bootstouren-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/chastnye-morskie-progulki-hurgada"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/hurghada-private-boat-trips"/>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -80,12 +100,76 @@
   </url>
   <url>
     <loc>https://luckyladytrips.com/all-inclusive-boat-trips-hurghada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/all-inclusive-boat-trips-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/all-inclusive-bootstouren-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/morskie-progulki-hurgada-vse-vklyucheno"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/all-inclusive-boat-trips-hurghada"/>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://luckyladytrips.com/private-yacht-charter-soma-bay</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/de/soma-bay-bootstouren</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/soma-bay-boat-trips"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/soma-bay-bootstouren"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/morskie-progulki-soma-bay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/soma-bay-boat-trips"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/de/private-bootstouren-hurghada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/hurghada-private-boat-trips"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/private-bootstouren-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/chastnye-morskie-progulki-hurgada"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/hurghada-private-boat-trips"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/de/all-inclusive-bootstouren-hurghada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/all-inclusive-boat-trips-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/all-inclusive-bootstouren-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/morskie-progulki-hurgada-vse-vklyucheno"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/all-inclusive-boat-trips-hurghada"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/ru/morskie-progulki-soma-bay</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/soma-bay-boat-trips"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/soma-bay-bootstouren"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/morskie-progulki-soma-bay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/soma-bay-boat-trips"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/ru/chastnye-morskie-progulki-hurgada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/hurghada-private-boat-trips"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/private-bootstouren-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/chastnye-morskie-progulki-hurgada"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/hurghada-private-boat-trips"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://luckyladytrips.com/ru/morskie-progulki-hurgada-vse-vklyucheno</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://luckyladytrips.com/all-inclusive-boat-trips-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://luckyladytrips.com/de/all-inclusive-bootstouren-hurghada"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://luckyladytrips.com/ru/morskie-progulki-hurgada-vse-vklyucheno"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://luckyladytrips.com/all-inclusive-boat-trips-hurghada"/>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

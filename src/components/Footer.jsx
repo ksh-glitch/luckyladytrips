@@ -7,7 +7,7 @@ import WhatsAppButton from './WhatsAppButton.jsx'
 import Logo from './Logo.jsx'
 
 export default function Footer() {
-  const year = 2025
+  const year = 2026
   // The homepage already closes with its own full-bleed final CTA, so the
   // footer's CTA band would be a second "book now" in a row. Show it on every
   // other page (which have no such closer), hide it on home.

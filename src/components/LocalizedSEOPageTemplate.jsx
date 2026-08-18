@@ -1,19 +1,15 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SEO from './SEO.jsx'
 import SmartImage from './SmartImage.jsx'
 import SectionHeading from './SectionHeading.jsx'
-import BoatCard from './BoatCard.jsx'
 import FAQAccordion from './FAQAccordion.jsx'
 import WhatsAppButton from './WhatsAppButton.jsx'
-import Button from './Button.jsx'
 import CtaBand from './CtaBand.jsx'
 import Reveal from './Reveal.jsx'
-import { Icon } from './icons.jsx'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
-import { boatById } from '../data/boats.js'
-import { seoPages } from '../data/seoPages.js'
-import { translationGroups, alternatesFor } from '../data/seoPagesI18n.js'
-import { inclusionsStrip } from '../data/inclusions.js'
+import { Icon } from './icons.jsx'
+import { localeUi, localizedBoats, alternatesFor } from '../data/seoPagesI18n.js'
 import { faqSchema, breadcrumbSchema, localBusinessSchema } from '../lib/schema.js'
 import { useSetEnquiry } from '../lib/EnquiryContext.jsx'
 
@@ -25,14 +21,28 @@ function Paragraphs({ text, className = '' }) {
   ))
 }
 
-export default function SEOPageTemplate({ page }) {
-  const boats = (page.bestBoats || []).map((id) => boatById[id]).filter(Boolean)
-  const related = seoPages.filter((p) => p.slug !== page.slug).slice(0, 4)
+/**
+ * German / Russian sibling of SEOPageTemplate. Same visual system, but every
+ * template string comes from localeUi and the WhatsApp pre-fill is written in
+ * the visitor's language. The header/footer around it stay English for now —
+ * the landing content, CTAs and FAQ (what search visitors actually read) are
+ * fully localized.
+ */
+export default function LocalizedSEOPageTemplate({ page }) {
+  const ui = localeUi[page.lang]
+  const boats = localizedBoats[page.lang]
   const path = `/${page.slug}`
-  const translated = Boolean(translationGroups[page.slug])
+  const source = `seo-${page.lang}:${page.groupKey}`
 
-  // Make the global sticky CTA prefill this page's topic.
-  useSetEnquiry({ context: `I'm interested in: ${page.hero.kicker}.`, source: `seo:${page.slug}` })
+  // Sticky mobile CTA opens the localized template too.
+  useSetEnquiry({ message: ui.whatsappMessage, source })
+
+  // The SSG head sets <html lang> statically, but client-side navigation
+  // doesn't re-apply html attributes — keep it in sync for screen readers.
+  useEffect(() => {
+    document.documentElement.lang = ui.htmlLang
+    return () => { document.documentElement.lang = 'en' }
+  }, [ui.htmlLang])
 
   return (
     <>
@@ -41,11 +51,13 @@ export default function SEOPageTemplate({ page }) {
         description={page.metaDescription}
         path={path}
         image={page.image}
-        alternates={translated ? alternatesFor(page.slug) : []}
+        lang={ui.htmlLang}
+        ogLocale={ui.ogLocale}
+        alternates={alternatesFor(page.groupKey)}
         schema={[
           localBusinessSchema(),
           breadcrumbSchema([
-            { name: 'Home', path: '/' },
+            { name: ui.breadcrumbHome, path: '/' },
             { name: page.hero.h1, path },
           ]),
           faqSchema(page.faqs),
@@ -63,12 +75,12 @@ export default function SEOPageTemplate({ page }) {
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <nav aria-label="Breadcrumb" className="text-sm text-white/75">
               <ol className="flex items-center gap-2">
-                <li><Link to="/" className="hover:text-gold-300">Home</Link></li>
+                <li><Link to="/" className="hover:text-gold-300">{ui.breadcrumbHome}</Link></li>
                 <li aria-hidden="true">/</li>
                 <li className="text-white">{page.hero.kicker}</li>
               </ol>
             </nav>
-            {translated && <LanguageSwitcher groupKey={page.slug} current="en" />}
+            <LanguageSwitcher groupKey={page.groupKey} current={page.lang} />
           </div>
 
           <span className="chip w-fit">
@@ -83,19 +95,17 @@ export default function SEOPageTemplate({ page }) {
             {page.hero.intro}
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <WhatsAppButton size="lg" source={`seo-hero:${page.slug}`} context={`I'm interested in: ${page.hero.kicker}.`} />
-            <Button to="/boats" variant="secondary" size="lg" iconRight="arrowRight">
-              View our boats
-            </Button>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <WhatsAppButton size="lg" label={ui.whatsappLabel} message={ui.whatsappMessage} source={`${source}-hero`} />
           </div>
+          <p className="mt-3 text-sm text-white/65">{ui.replyNote}</p>
         </div>
       </section>
 
       {/* Inclusions strip */}
       <div className="border-y border-sand-200/70 bg-white/60">
         <div className="container flex gap-2.5 overflow-x-auto py-4 no-scrollbar">
-          {inclusionsStrip.map((it) => (
+          {ui.inclusions.map((it) => (
             <span key={it.label} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-sand-100 px-3.5 py-1.5 text-sm font-medium text-navy/80">
               <Icon name={it.icon} className="h-4 w-4 text-teal-600" />
               {it.label}
@@ -142,24 +152,37 @@ export default function SEOPageTemplate({ page }) {
         </div>
       </section>
 
-      {/* Featured boats */}
-      {boats.length > 0 && (
-        <section className="section">
-          <div className="container">
-            <SectionHeading eyebrow="Choose your boat" title="The right boat for this trip" intro="Private only, all-inclusive, and priced with nothing hidden." />
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {boats.map((b) => (
-                <BoatCard key={b.id} boat={b} layout="tall" flag={b.id === 'one-lucky-lady' ? 'The original' : undefined} />
-              ))}
-            </div>
+      {/* Boats, in-language */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow={ui.boatsEyebrow} title={ui.boatsTitle} intro={ui.boatsIntro} />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {boats.map((b) => (
+              <Reveal key={b.id} className="card overflow-hidden">
+                <SmartImage src={b.image} alt={b.name} className="aspect-[4/3] w-full" />
+                <div className="p-5">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="font-display text-xl text-navy">{b.name}</h3>
+                    <span className="shrink-0 text-sm font-bold text-teal-700">{b.price}</span>
+                  </div>
+                  <p className="mt-1.5 text-sm leading-relaxed text-navy/65">{b.line}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </section>
-      )}
+          <div className="mt-8">
+            <Link to="/boats" className="link-underline inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">
+              {ui.boatsCta}
+              <Icon name="arrowRight" className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="bg-white/50 py-16 lg:py-24">
         <div className="container max-w-3xl">
-          <SectionHeading eyebrow="Good to know" title="Questions, answered" align="center" />
+          <SectionHeading eyebrow={ui.faqEyebrow} title={ui.faqTitle} align="center" />
           <div className="mt-12">
             <FAQAccordion items={page.faqs} />
           </div>
@@ -173,25 +196,10 @@ export default function SEOPageTemplate({ page }) {
             <h2 className="mx-auto max-w-2xl text-balance font-display text-display-sm text-white sm:text-display">{page.cta.heading}</h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">{page.cta.sub}</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <WhatsAppButton variant="white" size="lg" source={`seo-cta:${page.slug}`} context={`I'm interested in: ${page.hero.kicker}.`} />
-              <Button to="/trips" variant="ghost" size="lg" iconRight="arrowRight">
-                Explore trips
-              </Button>
+              <WhatsAppButton variant="white" size="lg" label={ui.whatsappLabel} message={ui.whatsappMessage} source={`${source}-cta`} />
             </div>
+            <p className="mt-4 text-sm text-white/60">{ui.replyNote}</p>
           </CtaBand>
-
-          {/* internal links */}
-          <div className="mt-12">
-            <p className="label">Keep exploring</p>
-            <div className="mt-4 flex flex-wrap gap-2.5">
-              {related.map((r) => (
-                <Link key={r.slug} to={`/${r.slug}`} className="inline-flex items-center gap-1.5 rounded-full border border-sand-200 bg-white px-4 py-2 text-sm font-medium text-navy/75 shadow-soft transition hover:border-teal-600/30 hover:text-teal-700">
-                  {r.hero.kicker}
-                  <Icon name="arrowRight" className="h-3.5 w-3.5" />
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
     </>

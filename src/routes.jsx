@@ -7,10 +7,14 @@ import Reviews from './pages/Reviews.jsx'
 import FAQ from './pages/FAQ.jsx'
 import Contact from './pages/Contact.jsx'
 import SEOPage from './pages/SEOPage.jsx'
+import LocalizedSEOPage from './pages/LocalizedSEOPage.jsx'
+import Gallery from './pages/Gallery.jsx'
+import TikTokPage from './pages/TikTokPage.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Preview from './pages/Preview.jsx'
 import Links from './pages/Links.jsx'
 import { seoPageSlugs } from './data/seoPages.js'
+import { localizedSeoPageSlugs } from './data/seoPagesI18n.js'
 
 export const routes = [
   // Standalone Riviera homepage preview (noindex). Rendered outside <App /> so
@@ -30,8 +34,12 @@ export const routes = [
       { path: 'reviews', element: <Reviews /> },
       { path: 'faq', element: <FAQ /> },
       { path: 'contact', element: <Contact /> },
+      { path: 'gallery', element: <Gallery /> },
+      { path: 'tiktok', element: <TikTokPage /> },
       // SEO landing pages — one static route each (prerendered)
       ...seoPageSlugs.map((slug) => ({ path: slug, element: <SEOPage slug={slug} /> })),
+      // German / Russian versions of the top landing pages (e.g. /de/…, /ru/…)
+      ...localizedSeoPageSlugs.map((slug) => ({ path: slug, element: <LocalizedSEOPage slug={slug} /> })),
       { path: '*', element: <NotFound /> },
     ],
   },

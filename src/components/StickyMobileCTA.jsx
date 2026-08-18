@@ -22,7 +22,13 @@ export default function StickyMobileCTA() {
   }, [])
 
   const src = enquiry?.source ? `sticky:${enquiry.source}` : 'sticky'
-  const href = enquiry ? whatsappUrl(enquiryFor(enquiry), src) : whatsappUrl(undefined, src)
+  // `message` (a fully-written prefill, e.g. a localized page's template) wins
+  // over the composed English enquiry.
+  const href = enquiry?.message
+    ? whatsappUrl(enquiry.message, src)
+    : enquiry
+      ? whatsappUrl(enquiryFor(enquiry), src)
+      : whatsappUrl(undefined, src)
   const subtitle = enquiry?.boat
     ? `${enquiry.boat} · ${site.reply.time.toLowerCase()}`
     : site.reply.time
